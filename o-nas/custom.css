@@ -1,0 +1,228 @@
+html, body {
+	background-color: white;
+	height: 100%;
+	width: 100%;
+}
+.row {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+.thumbnail {
+	padding: 0px;
+	border: none;
+}
+/*N-A-W-I-G-A-C-J-A*/
+.navbar {
+	background: none;
+	font-family: "source sans pro";
+	margin: 0px 0px 0px 0px;
+	border: none;
+}
+.navbar i {
+	color: white;
+}
+.navbar a {
+	color: white;
+}
+.navbar-header {
+	float: left;
+}
+li {
+	float: left;
+}
+/*M E N U*/
+.menu {
+	background: url(img/menu.jpg);
+	background-color: white;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	padding-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 100%;
+	text-align: center;
+}
+.menu h2 {
+	color: black;
+}
+.menu h3 {
+	color: black;
+	font-size: 28px;
+	line-height: 40px;
+}
+.menu a {
+	color: black;
+}
+.menu a:hover {
+	color: black;
+}
+.menu .fa {
+	color: black;
+}
+.menu .row {
+	padding-top: 15%;
+}
+
+/* CZCIONKI */
+body {
+	 font-size: 16px;
+	 min-height: 100%;
+	 font-family: "lato";
+	 font-weight: 400;
+	 font-style: normal;
+	 line-height: 25px;
+}
+
+h1 {
+	 font-size: 60px;
+	 text-decoration: bold;
+	 line-height: 60px;
+	 margin: 0px 0px 15px 0px;
+	 font-weight: 900;
+	 font-style: bold;
+	 font-family: "source sans pro";
+}
+
+h2 {
+	 font-size: 28px;
+	 line-height: 30px;
+	 margin: 0px 0px 25px 0px;
+	 font-family: "source sans pro";
+	 font-weight: 900;
+	 font-style: bold;
+}
+h3 {
+	 font-size: 22px;
+	 line-height: 24px;
+	 margin: 0px 0px 0px 0px;
+	 font-family: "source sans pro";
+	 font-weight: 900;
+	 font-style: bold;
+}
+p {
+	 margin: 0px 0px 25px 0px;
+	 text-transform: inherit;
+	 font-size: 18px;
+	 font-family: "lato";
+	 font-weight: 400;
+	 font-style: normal;
+}
+a {
+	color: white;
+}
+a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+/*H E A D E R*/
+.header {
+	height: 100%;
+	background: url(img/header.jpg);
+	background-color: white;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+.header p {
+	color: white;
+}
+.header h1 {
+	color: white;
+}
+.header h2 {
+	color: white;
+}
+
+.alignertrzy {
+		display: flex;
+		display: -webkit-flex;
+		-webkit-justify-content: center;
+	  justify-content: center;
+		-webkit-flex-direction: column;
+	  flex-direction: column;
+		height: 500px;
+		text-align: center;
+}
+.tekst {
+	padding-top: 60px;
+}
+
+/*A N I M A C J E*/
+
+/*UNDERLINE UNDERLINE UNDERLINE UNDERLINE*/
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: #0BB5FF;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+.navbar-default .navbar-brand {
+    color: white;
+    padding-left: 40px;
+}
+.navbar-brand h2 {
+	font-size: 20px;
+}
+.menu .hvr-underline-from-center:before {
+	background: white;
+}
+/*FADE FADE FADA FADE FADE FADE*/
+/* Icon Fade */
+.fa {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  padding-right: 1em;
+}
+.fa:before {
+  content: "\f00c";
+  position: absolute;
+  right: 1em;
+  padding: 0 1px;
+  font-family: FontAwesome;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: color;
+  transition-property: color;
+}
+.fa:hover:before, .hvr-icon-fade:focus:before, .hvr-icon-fade:active:before {
+  color: #0BB5FF;
+}
+.menu .fa:hover:before, .hvr-icon-fade:focus:before, .hvr-icon-fade:active:before {
+  color: white;

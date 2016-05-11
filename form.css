@@ -1,0 +1,26 @@
+.form-control {
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-radius: 0px;
+	border-bottom: 2px solid #000;
+	color: black;
+	border-radius: 0px;
+	box-shadow: 0px;
+	font-family: "lato";
+	border-radius: 0px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: none;
+       -o-transition: none;
+          transition: none;
+}
+.form-control:focus {
+  border-color: blue;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+select {
+	border-radius: 0px;
+}
