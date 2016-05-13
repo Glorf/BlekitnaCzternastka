@@ -142,8 +142,11 @@
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function(){
-      $('.scroll > a').click(function(){
-        $(document).scrollTop('#archiwum')
+      $('a, i').click(function(){
+        $('html, body').animate({
+          scrollTop: $($(this).attr('href')).offset().top
+        }, 500);
+        return false;
       });
     });
     </script>
