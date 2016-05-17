@@ -47,9 +47,7 @@ li {
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
-	padding-top: 10px;
-	padding-left: 5px;
-	padding-right: 5px;
+	margin: 0px 0px 0px 0px;
 	height: 100%;
 	text-align: center;
 }
