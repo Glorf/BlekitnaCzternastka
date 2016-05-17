@@ -9,7 +9,7 @@
                     zoom: 13,
 
                     // The latitude and longitude to center the map (always required)
-                    center: new google.maps.LatLng(52.4070836, 16.9025477), // New York
+                    center: new google.maps.LatLng(x, y), //Na stronie gdzie dodajesz mapkę definiuj globalnie X i Y
 
                     // How you would like to style the map. 
                     // This is where you would paste any style found on Snazzy Maps.
@@ -26,7 +26,7 @@
 
                 // Let's also add a marker while we're at it
                 var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(52.4070836, 16.9025477),
+                    position: new google.maps.LatLng(x, y),
                     map: map,
                     title: 'Harcówka'
 
