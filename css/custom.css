@@ -170,7 +170,7 @@ background-repeat: no-repeat;
 	height: 100%;
 	background: url(img/oboz.jpg);
 	background-size: cover;
-background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	background-position: center;
 	background-attachment: fixed;
 }
@@ -186,7 +186,7 @@ background-repeat: no-repeat;
 	height: 100%;
 	background: url(img/car3.jpg);
 	background-size: cover;
-background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	background-position: center;
 	background-attachment: fixed;
 }
@@ -224,7 +224,21 @@ background-repeat: no-repeat;
 .info {
 	padding-top: 4%;
 }
-
+/* 1% */
+.procent {
+	height: 100%;
+	background: url(img/procent.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+.procent p {
+	color: white;
+}
+.procent h2 {
+	color: white;
+}
 /*M A P K A*/
 #mapka {
 	width: 100%;
