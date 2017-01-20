@@ -134,7 +134,7 @@ a:active {
 /*H E A D E R*/
 .header {
 	height: 100%;
-	background: url(img/header.jpg);
+	background: url(img/procent.jpg);
 	background-color: white;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -151,7 +151,7 @@ a:active {
 /*A R C H I W U M*/
 .archiwum {
 	height: 100%;
-	background: url(img/car5.jpg);
+	background: url(img/archiwum.jpg);
 	background-size: cover;
 background-repeat: no-repeat;
 	background-position: center;
@@ -184,7 +184,7 @@ background-repeat: no-repeat;
 /*O   N A S*/
 .onas {
 	height: 100%;
-	background: url(img/car3.jpg);
+	background: url(img/onas.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -225,18 +225,18 @@ background-repeat: no-repeat;
 	padding-top: 4%;
 }
 /* 1% */
-.procent {
+.dolacz {
 	height: 100%;
-	background: url(img/procent.jpg);
+	background: url(img/dolacz.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-attachment: fixed;
 }
-.procent p {
+.dolacz p {
 	color: white;
 }
-.procent h2 {
+.dolacz h2 {
 	color: white;
 }
 /*M A P K A*/
