@@ -69,11 +69,13 @@ x {
 }
 a {
 	color: black;
+	border-bottom: 1pt dotted black;
 }
 a:hover {
 	background: yellow;
 	color: black;
 	text-decoration: none;
+	font-style: italic;
 }
 div.content {
 	 margin: 0 auto;
