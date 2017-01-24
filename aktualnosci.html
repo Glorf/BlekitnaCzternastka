@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html  lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Błękitna XIV</title>
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!--styles.css-->
+        <link href="css/custom.css" rel="stylesheet">
+        <!-- CZCIONKI -->
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <!-- Social icons -->
+        <link rel="stylesheet" type="text/css" href="fontawesome/css/font-awesome.min.css">
+    </head>
+    <body>
+    <!--- JQuery & Bootstrap -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Custom scripts & Google Analytics -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script> var x=52.4070836; var y=16.9025477;</script>
+        <script type="text/javascript" src="js/mapka.js"></script>
+        <script type="text/javascript" src="js/animacje.js"></script>
+        <script>
+            $(document).ready(function() {
+              window.fbAsyncInit = function() {
+                FB.init({
+                  appId      : '245300832548900',
+                  xfbml      : true,
+                  version    : 'v2.8'
+                });
+                FB.AppEvents.logPageView();
+                FB.getLoginStatus(function(response){
+                    FB.api(
+                  '/Blekitna14/feed',
+                  'GET',
+                  {},
+                  function(rsp) {
+                      console.log(rsp)// Insert your code here
+                  }
+                );
+                })
+              };
+
+              (function(d, s, id){
+                 var js, fjs = d.getElementsByTagName(s)[0];
+                 if (d.getElementById(id)) {return;}
+                 js = d.createElement(s); js.id = id;
+                 js.src = "https://connect.facebook.net/en_US/sdk.js";
+                 fjs.parentNode.insertBefore(js, fjs);
+               }(document, 'script', 'facebook-jssdk'));
+              });
+            
+        </script>
+    </body>
+</html>
