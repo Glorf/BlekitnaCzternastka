@@ -32,7 +32,7 @@ li {
 }
 /*M E N U*/
 .menu {
-	background: url(img/menu.jpg);
+	background: url(../css/img/menu.jpg);
 	background-color: white;
 	background-size: cover;
 	background-position: center;
