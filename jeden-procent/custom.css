@@ -42,7 +42,7 @@ li {
 }
 /*M E N U*/
 .menu {
-	background: url(img/menu.jpg);
+	background: url(../css/img/menu.jpg);
 	background-color: white;
 	background-size: cover;
 	background-position: center;
@@ -136,7 +136,7 @@ a:active {
 /*H E A D E R*/
 .header {
 	height: 100%;
-	background: url(img/header.jpg);
+	background: url(../css/img/procent.jpg);
 	background-color: white;
 	background-size: cover;
 	background-position: center;
