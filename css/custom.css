@@ -3,6 +3,7 @@ html, body {
 	height: 100%;
 	width: 100%;
 }
+
 .row {
 	margin-left: 0px;
 	margin-right: 0px;
@@ -337,3 +338,4 @@ background-repeat: no-repeat;
 }
 .menu .fa:hover:before, .hvr-icon-fade:focus:before, .hvr-icon-fade:active:before {
   color: white;
+}
