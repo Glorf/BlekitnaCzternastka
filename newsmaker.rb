@@ -18,11 +18,19 @@ data = get("https://graph.facebook.com/blekitna14/posts?#{$acces_token}&limit=3"
 array = []
 
 items = JSON.parse(data)['data']
-items.each do |item|
+items.each_with_index do |item, index|
+  array << {:text => item['message'], :date => item['created_time']}
   puts item['id']
   attachments= get("https://graph.facebook.com/#{item['id']}/attachments?#{$acces_token}")
   puts attachments
+  parsed_attachment = JSON.parse(attachments)['data']
+  if parsed_attachment[0]['media'] != nil
+    array[index].push(:img => parsed_attachment[0]['media']['image']['src'])
+  elsif parsed_attachment[0]['subatachments'] != nil
+    array[index].push(:img => parsed_attachment[0]['subatachments']['data'][0]['media']['image']['src'])
+  end
 end
+array.each {|i| puts i['img']}
   #attachments_parsed = JSON.parse(attachments)['data']
   #if attachments_parsed[0].media = nil
   #  img_src = 
