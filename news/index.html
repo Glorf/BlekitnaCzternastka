@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <style>
+      p {
+        font-family: 'Lato', sans-serif;
+        font-size: 18px;
+        margin-top: 18pt;
+      }
+      .date {
+        text-align: right;
+        font-size: 10pt;
+      }
+      h1 {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 28px;
+        font-weight: 900;
+        text-align: center;
+      }
+      img {
+        width: 100%;
+      }
+    </style>
+    <div id="app" calss="container">
+      <h1>Aktualności</h1>
+      <div class="row">
+        <div v-for="item in items" class="col-sm-4">
+          <img v-bind:src='item.src'/>
+          <p class=text>{{ item.message }}</p>
+          <p class="date">{{ item.created_time }}</p>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+   <script>
+    var app_id = "245300832548900";
+    var app_secret = "a9d3f550918392cb207faaf14b7cc054";
+    function httpGetAsync(theUrl, callback){
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+          callback(xmlHttp.responseText);
+      }
+      xmlHttp.open("GET", theUrl, true);
+      xmlHttp.send(null);
+    };
+    httpGetAsync('https://graph.facebook.com/oauth/access_token?grant_type=client_credentials&client_id=' + app_id + '&client_secret=' + app_secret, function(item){
+        httpGetAsync("https://graph.facebook.com/blekitna14/posts?" + item + '&limit=3', function(feed){
+          items = JSON.parse(feed).data
+          app.items = items;
+          for(let i = 0; i < items.length; i++){
+            httpGetAsync("https://graph.facebook.com/" + items[i].id + "/attachments?" + item, 
+              function(attachments_object){
+              console.log("https://graph.facebook.com/" + items[i].id + "/attachments?" + item)
+              parsed_object = JSON.parse(attachments_object).data;
+              if (parsed_object[0].media !== undefined){
+                Vue.nextTick(function () {
+                  Vue.set(app.items[i], 'src', parsed_object[0].media.image.src);
+                })
+              }
+              else if(parsed_object[0].subattachments !== undefined){
+                Vue.nextTick(function () {
+                  Vue.set(app.items[i], 'src', parsed_object[0].subattachments.data[0].media.image.src);
+                })
+              }
+            })
+          };
+        })
+      }
+    ); 
+    var app = new Vue({
+      el: '#app',
+      data: {
+        items: null
+      }
+    });
+    </script>
+  </body>
+</html>
