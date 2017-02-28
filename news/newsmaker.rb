@@ -24,6 +24,7 @@ items.each_with_index do |item, index|
   attachments= get("https://graph.facebook.com/#{item['id']}/attachments?#{$acces_token}")
   #puts attachments
   parsed_attachment = JSON.parse(attachments)['data']
+  next if parsed_attachment[0] == nil
   if parsed_attachment[0]['media'] != nil
     array[index][:img] = parsed_attachment[0]['media']['image']['src']
   elsif parsed_attachment[0]['subatachments'] != nil
