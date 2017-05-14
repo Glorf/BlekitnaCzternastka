@@ -135,7 +135,7 @@ a:active {
 /*H E A D E R*/
 .header {
 	height: 100%;
-	background: url(img/procent.jpg);
+	background: url(img/oboz.jpg);
 	background-color: white;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -167,18 +167,18 @@ background-repeat: no-repeat;
 
 
 /*O B O Z   2 0 1 6*/
-.oboz {
+.procent {
 	height: 100%;
-	background: url(img/oboz.jpg);
+	background: url(img/procent.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-attachment: fixed;
 }
-.oboz p {
+.procent p {
 	color: white;
 }
-.oboz h2 {
+.procent h2 {
 	color: white;
 }
 
