@@ -75,7 +75,6 @@ li {
 }
 
 /* CZCIONKI */
-}
 body {
 	 font-size: 16px;
 	 min-height: 100%;
@@ -118,7 +117,7 @@ p {
 	 font-size: 18px;
 	 font-family: "lato";
 	 font-weight: 400;
-	 font-style: normal;
+   font-style: normal;
 }
 a {
 	color: white;
@@ -135,18 +134,21 @@ a:active {
 /*H E A D E R*/
 .header {
 	height: 100%;
-	background: url(img/oboz.jpg);
+	background: url(img/100-lat.jpg);
 	background-color: white;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-attachment: fixed;
+  background-attachment: fixed;
 }
 .header p {
-	color: white;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.25em black;
+  
 }
 .header h2 {
-	color: white;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.25em black;
 }
 
 /*A R C H I W U M*/
@@ -159,11 +161,15 @@ background-repeat: no-repeat;
 	background-attachment: fixed;
 }
 .archiwum p {
-	color: white;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.25em black;
 }
 .archiwum h2 {
-	color: white;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.25em black;
 }
+
+/* 100-lecie strona główna*/
 
 
 /*O B O Z   2 0 1 6*/
@@ -176,10 +182,12 @@ background-repeat: no-repeat;
 	background-attachment: fixed;
 }
 .procent p {
-	color: white;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.25em black;  
 }
 .procent h2 {
-	color: white;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.25em black;  
 }
 
 /*O   N A S*/
@@ -204,10 +212,12 @@ background-repeat: no-repeat;
 .aligner-item {
 }
 .onas p {
-	color: white;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.25em black;  
 }
 .onas h2 {
-	color: white;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.25em black;
 }
 
 /*K O N T A K T*/
@@ -235,10 +245,12 @@ background-repeat: no-repeat;
 	background-attachment: fixed;
 }
 .dolacz p {
-	color: white;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.25em black;
 }
 .dolacz h2 {
-	color: white;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.25em black;
 }
 /*M A P K A*/
 #mapka {
