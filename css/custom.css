@@ -172,7 +172,25 @@ background-repeat: no-repeat;
 /* 100-lecie strona główna*/
 
 
-/*O B O Z   2 0 1 6*/
+/*O B O Z*/
+.oboz {
+	height: 100%;
+	background: url(img/oboz.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+.oboz p {
+  color: white;
+  text-shadow: 0.1em 0.1em 0.25em black;  
+}
+.oboz h2 {
+  color: white;
+  text-shadow: 0.1em 0.1em 0.25em black;  
+}
+
+/*P R O C E N T*/
 .procent {
 	height: 100%;
 	background: url(img/procent.jpg);
