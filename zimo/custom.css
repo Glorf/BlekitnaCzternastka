@@ -3,9 +3,8 @@ html, body {
 	height: 100%;
 	width: 100%;
 }
-
 .row {
-	margin-left: 0px;
+
 	margin-right: 0px;
 }
 
@@ -48,7 +47,9 @@ li {
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
-	margin: 0px 0px 0px 0px;
+	padding-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
 	height: 100%;
 	text-align: center;
 }
@@ -75,6 +76,7 @@ li {
 }
 
 /* CZCIONKI */
+}
 body {
 	 font-size: 16px;
 	 min-height: 100%;
@@ -82,7 +84,6 @@ body {
 	 font-weight: 400;
 	 font-style: normal;
 	 line-height: 25px;
-	 margin-right: : 0px;
 }
 
 h1 {
@@ -92,6 +93,7 @@ h1 {
 	 margin: 0px 0px 15px 0px;
 	 font-weight: 900;
 	 font-style: bold;
+	 color: white;
 	 font-family: "source sans pro";
 }
 
@@ -117,7 +119,7 @@ p {
 	 font-size: 18px;
 	 font-family: "lato";
 	 font-weight: 400;
-   font-style: normal;
+	 font-style: normal;
 }
 a {
 	color: white;
@@ -130,111 +132,34 @@ a:active {
 	color: white;
 	text-decoration: none;
 }
+.kontakt a {
+  color: black;
+}
+.kontakt a:hover {
+  color: black;
+  text-decoration: none;
+}
+.kontakt a:active {
+  color: black;
+  text-decoration: none;
+}
 
 /*H E A D E R*/
 .header {
 	height: 100%;
-	background: url(img/100-lat.jpg);
+	background: url(img/header.jpg);
 	background-color: white;
 	background-size: cover;
-	background-repeat: no-repeat;
 	background-position: center;
-  background-attachment: fixed;
+	background-attachment: fixed;
 }
 .header p {
-  color: white;
-  text-shadow: 0.1em 0.1em 0.25em black;
-  
+	color: white;
 }
 .header h2 {
-  color: white;
-  text-shadow: 0.1em 0.1em 0.25em black;
+	color: white;
 }
 
-/*A R C H I W U M*/
-.archiwum {
-	height: 100%;
-	background: url(img/archiwum.jpg);
-	background-size: cover;
-background-repeat: no-repeat;
-	background-position: center;
-	background-attachment: fixed;
-}
-.archiwum p {
-  color: white;
-  text-shadow: 0.1em 0.1em 0.25em black;
-}
-.archiwum h2 {
-  color: white;
-  text-shadow: 0.1em 0.1em 0.25em black;
-}
-
-/* 100-lecie strona główna*/
-
-
-/*O B O Z*/
-.oboz {
-	height: 100%;
-	background: url(img/oboz.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-attachment: fixed;
-}
-.oboz p {
-  color: white;
-  text-shadow: 0.1em 0.1em 0.25em black;  
-}
-.oboz h2 {
-  color: white;
-  text-shadow: 0.1em 0.1em 0.25em black;  
-}
-
-/*Z I M O*/
-.zimo {
-	height: 100%;
-	background: url(img/zimowisko.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-attachment: fixed;
-}
-.zimo p {
-  color: white;
-  text-shadow: 0.1em 0.1em 0.25em black;  
-}
-.zimo h2 {
-  color: white;
-  text-shadow: 0.1em 0.1em 0.25em black;  
-}
-
-/*P R O C E N T*/
-.procent {
-	height: 100%;
-	background: url(img/procent.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-attachment: fixed;
-}
-.procent p {
-  color: white;
-  text-shadow: 0.1em 0.1em 0.25em black;  
-}
-.procent h2 {
-  color: white;
-  text-shadow: 0.1em 0.1em 0.25em black;  
-}
-
-/*O   N A S*/
-.onas {
-	height: 100%;
-	background: url(img/onas.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-attachment: fixed;
-}
 .aligner {
 	display: flex;
 	display: -webkit-flex;
@@ -242,18 +167,10 @@ background-repeat: no-repeat;
   justify-content: center;
 	-webkit-flex-direction: column;
   flex-direction: column;
-	height: 100%;
+	height: 600px;
 	text-align: center;
-}
-.aligner-item {
-}
-.onas p {
-  color: white;
-  text-shadow: 0.1em 0.1em 0.25em black;  
-}
-.onas h2 {
-  color: white;
-  text-shadow: 0.1em 0.1em 0.25em black;
+	-webkit-flex: 0 0 33%;
+	flex: 0 0 33%;
 }
 
 /*K O N T A K T*/
@@ -261,6 +178,7 @@ background-repeat: no-repeat;
 .kontakt {
 	width: 100%;
 	height: 100%;
+	padding: 0px 0px 0px 0px;
 }
 .kontakt .row {
 	width: 100%;
@@ -268,26 +186,10 @@ background-repeat: no-repeat;
 	margin-right: 0px;
 	margin-left: 0px;
 }
-.info {
-	padding-top: 4%;
+.kontakt {
+	padding-top: 10px;
 }
-/* 1% */
-.dolacz {
-	height: 100%;
-	background: url(img/dolacz.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-attachment: fixed;
-}
-.dolacz p {
-  color: white;
-  text-shadow: 0.1em 0.1em 0.25em black;
-}
-.dolacz h2 {
-  color: white;
-  text-shadow: 0.1em 0.1em 0.25em black;
-}
+
 /*M A P K A*/
 #mapka {
 	width: 100%;
@@ -299,17 +201,8 @@ background-repeat: no-repeat;
 	padding-right: 0px;
 	margin-right: 0px;
 	padding-left: 0px;
+	padding-top: 0px;
 }
-.stopka {
-	position: relative;
-	bottom: 8%;
-	padding-left: 15px;
-	padding-bottom: -10px;
-}
-.stopka p {
-	font-size: 1em;
-}
-
 /*A N I M A C J E*/
 
 /*UNDERLINE UNDERLINE UNDERLINE UNDERLINE*/
@@ -386,4 +279,3 @@ background-repeat: no-repeat;
 }
 .menu .fa:hover:before, .hvr-icon-fade:focus:before, .hvr-icon-fade:active:before {
   color: white;
-}
