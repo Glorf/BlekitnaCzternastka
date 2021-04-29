@@ -82,7 +82,7 @@ body {
 	 font-weight: 400;
 	 font-style: normal;
 	 line-height: 25px;
-	 margin-right: : 0px;
+	 margin-right: 0px;
 }
 
 h1 {
@@ -134,7 +134,7 @@ a:active {
 /*H E A D E R*/
 .header {
 	height: 100%;
-	background: url(img/100-lat.jpg);
+	background: url(img/oboz.jpg);
 	background-color: white;
 	background-size: cover;
 	background-repeat: no-repeat;
