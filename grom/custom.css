@@ -1,5 +1,5 @@
 html, body {
-	background-color: #484c72;
+	background-color: #293040;
 	height: 100%;
 	width: 100%;
 	color: white;
@@ -11,7 +11,7 @@ html, body {
 .thumbnail {
 	padding: 0px;
 	border: 6px orange solid;
-	background-color: #484c72;
+	background-color: #293040;
 }
 .thumbnail-2{
 	padding: 10px;
@@ -43,9 +43,8 @@ li {
 }
 /*M E N U*/
 .menu {
-	background: url(../css/img/menu.jpg);
-	background-color: orange;
-	background-size: cover;
+	background-color: #293040;
+	background-size: 75%;
 	background-position: center;
 	background-attachment: fixed;
 	padding-top: 10px;
@@ -55,21 +54,21 @@ li {
 	text-align: center;
 }
 .menu h2 {
-	color: black;
+	color: orange;
 }
 .menu h3 {
-	color: black;
+	color: orange;
 	font-size: 28px;
 	line-height: 40px;
 }
 .menu a {
-	color: black;
+	color: orange;
 }
 .menu a:hover {
-	color: black;
+	color: orange;
 }
 .menu .fa {
-	color: black;
+	color: orange;
 }
 .menu .row {
 	padding-top: 15%;
@@ -130,11 +129,11 @@ a:hover {
 /*H E A D E R*/
 .header {
 	height: 100%;
-	background: url(img/placeholder.png);
-	background-color: orange;
-	background-size: cover;
+	background: url(img/baner.jpg);
+	background-color: #293040;
+	background-size: 75%;
+	background-repeat: no-repeat;
 	background-position: center;
-	background-attachment: fixed;
 }
 .header p {
 	color: orange;
