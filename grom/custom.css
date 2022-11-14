@@ -1,8 +1,8 @@
 html, body {
-	background-color: #293040;
+	background-color: white;
 	height: 100%;
 	width: 100%;
-	color: white;
+	color: black;
 }
 .row {
 	margin-right: 0px;
@@ -43,9 +43,10 @@ li {
 }
 /*M E N U*/
 .menu {
-	background-color: #293040;
-	background-size: 75%;
+	background-image: url("img/TypZRowerem.jpg");
+	background-size: cover;
 	background-position: center;
+	background-repeat: no-repeat;
 	background-attachment: fixed;
 	padding-top: 10px;
 	padding-left: 5px;
@@ -129,11 +130,11 @@ a:hover {
 /*H E A D E R*/
 .header {
 	height: 100%;
-	background: url(img/baner.jpg);
-	background-color: #293040;
-	background-size: 75%;
+	background: url("img/TypZRowerem.jpg");
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	background-attachment: fixed;
 }
 .header p {
 	color: orange;
@@ -143,6 +144,9 @@ a:hover {
 }
 .header h2 {
 	color: orange;
+}
+.dark-blue{
+	color:#293040;
 }
 
 .alignertrzy {
@@ -166,6 +170,32 @@ a:hover {
 }
 .white-text{
 	color: white;
+}
+
+/* O  N A S*/
+.blokZTlem {
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+.bgONas{
+	background-image: url("img/2.png");
+}
+.bgZgloszenia{
+	background-image: url("img/formularzXD.png");
+}
+.bgUczestnik{
+	background-image: url("img/kajak.jpg");
+}
+.flexin{
+	display: flex;
+	height: 80%;
+	width: 100%;
+}
+div.flexin>div{
+	width: 50%;
 }
 /*A N I M A C J E*/
 
