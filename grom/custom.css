@@ -33,7 +33,7 @@ html, body {
 	color: orange;
 }
 .navbar a {
-	color: orange;
+	color: #293040;
 }
 .navbar-header {
 	float: left;
@@ -55,18 +55,18 @@ li {
 	text-align: center;
 }
 .menu h2 {
-	color: orange;
+	color: #293040;
 }
 .menu h3 {
-	color: orange;
+	color: #293040;
 	font-size: 28px;
 	line-height: 40px;
 }
 .menu a {
-	color: orange;
+	color: #293040;
 }
 .menu a:hover {
-	color: orange;
+	color: #293040;
 }
 .menu .fa {
 	color: orange;
@@ -93,6 +93,7 @@ h1 {
 	 font-weight: 900;
 	 font-style: bold;
 	 font-family: "source sans pro";
+	 text-shadow: 2px 2px 0 orange, 2px -2px 0 orange, -2px 2px 0 orange, -2px -2px 0 orange, 2px 0px 0 orange, 0px 2px 0 orange, -2px 0px 0 orange, 0px -2px 0 orange;
 }
 
 h2 {
@@ -102,14 +103,16 @@ h2 {
 	 font-family: "source sans pro";
 	 font-weight: 900;
 	 font-style: bold;
+	 text-shadow: 1px 1px 0 orange, 1px -1px 0 orange, -1px 1px 0 orange, -1px -1px 0 orange, 1px 0px 0 orange, 0px 1px 0 orange, -1px 0px 0 orange, 0px -1px 0 orange;
 }
 h3 {
-	 font-size: 22px;
+	 font-size: 21px;
 	 line-height: 24px;
 	 margin: 0px 0px 0px 0px;
 	 font-family: "source sans pro";
 	 font-weight: 900;
 	 font-style: bold;
+	 text-shadow: 1px 1px 0 orange, 1px -1px 0 orange, -1px 1px 0 orange, -1px -1px 0 orange, 1px 0px 0 orange, 0px 1px 0 orange, -1px 0px 0 orange, 0px -1px 0 orange;
 }
 p {
 	 margin: 0px 0px 25px 0px;
@@ -120,10 +123,10 @@ p {
 	 font-style: normal;
 }
 a {
-	color: orange;
+	color: #293040;
 }
 a:hover {
-	color: orange;
+	color: #293040;
 	text-decoration: none;
 }
 
@@ -137,13 +140,13 @@ a:hover {
 	background-attachment: fixed;
 }
 .header p {
-	color: orange;
+	color: #293040;
 }
 .header h1 {
-	color: orange;
+	color: #293040;
 }
 .header h2 {
-	color: orange;
+	color: #293040;
 }
 .dark-blue{
 	color:#293040;
@@ -196,6 +199,14 @@ a:hover {
 }
 div.flexin>div{
 	width: 50%;
+}
+.margin-top{
+	margin-top: 50px;
+}
+.biale-tlo{
+	background-color: rgba(245,245,245,0.35);
+	border: 1px solid rgba(245,245,245,0.35);
+	border-radius: 25px;
 }
 /*A N I M A C J E*/
 
