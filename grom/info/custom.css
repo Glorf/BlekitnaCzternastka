@@ -1,23 +1,28 @@
 .blok-zgloszenia{
-    margin-left: 50px;
+    margin-left: 8.3%;
     margin-top: 50px;
     height: fit-content;
 }
 table{
-    width: 600px;
+    width: 100%;
     border: 1px black solid;
     border-collapse: collapse;
-    overflow-x: scroll;
 }
 th,td{
-    padding-left: 5px;
-    width: 110px;
+    padding: 5px;
+    min-width: 80px;
     border: 1px black solid;
+    text-align: left;
 }
 .bg-color{
     background-color: #293040;
     color: white;
 }
-.row{
-    box-sizing: border-box;
+.overflow{
+    overflow-x: scroll;
+    width: 100%;
 }
+body{
+    overflow-x: hidden;
+}
+
