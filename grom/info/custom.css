@@ -19,7 +19,7 @@ th,td{
     color: white;
 }
 .overflow{
-    overflow-x: scroll;
+    overflow-x: auto;
     width: 100%;
 }
 body{
