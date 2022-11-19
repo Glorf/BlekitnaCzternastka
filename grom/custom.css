@@ -13,15 +13,7 @@ html, body {
 	border: 6px orange solid;
 	background-color: #293040;
 }
-.thumbnail-2{
-	padding: 10px;
-	border: none;
-	border: 6px #0BB5FF solid;
-}
-.thumbnail-3{
-	padding: 0px;
-	border: none;
-}
+
 /*N-A-W-I-G-A-C-J-A*/
 .navbar {
 	background: none;
@@ -29,12 +21,8 @@ html, body {
 	margin: 0px 0px 0px 0px;
 	border: none;
 }
-.navbar i {
-	color: orange;
-}
-.navbar a {
-	color: #293040;
-}
+
+
 .navbar-header {
 	float: left;
 }
@@ -54,9 +42,7 @@ li {
 	height: 100%;
 	text-align: center;
 }
-.menu h2 {
-	color: #293040;
-}
+
 .menu h3 {
 	color: #293040;
 	font-size: 28px;
@@ -93,7 +79,8 @@ h1 {
 	 font-weight: 900;
 	 font-style: bold;
 	 font-family: "source sans pro";
-	 text-shadow: 1px 1px 0 orange, 1px -1px 0 orange, -1px 1px 0 orange, -1px -1px 0 orange, 1px 0px 0 orange, 0px 1px 0 orange, -1px 0px 0 orange, 0px -1px 0 orange;
+	 color: orange;
+	 text-shadow: 2px 2px 4px black;
 	}
 
 h2 {
@@ -103,7 +90,8 @@ h2 {
 	 font-family: "source sans pro";
 	 font-weight: 900;
 	 font-style: bold;
-	 text-shadow: 1px 1px 0 orange, 1px -1px 0 orange, -1px 1px 0 orange, -1px -1px 0 orange, 1px 0px 0 orange, 0px 1px 0 orange, -1px 0px 0 orange, 0px -1px 0 orange;
+	 color: orange;
+	 text-shadow: 2px 2px 4px black;
 }
 h3 {
 	 font-size: 21px;
@@ -112,7 +100,8 @@ h3 {
 	 font-family: "source sans pro";
 	 font-weight: 900;
 	 font-style: bold;
-	 text-shadow: 1px 1px 0 orange, 1px -1px 0 orange, -1px 1px 0 orange, -1px -1px 0 orange, 1px 0px 0 orange, 0px 1px 0 orange, -1px 0px 0 orange, 0px -1px 0 orange;
+	 color: black;
+	 text-shadow: 2px 2px 4px orange;
 }
 p {
 	 margin: 0px 0px 25px 0px;
@@ -124,6 +113,10 @@ p {
 }
 a {
 	color: #293040;
+}
+h2 > a{
+	color: orange;
+	text-shadow: 2px 2px 4px black;
 }
 a:hover {
 	color: #293040;
@@ -139,15 +132,7 @@ a:hover {
 	background-position: center;
 	background-attachment: fixed;
 }
-.header p {
-	color: #293040;
-}
-.header h1 {
-	color: #293040;
-}
-.header h2 {
-	color: #293040;
-}
+
 .dark-blue{
 	color:#293040;
 }
@@ -168,10 +153,7 @@ a:hover {
 .blue-text{
 	color:#0BB5FF
 }
-.orange-text{
-	color: orange;
-	text-shadow: 2px 2px 4px black;
-}
+
 .white-text{
 	color: white;
 }
@@ -231,7 +213,7 @@ div.flexin>div{
   left: 50%;
   right: 50%;
   bottom: 0;
-  background: #0BB5FF;
+  background: orange;
   height: 4px;
   -webkit-transition-property: left, right;
   transition-property: left, right;
@@ -252,7 +234,7 @@ div.flexin>div{
 	font-size: 20px;
 }
 .menu .hvr-underline-from-center:before {
-	background: orange;
+	background: #293040;
 }
 /*FADE FADE FADA FADE FADE FADE*/
 /* Icon Fade */
@@ -282,7 +264,7 @@ div.flexin>div{
   transition-property: color;
 }
 .fa:hover:before, .hvr-icon-fade:focus:before, .hvr-icon-fade:active:before {
-  color: #0BB5FF;
+  color: orange;
 }
 .menu .fa:hover:before, .hvr-icon-fade:focus:before, .hvr-icon-fade:active:before {
   color: orange;
