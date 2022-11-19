@@ -1,0 +1,23 @@
+.blok-zgloszenia{
+    margin-left: 50px;
+    margin-top: 50px;
+    height: fit-content;
+}
+table{
+    width: 600px;
+    border: 1px black solid;
+    border-collapse: collapse;
+    overflow-x: scroll;
+}
+th,td{
+    padding-left: 5px;
+    width: 110px;
+    border: 1px black solid;
+}
+.bg-color{
+    background-color: #293040;
+    color: white;
+}
+h2{
+    color:#293040
+}

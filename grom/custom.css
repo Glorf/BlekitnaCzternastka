@@ -93,8 +93,8 @@ h1 {
 	 font-weight: 900;
 	 font-style: bold;
 	 font-family: "source sans pro";
-	 text-shadow: 2px 2px 0 orange, 2px -2px 0 orange, -2px 2px 0 orange, -2px -2px 0 orange, 2px 0px 0 orange, 0px 2px 0 orange, -2px 0px 0 orange, 0px -2px 0 orange;
-}
+	 text-shadow: 1px 1px 0 orange, 1px -1px 0 orange, -1px 1px 0 orange, -1px -1px 0 orange, 1px 0px 0 orange, 0px 1px 0 orange, -1px 0px 0 orange, 0px -1px 0 orange;
+	}
 
 h2 {
 	 font-size: 28px;
@@ -170,6 +170,7 @@ a:hover {
 }
 .orange-text{
 	color: orange;
+	text-shadow: 2px 2px 4px black;
 }
 .white-text{
 	color: white;
