@@ -112,14 +112,14 @@ p {
 	 font-style: normal;
 }
 a {
-	color: #293040;
+	color: orange;
 }
 h2 > a{
 	color: orange;
 	text-shadow: 2px 2px 4px black;
 }
 a:hover {
-	color: #293040;
+	color: orange;
 	text-decoration: none;
 }
 
@@ -172,8 +172,17 @@ a:hover {
 .bgZgloszenia{
 	background-image: url("img/formularzXD.png");
 }
-.bgUczestnik{
+.bgZawodnik{
 	background-image: url("img/kajak.jpg");
+}
+.bgWyniki{
+	background-image: url("img/kajak.jpg");
+}
+.bgORajdzie{
+	background-image: url("img/kajak.jpg");
+}
+.bgSociale{
+	background-image: url("img/2.png");
 }
 .flexin{
 	display: flex;

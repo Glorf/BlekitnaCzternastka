@@ -14,10 +14,10 @@ th,td{
     border: 1px black solid;
     text-align: left;
 }
-.bg-color{
+/*.bg-color{
     background-color: #293040;
     color: white;
-}
+}*/
 .overflow{
     overflow-x: auto;
     width: 100%;
