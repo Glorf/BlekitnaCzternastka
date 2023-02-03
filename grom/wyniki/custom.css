@@ -1,0 +1,23 @@
+table{
+    border-collapse: collapse;
+}
+th{
+    border: 1px black solid;
+    width: 200px;
+    background-color: black;
+    color: white;
+}
+td{
+    border: 1px black solid;
+    background-color: #fffaed;
+}
+.cell-color{
+    background-color: #fcd690;
+}
+.cell-left{
+    width: 25px;
+}
+.blok-tabela{
+    margin: 8.3%;
+    overflow: auto;
+}
