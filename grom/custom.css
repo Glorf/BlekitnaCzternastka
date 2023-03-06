@@ -298,3 +298,6 @@ div.flexin>div{
 	display: flex;
 	justify-content: center;
 }
+.align-center{
+	text-align: center;
+}
