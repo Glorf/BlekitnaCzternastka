@@ -51,9 +51,9 @@ li {
 .menu a {
 	color: orange;
 }
-.menu a:hover {
+/*.menu a:hover {
 	color: #293040;
-}
+}*/
 .menu .fa {
 	color: orange;
 }

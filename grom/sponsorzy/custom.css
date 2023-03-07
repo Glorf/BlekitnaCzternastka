@@ -1,0 +1,17 @@
+article{
+    display: flex;
+    margin-left: 8.3%;
+    margin-top: 50px;
+    margin-right: 8.3%;
+}
+img{
+    margin-right: 30px;
+    width: 150px;
+    height: 150px;;
+}
+p{
+    
+}
+.kontakt{
+    clear: both;
+}
