@@ -4,6 +4,15 @@ article{
     margin-top: 50px;
     margin-right: 8.3%;
 }
+@media (max-width: 500px){
+    article{
+        display: block;
+    }
+    img{
+        margin-bottom: 30px;
+    }
+}
+
 img{
     margin-right: 30px;
     width: 150px;
