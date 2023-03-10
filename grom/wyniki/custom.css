@@ -3,13 +3,16 @@ table{
 }
 th{
     border: 1px black solid;
-    width: 200px;
-    background-color: black;
+    background-color: #3d3838;
     color: white;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 td{
     border: 1px black solid;
     background-color: #fffaed;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 .cell-color{
     background-color: #fcd690;
