@@ -35,9 +35,11 @@ ul{
 }
 img{
     width: 450px;
+    height: 450px;
 }
 @media (max-width: 767px){
     img{
         width: 200px;
+        height: 450px;
     }
 }
