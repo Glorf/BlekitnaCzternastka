@@ -33,3 +33,11 @@ ul{
 .bolder{
     font-weight: bolder;
 }
+img{
+    width: 450px;
+}
+@media (max-width: 767px){
+    img{
+        width: 200px;
+    }
+}
