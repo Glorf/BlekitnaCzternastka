@@ -198,6 +198,7 @@ div.flexin>div{
 	border: 1px solid rgba(245,245,245,0.35);
 	border-radius: 25px;
 }
+
 /*A N I M A C J E*/
 
 /*UNDERLINE UNDERLINE UNDERLINE UNDERLINE*/
@@ -295,4 +296,38 @@ div.flexin>div{
 .icon-social-align{
 	display: flex;
 	justify-content: center;
+}
+.sponsorzy{
+	text-align: center;
+	padding-top: 50px;
+}
+.logo-block{
+	display: inline-block;
+	width: 150px;
+	height: 250px;
+}
+.logo-image>img{
+	max-width: 150px;
+	max-height: 150px;
+}
+.logo-image{
+	width: 150px;
+	height: 150px;
+}
+.logo-block>p{
+	height: 100px;
+	width: 100%;
+}
+.logo-block>p>a{
+	color: green;
+}
+.logos{
+	width: 100%;
+	margin: 25px auto 50px auto;
+	text-align: center;
+}
+
+footer{
+	float: left;
+	width: 100%;
 }
