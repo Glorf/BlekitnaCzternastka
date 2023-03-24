@@ -24,3 +24,26 @@ td{
     margin: 8.3%;
     overflow: auto;
 }
+.kontakt{
+    clear: both;
+}
+.fish-block{
+    width: 100%;
+    height: 150px;
+}
+.fish-block>div .fish-block>p{
+    float: left;
+}
+.fish-block>p{
+    display: block;
+    float: left;
+}
+.fish-block>div{
+    height: 150px;
+    width: 200px;
+    float: left;
+}
+.fish-block>div>img{
+    max-height: 100%;
+    max-width: 100%;
+}
