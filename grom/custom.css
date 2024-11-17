@@ -89,7 +89,9 @@ h2 {
 	 font-weight: 900;
 	 font-style: bold;
 	 color: orange;
-	 text-shadow: 2px 2px 3px black;
+}
+.shadow{
+	text-shadow: 2px 2px 3px black;
 }
 h3 {
 	 font-size: 21px;
