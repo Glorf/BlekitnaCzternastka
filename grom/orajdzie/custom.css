@@ -3,5 +3,7 @@
     margin-top: 50px;
     height: fit-content;
 }
-
+.bolder{
+    font-weight: bolder;
+}
 
