@@ -307,6 +307,7 @@ div.flexin>div{
 	display: inline-block;
 	width: 150px;
 	height: 250px;
+	margin-right: 20px;
 }
 .dlugi{
 	width: 300px;
