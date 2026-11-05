@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Makieta C – Kronika | Błękitna XIV</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --paper:#F6F0E2; --ink:#27303f; --blue:#1F8FC4; --sky:#0BB5FF; --forest:#2F6B4F; --rust:#C4572B; --line:#dccfb4; }
+  * { box-sizing:border-box; margin:0; }
+  body { font:18px/1.65 'Source Sans 3',sans-serif; color:var(--ink); background:var(--paper); }
+  h1,h2,h3,.logo { font-family:Fraunces,serif; }
+  a { color:inherit; }
+  .wrap { max-width:980px; margin:0 auto; padding:0 22px; }
+
+  header { padding:22px 0 14px; border-bottom:2px solid var(--ink); }
+  header .wrap { display:flex; flex-wrap:wrap; align-items:baseline; gap:12px 30px; }
+  .logo { font-size:30px; font-weight:800; text-decoration:none; }
+  .logo b { color:var(--blue); }
+  nav { margin-left:auto; display:flex; flex-wrap:wrap; gap:6px 24px; font-weight:700; }
+  nav a { text-decoration:none; }
+  nav a:hover { color:var(--rust); text-decoration:underline; }
+
+  .intro { display:grid; grid-template-columns:1.1fr 1fr; gap:40px; align-items:center; padding:48px 0 30px; }
+  @media (max-width:760px){ .intro{grid-template-columns:1fr} }
+  h1 { font-size:clamp(34px,5.5vw,58px); line-height:1.08; font-weight:800; }
+  h1 em { color:var(--rust); font-style:italic; }
+  .intro p { margin:16px 0 22px; font-size:20px; }
+  .btn { display:inline-block; padding:12px 24px; background:var(--forest); color:#fff; font-weight:700; text-decoration:none; border-radius:4px; margin:0 8px 8px 0; }
+  .btn.o { background:none; color:var(--forest); border:2px solid var(--forest); }
+  .polaroid { background:#fff; padding:12px 12px 44px; box-shadow:0 6px 18px rgba(0,0,0,.18); transform:rotate(2deg); }
+  .polaroid img { width:100%; display:block; aspect-ratio:4/3; object-fit:cover; }
+  .polaroid span { display:block; text-align:center; margin-top:10px; font:italic 600 16px Fraunces,serif; }
+
+  section { padding:34px 0; }
+  h2 { font-size:30px; margin-bottom:6px; }
+  .rule { border:0; border-top:1px dashed var(--line); margin:0; }
+  .sub { color:#5a5f6b; margin-bottom:18px; }
+  .teams { list-style:none; padding:0; border-top:2px solid var(--ink); }
+  .teams li { display:grid; grid-template-columns:1.3fr 1fr 1.4fr; gap:8px 18px; padding:14px 0; border-bottom:1px solid var(--line); align-items:baseline; }
+  @media (max-width:700px){ .teams li{grid-template-columns:1fr} }
+  .teams b { font:700 21px Fraunces,serif; }
+  .teams a { color:var(--blue); font-weight:700; text-decoration:none; }
+  .teams a:hover { text-decoration:underline; }
+
+  .camps { display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+  @media (max-width:700px){ .camps{grid-template-columns:1fr} }
+  .camp { text-decoration:none; }
+  .camp .polaroid { transform:rotate(-1.5deg); }
+  .camp:nth-child(2) .polaroid { transform:rotate(1.5deg); }
+
+  .contact { background:var(--ink); color:#eee6d2; padding:44px 0; margin-top:30px; }
+  .contact .wrap { display:grid; grid-template-columns:1.2fr 1fr; gap:34px; }
+  @media (max-width:700px){ .contact .wrap{grid-template-columns:1fr} }
+  .contact h2 { color:#fff; }
+  .contact .n { font:800 38px Fraunces,serif; color:#fff; text-decoration:none; display:block; margin:6px 0; }
+  .contact a { color:#fff; }
+  .soc a { display:inline-block; margin:6px 14px 0 0; border-bottom:2px solid var(--sky); text-decoration:none; font-weight:700; }
+  footer { background:var(--ink); color:#9ca3b3; font-size:14px; padding:0 0 22px; }
+  .tag { position:fixed; right:12px; bottom:12px; background:var(--rust); color:#fff; font:700 13px sans-serif; padding:6px 12px; border-radius:4px; z-index:9; }
+</style>
+</head>
+<body>
+<div class="tag">Makieta C · kronika</div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">Błękitna <b>XIV</b></a>
+    <nav><a href="#">Start</a><a href="#">Drużyny</a><a href="#">Obóz</a><a href="#">Archiwum ↗</a><a href="#kontakt">Kontakt</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="intro">
+    <div>
+      <h1>Harcerze z Poznania, <em>od 1919 roku.</em></h1>
+      <p>Zbiórki co tydzień, rajdy co miesiąc, a latem miesiąc w lesie. Wpadnij na zbiórkę, weź szczoteczkę do zębów i paczkę ciastek.</p>
+      <a class="btn" href="#">Znajdź drużynę</a><a class="btn o" href="#">Obóz i zimowisko</a>
+    </div>
+    <div class="polaroid"><img src="../o-nas/img/header.jpg" alt="Szczep na obozie"><span>Obóz, apel w lesie</span></div>
+  </div>
+</div>
+<hr class="rule">
+
+<section>
+  <div class="wrap">
+    <h2>Drużyny</h2>
+    <p class="sub">Telefon do drużynowego od razu przy drużynie.</p>
+    <ul class="teams">
+      <li><b>Leśne Skrzaty</b><span>zuchy, 6–9 lat</span><a href="tel:000000000">Imię Nazwisko · 000 000 000</a></li>
+      <li><b>Leśna</b><span>dziewczyny, 10–13 lat</span><a href="tel:000000000">Imię Nazwisko · 000 000 000</a></li>
+      <li><b>Kohorta</b><span>chłopcy, 10–13 lat</span><a href="tel:000000000">Imię Nazwisko · 000 000 000</a></li>
+      <li><b>Ster</b><span>dziewczyny, gimnazjum</span><a href="tel:000000000">Imię Nazwisko · 000 000 000</a></li>
+      <li><b>Formoza</b><span>chłopcy, gimnazjum</span><a href="tel:000000000">Imię Nazwisko · 000 000 000</a></li>
+      <li><b>Cichociemni</b><span>liceum</span><a href="tel:000000000">Imię Nazwisko · 000 000 000</a></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Obóz</h2>
+    <p class="sub">Dwa duże wyjazdy w roku. Reszta na Facebooku i Instagramie.</p>
+    <div class="camps">
+      <a class="camp" href="#"><div class="polaroid"><img src="../css/img/oboz.jpg" alt="Obóz letni"><span>Obóz letni</span></div></a>
+      <a class="camp" href="#"><div class="polaroid"><img src="../css/img/zimowisko.jpg" alt="Zimowisko"><span>Zimowisko</span></div></a>
+    </div>
+  </div>
+</section>
+
+<div class="contact" id="kontakt">
+  <div class="wrap">
+    <div>
+      <h2>Szczepowy</h2>
+      <p>Imię Nazwisko</p>
+      <a class="n" href="tel:000000000">000 000 000</a>
+      <a href="mailto:blekitna14@gmail.com">blekitna14@gmail.com</a><br>ul. Bukowska 16, 60-809 Poznań
+    </div>
+    <div class="soc">
+      <h2>Na bieżąco</h2>
+      <a href="#">Facebook</a><a href="#">Instagram</a><a href="#">Zdjęcia (Flickr)</a><br><a href="#">Przekaż 1%</a>
+    </div>
+  </div>
+</div>
+<footer><div class="wrap">© Błękitna Czternastka · Poznań</div></footer>
+</body>
+</html>

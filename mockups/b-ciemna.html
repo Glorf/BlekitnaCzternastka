@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Makieta B – Ciemna | Błękitna XIV</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#141a26; --panel:#1d2536; --blue:#0BB5FF; --amber:#F5A524; --text:#e9eef7; --muted:#9aa7bf; }
+  * { box-sizing:border-box; margin:0; }
+  body { font:18px/1.6 Barlow,sans-serif; color:var(--text); background:var(--bg); }
+  h1,h2,h3,.logo,nav { font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:.03em; }
+  a { color:inherit; }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 20px; }
+
+  header { position:absolute; inset:0 0 auto 0; z-index:5; }
+  header .wrap { display:flex; align-items:center; gap:26px; height:72px; }
+  .logo { font-size:28px; font-weight:800; text-decoration:none; }
+  .logo b { color:var(--blue); }
+  nav { margin-left:auto; display:flex; gap:26px; font-size:20px; font-weight:700; }
+  nav a { text-decoration:none; opacity:.85; }
+  nav a:hover { color:var(--blue); opacity:1; }
+  nav .k { color:var(--amber); opacity:1; }
+  @media (max-width:760px){ nav a:nth-child(n+3):not(.k){display:none} nav{gap:16px} }
+
+  .hero { min-height:min(100vh,760px); background:linear-gradient(rgba(20,26,38,.2),var(--bg) 96%),url(../css/img/oboz.jpg) center/cover; display:flex; align-items:flex-end; }
+  .hero .wrap { padding-bottom:72px; }
+  .hero h1 { font-size:clamp(56px,11vw,150px); line-height:.92; font-weight:800; }
+  .hero h1 em { color:var(--blue); font-style:normal; }
+  .hero p { font-size:22px; max-width:30em; margin:18px 0 28px; color:#d6deec; }
+  .btn { display:inline-block; padding:12px 28px; font:800 22px 'Barlow Condensed',sans-serif; text-transform:uppercase; text-decoration:none; margin:0 10px 10px 0; border:3px solid var(--blue); }
+  .btn.p { background:var(--blue); color:var(--bg); }
+  .btn.s { color:var(--blue); }
+  .btn:hover { background:var(--amber); border-color:var(--amber); color:var(--bg); }
+
+  section { padding:72px 0; }
+  h2 { font-size:44px; line-height:1; margin-bottom:18px; }
+  h2 span { color:var(--amber); }
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  @media (max-width:860px){ .grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:520px){ .grid{grid-template-columns:1fr} }
+  .team { background:var(--panel); padding:20px; border-top:4px solid var(--blue); }
+  .team:nth-child(even) { border-color:var(--amber); }
+  .team h3 { font-size:28px; }
+  .team small { color:var(--muted); display:block; margin-bottom:8px; }
+  .team a { color:var(--blue); font-weight:600; text-decoration:none; }
+  .lead { max-width:36em; color:#d6deec; }
+
+  .photos { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:700px){ .photos{grid-template-columns:1fr} }
+  .ph { min-height:300px; background-size:cover; background-position:center; display:flex; align-items:flex-end; padding:20px; text-decoration:none; position:relative; }
+  .ph::before { content:""; position:absolute; inset:0; background:linear-gradient(transparent 40%,rgba(20,26,38,.92)); }
+  .ph h3 { position:relative; font-size:40px; line-height:1; }
+
+  .contact { background:var(--panel); }
+  .cgrid { display:grid; grid-template-columns:1.2fr 1fr; gap:36px; }
+  @media (max-width:760px){ .cgrid{grid-template-columns:1fr} }
+  .num { font:800 48px 'Barlow Condensed',sans-serif; color:var(--amber); text-decoration:none; display:block; }
+  .soc a { display:inline-block; margin:0 10px 10px 0; padding:8px 18px; border:2px solid var(--muted); text-decoration:none; font-weight:600; }
+  .soc a:hover { border-color:var(--blue); color:var(--blue); }
+  footer { padding:26px 0; color:var(--muted); font-size:15px; }
+  .tag { position:fixed; right:12px; bottom:12px; background:var(--amber); color:#000; font:700 13px sans-serif; padding:6px 12px; z-index:9; }
+</style>
+</head>
+<body>
+<div class="tag">Makieta B · ciemna</div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">Błękitna <b>XIV</b></a>
+    <nav><a href="#">Start</a><a href="#">Drużyny</a><a href="#">Obóz</a><a href="#">Archiwum ↗</a><a class="k" href="#kontakt">Kontakt</a></nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Harcerze.<br><em>Poznań.</em> Od 1919.</h1>
+    <p>Zbiórki co tydzień, rajdy co miesiąc, raz w roku miesiąc w lesie. Przyjdź i zobacz.</p>
+    <a class="btn p" href="#">Drużyny</a><a class="btn s" href="#">Obóz</a>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>Sześć drużyn. <span>Jeden szczep.</span></h2>
+    <p class="lead" style="margin-bottom:28px">Od zuchów po licealistów. Wybierz drużynę i zadzwoń do drużynowego.</p>
+    <div class="grid">
+      <div class="team"><h3>Leśne Skrzaty</h3><small>zuchy 6–9 lat</small><a href="tel:000000000">Imię Nazwisko · 000 000 000</a></div>
+      <div class="team"><h3>Leśna</h3><small>dziewczyny 10–13 lat</small><a href="tel:000000000">Imię Nazwisko · 000 000 000</a></div>
+      <div class="team"><h3>Kohorta</h3><small>chłopcy 10–13 lat</small><a href="tel:000000000">Imię Nazwisko · 000 000 000</a></div>
+      <div class="team"><h3>Ster</h3><small>dziewczyny, gimnazjum</small><a href="tel:000000000">Imię Nazwisko · 000 000 000</a></div>
+      <div class="team"><h3>Formoza</h3><small>chłopcy, gimnazjum</small><a href="tel:000000000">Imię Nazwisko · 000 000 000</a></div>
+      <div class="team"><h3>Cichociemni</h3><small>liceum</small><a href="tel:000000000">Imię Nazwisko · 000 000 000</a></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap photos">
+    <a class="ph" href="#" style="background-image:url(../css/img/oboz.jpg)"><h3>Obóz letni →</h3></a>
+    <a class="ph" href="#" style="background-image:url(../css/img/zimowisko.jpg)"><h3>Zimowisko →</h3></a>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap cgrid">
+    <div>
+      <h2>Kontakt do <span>szczepowego</span></h2>
+      <p>Imię Nazwisko</p>
+      <a class="num" href="tel:000000000">000 000 000</a>
+      <p><a href="mailto:blekitna14@gmail.com">blekitna14@gmail.com</a><br>ul. Bukowska 16, 60-809 Poznań</p>
+    </div>
+    <div class="soc">
+      <h2>Na bieżąco</h2>
+      <a href="#">Facebook</a><a href="#">Instagram</a><a href="#">Zdjęcia: Flickr</a><a href="#">1% podatku</a>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap">© Błękitna Czternastka · Poznań</div></footer>
+</body>
+</html>
