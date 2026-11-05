@@ -6,7 +6,7 @@
 <title>Makieta C – Kronika | Błękitna XIV</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root { --paper:#F6F0E2; --ink:#1f2021; --indigo:#353964; --green:#2F6B4F; --yellow:#EEEE23; --line:#dccfb4; }
+  :root { --paper:#F6F0E2; --ink:#1f2021; --indigo:#353964; --green:#353964; --sky:#0BB5FF; --yellow:#EEEE23; --line:#dccfb4; }
   * { box-sizing:border-box; margin:0; }
   body { font:18px/1.65 'Source Sans 3',sans-serif; color:var(--ink); background:var(--paper); }
   h1,h2,h3,.logo { font-family:Fraunces,serif; }
@@ -19,7 +19,7 @@
   .logo b { color:var(--green); }
   nav { margin-left:auto; display:flex; flex-wrap:wrap; gap:6px 24px; font-weight:700; }
   nav a { text-decoration:none; }
-  nav a:hover { text-decoration:underline; text-decoration-color:var(--yellow); text-decoration-thickness:3px; }
+  nav a:hover { text-decoration:underline; text-decoration-color:var(--sky); text-decoration-thickness:3px; }
 
   .intro { display:grid; grid-template-columns:1.1fr 1fr; gap:40px; align-items:center; padding:48px 0 30px; }
   @media (max-width:760px){ .intro{grid-template-columns:1fr} }
@@ -40,7 +40,7 @@
   .teams li { display:grid; grid-template-columns:1.3fr 1fr 1.4fr; gap:8px 18px; padding:14px 0; border-bottom:1px solid var(--line); align-items:baseline; }
   @media (max-width:700px){ .teams li{grid-template-columns:1fr} }
   .teams b { font:700 21px Fraunces,serif; }
-  .teams a { color:var(--ink); font-weight:700; text-decoration:underline; text-decoration-color:var(--yellow); text-decoration-thickness:3px; }
+  .teams a { color:var(--ink); font-weight:700; text-decoration:underline; text-decoration-color:var(--sky); text-decoration-thickness:3px; }
   .teams a:hover { color:var(--green); }
 
   .camps { display:grid; grid-template-columns:1fr 1fr; gap:26px; }
@@ -49,15 +49,15 @@
   .camp .polaroid { transform:rotate(-1.5deg); }
   .camp:nth-child(2) .polaroid { transform:rotate(1.5deg); }
 
-  .contact { background:#24402f; color:#eee6d2; padding:44px 0; margin-top:30px; }
+  .contact { background:#353964; color:#eee6d2; padding:44px 0; margin-top:30px; }
   .contact .wrap { display:grid; grid-template-columns:1.2fr 1fr; gap:34px; }
   @media (max-width:700px){ .contact .wrap{grid-template-columns:1fr} }
   .contact h2 { color:#fff; }
   .contact .n { font:800 38px Fraunces,serif; color:#fff; text-decoration:none; display:block; margin:6px 0; }
   .contact a { color:#fff; }
-  .soc a { display:inline-block; margin:6px 14px 0 0; border-bottom:3px solid var(--yellow); text-decoration:none; font-weight:700; }
-  footer { background:#24402f; color:#9ca3b3; font-size:14px; padding:0 0 22px; }
-  .tag { position:fixed; right:12px; bottom:12px; background:var(--yellow); color:var(--ink); font:700 13px sans-serif; padding:6px 12px; border-radius:4px; z-index:9; }
+  .soc a { display:inline-block; margin:6px 14px 0 0; border-bottom:3px solid var(--sky); text-decoration:none; font-weight:700; }
+  footer { background:#353964; color:#9ca3b3; font-size:14px; padding:0 0 22px; }
+  .tag { position:fixed; right:12px; bottom:12px; background:#fff; border:1px solid var(--ink); color:var(--ink); font:700 13px sans-serif; padding:6px 12px; border-radius:4px; z-index:9; }
 </style>
 </head>
 <body>
