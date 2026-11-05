@@ -20,7 +20,7 @@ Strona jest dla: harcerzy, rodziców, byłych harcerzy, rodziców dzieci, które
 | Podstrona | Co zawiera |
 |---|---|
 | **Start** | Zdjęcie, 2–3 zdania o nas, przyciski do Drużyn i Obozu, **kontakt do szczepowego** (imię, telefon, e-mail, adres: ul. Bukowska 16, Poznań), linki do Facebooka, Instagrama i Flickra, 1% podatku. |
-| **Drużyny** (dawniej „Dołącz do nas”) | Karta każdej drużyny: wiek, kiedy i gdzie zbiórki, krótki opis, **imię, telefon i e-mail drużynowego**. Szybkie przechodzenie między drużynami. |
+| **Drużyny** (dawniej „Dołącz do nas”) | Na górze krótko o szczepie i jego historii (kilka zdań), potem karta każdej drużyny osobno: wiek, kiedy i gdzie zbiórki, krótki opis, **imię, telefon i e-mail drużynowego**. Szybkie przechodzenie między drużynami; na dole miejsce na linki do dłuższych opracowań o szczepie i historii (dodamy później, jeśli szczepowy zechce). |
 | **Obóz** | Obóz letni i zimowisko: terminy, miejsce, cena, informacje dla rodziców, zdjęcia, zapisy. Tylko te dwa duże wydarzenia. |
 | **Archiwum** | W wersji 1.0 tylko link do istniejącego archiwum: <https://blekitna14.org/archiwum/index.html> (ta strona zostaje bez zmian). |
 | **Błękitny Grom** *(później)* | Zarezerwowane miejsce, osobny wygląd w tej samej konstrukcji strony. |
