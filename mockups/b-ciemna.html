@@ -6,7 +6,7 @@
 <title>Makieta B – Ciemna | Błękitna XIV</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#22254a; --panel:#2c3060; --blue:#EEEE23; --amber:#EEEE23; --text:#f1f2f8; --muted:#a9acc9; }
+  :root { --bg:#161a18; --panel:#222826; --blue:#8FD0A4; --amber:#EEEE23; --text:#f2efe6; --muted:#a3aaa5; }
   * { box-sizing:border-box; margin:0; }
   body { font:18px/1.6 Barlow,sans-serif; color:var(--text); background:var(--bg); }
   h1,h2,h3,.logo,nav { font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:.03em; }
@@ -23,39 +23,39 @@
   nav .k { color:var(--amber); opacity:1; }
   @media (max-width:760px){ nav a:nth-child(n+3):not(.k){display:none} nav{gap:16px} }
 
-  .hero { min-height:min(100vh,760px); background:linear-gradient(rgba(34,37,74,.2),var(--bg) 96%),url(../css/img/oboz.jpg) center/cover; display:flex; align-items:flex-end; }
+  .hero { min-height:min(100vh,760px); background:linear-gradient(rgba(22,26,24,.2),var(--bg) 96%),url(../css/img/oboz.jpg) center/cover; display:flex; align-items:flex-end; }
   .hero .wrap { padding-bottom:72px; }
   .hero h1 { font-size:clamp(56px,11vw,150px); line-height:.92; font-weight:800; }
   .hero h1 em { color:var(--blue); font-style:normal; }
-  .hero p { font-size:22px; max-width:30em; margin:18px 0 28px; color:#dfe1f0; }
+  .hero p { font-size:22px; max-width:30em; margin:18px 0 28px; color:#e3e0d6; }
   .btn { display:inline-block; padding:12px 28px; font:800 22px 'Barlow Condensed',sans-serif; text-transform:uppercase; text-decoration:none; margin:0 10px 10px 0; border:3px solid var(--blue); }
   .btn.p { background:var(--blue); color:var(--bg); }
   .btn.s { color:var(--blue); }
-  .btn:hover { background:var(--amber); border-color:var(--amber); color:var(--bg); }
+  .btn:hover { background:#fff; border-color:#fff; color:var(--bg); }
 
   section { padding:72px 0; }
   h2 { font-size:44px; line-height:1; margin-bottom:18px; }
-  h2 span { color:var(--amber); }
+  h2 span { color:var(--blue); }
   .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
   @media (max-width:860px){ .grid{grid-template-columns:1fr 1fr} }
   @media (max-width:520px){ .grid{grid-template-columns:1fr} }
-  .team { background:var(--panel); padding:20px; border-top:4px solid var(--blue); }
+  .team { background:var(--panel); padding:20px; border-top:3px solid var(--amber); }
   
   .team h3 { font-size:28px; }
   .team small { color:var(--muted); display:block; margin-bottom:8px; }
   .team a { color:var(--blue); font-weight:600; text-decoration:none; }
-  .lead { max-width:36em; color:#dfe1f0; }
+  .lead { max-width:36em; color:#e3e0d6; }
 
   .photos { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
   @media (max-width:700px){ .photos{grid-template-columns:1fr} }
   .ph { min-height:300px; background-size:cover; background-position:center; display:flex; align-items:flex-end; padding:20px; text-decoration:none; position:relative; }
-  .ph::before { content:""; position:absolute; inset:0; background:linear-gradient(transparent 40%,rgba(34,37,74,.92)); }
+  .ph::before { content:""; position:absolute; inset:0; background:linear-gradient(transparent 40%,rgba(22,26,24,.92)); }
   .ph h3 { position:relative; font-size:40px; line-height:1; }
 
   .contact { background:var(--panel); }
   .cgrid { display:grid; grid-template-columns:1.2fr 1fr; gap:36px; }
   @media (max-width:760px){ .cgrid{grid-template-columns:1fr} }
-  .num { font:800 48px 'Barlow Condensed',sans-serif; color:var(--amber); text-decoration:none; display:block; }
+  .num { font:800 48px 'Barlow Condensed',sans-serif; color:var(--blue); text-decoration:none; display:block; }
   .soc a { display:inline-block; margin:0 10px 10px 0; padding:8px 18px; border:2px solid var(--muted); text-decoration:none; font-weight:600; }
   .soc a:hover { border-color:var(--blue); color:var(--blue); }
   footer { padding:26px 0; color:var(--muted); font-size:15px; }
