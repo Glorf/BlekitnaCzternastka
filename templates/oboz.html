@@ -38,30 +38,28 @@
 <section class="photos" id="zdjecia">
   <div class="wrap">
     <h2>Zdjęcia z wyjazdów</h2>
-    <p class="sub">Albumy z naszego Flickra, osobno z obozów i z zimowisk. Najnowsze na górze.</p>
-    {% for o in site.obozy if o.albumy %}
-    <div class="grp">
-      <div class="grphead">
-        <i class="fa {{ 'fa-sun-o' if o.id == 'oboz-letni' else 'fa-asterisk' }}" aria-hidden="true"></i>
-        <h3>{{ o.nazwa }}</h3>
-        <span>{{ o.albumy|length }} {{ 'album' if o.albumy|length == 1 else 'albumów' }}</span>
-      </div>
-      <div class="mosaic">
-        {% for a in o.albumy[:5] %}
-        <a class="mt{{ ' big' if loop.first }}" href="{{ a.url }}" style="background-image:url({{ a.okladka }})">
-          <span class="yr">{{ a.rok }}</span>
-          <span class="nm">{{ a.nazwa }}</span>
-          <span class="ct">{{ a.zdjec }} zdjęć</span>
-        </a>
-        {% endfor %}
-      </div>
-      {% if o.albumy|length > 5 %}
-      <details class="older"><summary>Starsze albumy ({{ o.albumy|length - 5 }})</summary>
-        <ul>{% for a in o.albumy[5:] %}<li><b>{{ a.rok }}</b> <a href="{{ a.url }}">{{ a.nazwa }}</a></li>{% endfor %}</ul>
-      </details>
+    <p class="sub">Albumy z naszego Flickra, osobno z obozów i z zimowisk.</p>
+  </div>
+  {% for o in site.obozy if o.albumy %}
+  <div class="wrap trip alb {{ 'rev' if loop.index0 % 2 }}">
+    <div class="albtext">
+      <h3>{{ 'Z obozów' if o.id == 'oboz-letni' else 'Z zimowisk' }}</h3>
+      <p class="sub">{{ o.albumy|length }} {{ 'album' if o.albumy|length == 1 else 'albumów' }} na Flickrze. Obok najnowsze{% if o.albumy|length > 6 %}, starsze poniżej{% endif %}.</p>
+      {% if o.albumy|length > 6 %}
+      <ul class="olderlist">{% for a in o.albumy[6:] %}<li><b>{{ a.rok }}</b> <a href="{{ a.url }}">{{ a.nazwa }}</a></li>{% endfor %}</ul>
       {% endif %}
     </div>
-    {% endfor %}
+    <div class="thumbs">
+      {% for a in o.albumy[:6] %}
+      <a class="th" href="{{ a.url }}" style="background-image:url({{ a.okladka }})" title="{{ a.tytul }} ({{ a.zdjec }} zdjęć)">
+        <span class="yr">{{ a.rok }}</span>
+        <span class="nm">{{ a.nazwa }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+  <div class="wrap">
     <p class="links" style="margin-top:44px"><a class="textlink" href="{{ site.linki.flickr }}">Wszystkie albumy na Flickrze →</a> &nbsp; <a class="textlink" href="{{ site.linki.archiwum }}">Archiwum ↗</a></p>
   </div>
 </section>
