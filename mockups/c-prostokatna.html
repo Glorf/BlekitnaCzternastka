@@ -114,6 +114,37 @@
   .call { box-shadow:3px 3px 0 rgba(0,0,0,.4); }
   .soc a:hover, .call:hover { box-shadow:none; }
   .tag { border-radius:0; }
+
+  /* P R Z E Ł Ą C Z N I K */
+  .switch { margin:6px 0 30px; display:flex; flex-wrap:wrap; align-items:center; gap:10px 22px; }
+  .swl { color:var(--muted); font-size:15px; }
+  .swb { flex:1; min-width:280px; max-width:560px; }
+  .swb input { width:100%; accent-color:var(--cream); }
+  .swn { display:flex; justify-content:space-between; gap:8px; margin-top:6px; }
+  .swn button { font:500 16px 'Zilla Slab',serif; color:var(--muted); background:none; border:0; padding:4px 0; cursor:pointer; }
+  .swn button.on { color:var(--cream); font-weight:700; }
+  .lay { margin-top:10px; }
+
+  /* U K Ł A D 1: płaskie sześciokąty, kolumny = wiek */
+  .flat { --w:min(260px,24vw); --h:calc(var(--w)*.866); --g:8px; --sx:calc(var(--w)*.75 + var(--g)); --sy:calc(var(--h) + var(--g)); position:relative; width:calc(var(--sx)*3 + var(--w)); height:calc(var(--sy)*2.5 + 44px); margin:0 auto; }
+  .flat .hexw { position:absolute; width:var(--w); height:var(--h); }
+  .flat .hex { clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); }
+  .flat .hin { padding:0 12%; }
+  .cl { position:absolute; top:0; width:var(--w); text-align:center; font:700 clamp(15px,1.7vw,20px) 'Zilla Slab',serif; color:var(--cream); }
+
+  /* U K Ł A D 2 i 3: sześciokąty ostrokątne */
+  .honey .hexrow { position:relative; width:100%; }
+  .rl { position:absolute; left:0; top:50%; transform:translateY(-50%); font:700 clamp(14px,1.6vw,19px) 'Zilla Slab',serif; color:var(--muted); }
+  .hole { filter:none !important; }
+  .hub .hex::before { background:rgba(53,57,100,.5); }
+  .badge { display:inline-block; font:700 clamp(10px,1.1vw,13px) 'Zilla Slab',serif; font-style:normal; text-transform:uppercase; letter-spacing:.06em; background:var(--cream); color:var(--bg); padding:2px 8px; margin-bottom:6px; }
+  @media (max-width:700px){
+    .flat { display:grid; grid-template-columns:1fr 1fr; gap:14px; width:auto; height:auto; --w:100%; }
+    .flat .hexw { position:static; width:100%; height:auto; }
+    .flat .hex { clip-path:none; aspect-ratio:1; }
+    .cl, .rl, .hole { display:none !important; }
+    .swb { max-width:none; }
+  }
 </style>
 </head>
 <body>
@@ -153,11 +184,63 @@
   <div class="wrap">
     <h2>Siedem drużyn. Jeden szczep.</h2>
     <p class="sub">Od zuchów po liceum. Wybierz drużynę i zadzwoń do drużynowego.</p>
-    <div class="honey">
-      <div class="hexrow"><a class="hexw" href="#"><div class="hex" style="background-image:url(../o-nas/img/li.jpg)"><div class="hin"><b>Leśne Skrzaty</b><small>zuchy, 6–9 lat</small><span class="hp" data-tel="000 000 000">000 000 000</span></div></div></a><a class="hexw" href="#"><div class="hex" style="background-image:url(../o-nas/img/lesna.jpg)"><div class="hin"><b>Leśna</b><small>dziewczyny, 10–13</small><span class="hp" data-tel="000 000 000">000 000 000</span></div></div></a></div>
-      <div class="hexrow"><a class="hexw" href="#"><div class="hex" style="background-image:url(../o-nas/img/kohorta.jpg)"><div class="hin"><b>Kohorta</b><small>chłopcy, 10–13</small><span class="hp" data-tel="000 000 000">000 000 000</span></div></div></a><a class="hexw" href="#"><div class="hex" style="background-image:url(../o-nas/img/ster.jpg)"><div class="hin"><b>Ster</b><small>dziewczyny, gimnazjum</small><span class="hp" data-tel="000 000 000">000 000 000</span></div></div></a><a class="hexw" href="#"><div class="hex" style="background-image:url(../o-nas/img/formoza.jpg)"><div class="hin"><b>Formoza</b><small>chłopcy, gimnazjum</small><span class="hp" data-tel="000 000 000">000 000 000</span></div></div></a></div>
-      <div class="hexrow"><a class="hexw" href="#"><div class="hex" style="background-image:url(../o-nas/img/1.jpg)"><div class="hin"><b>Więź</b><small>dziewczyny, liceum</small><span class="hp" data-tel="000 000 000">000 000 000</span></div></div></a><a class="hexw" href="#"><div class="hex" style="background-image:url(../o-nas/img/cichociemni.jpg)"><div class="hin"><b>Cichociemni</b><small>chłopcy, liceum</small><span class="hp" data-tel="000 000 000">000 000 000</span></div></div></a></div>
+    <!-- P R Z E Ł Ą C Z N I K  U K Ł A D U (tylko w makiecie) -->
+    <div class="switch">
+      <span class="swl">Układ drużyn (tylko w makiecie):</span>
+      <div class="swb">
+        <input type="range" id="lay" min="1" max="3" step="1" value="1" aria-label="Wybierz układ">
+        <div class="swn"><button data-v="1">1 · Ścieżka wieku</button><button data-v="2">2 · Kwiat</button><button data-v="3">3 · Romb</button></div>
+      </div>
     </div>
+    <div id="teams"></div>
+    <script>
+      var T = {
+        skr:{n:'Leśne Skrzaty', a:'zuchy, 6–9 lat', p:'li'},
+        les:{n:'Leśna', a:'dziewczyny, 10–13', p:'lesna'},
+        koh:{n:'Kohorta', a:'chłopcy, 10–13', p:'kohorta'},
+        ste:{n:'Ster', a:'dziewczyny, gimnazjum', p:'ster'},
+        for:{n:'Formoza', a:'chłopcy, gimnazjum', p:'formoza'},
+        wie:{n:'Więź', a:'dziewczyny, liceum', p:'1'},
+        cic:{n:'Cichociemni', a:'chłopcy, liceum', p:'cichociemni'}
+      };
+      function hex(t, cls, style) {
+        return '<a class="hexw ' + (cls||'') + '" href="#" style="' + (style||'') + '"><div class="hex" style="background-image:url(../o-nas/img/' + t.p + '.jpg)"><div class="hin">' +
+          (cls && cls.indexOf('hub')>-1 ? '<em class="badge">start tutaj</em>' : '') +
+          '<b>' + t.n + '</b><small>' + t.a + '</small><span class="hp">000 000 000</span></div></div></a>';
+      }
+      function rows(list) { // list of rows; each row = {label, items:[key|null]}
+        return '<div class="honey">' + list.map(function(r){
+          return '<div class="hexrow">' + (r.label ? '<span class="rl">' + r.label + '</span>' : '') +
+            r.items.map(function(k){ return k===null ? '<span class="hexw hole"></span>' : hex(T[k], k==='skr' && r.hub ? 'hub' : ''); }).join('') + '</div>';
+        }).join('') + '</div>';
+      }
+      // 1 · pozioma ścieżka wieku: kolumny = wiek, wiersze = płeć (płaskie sześciokąty)
+      var cols = [
+        {l:'Zuchy · 6–9', it:[['skr',0.5]]},
+        {l:'10–13 lat', it:[['les',0],['koh',1]]},
+        {l:'Gimnazjum', it:[['ste',0.5],['for',1.5]]},
+        {l:'Liceum', it:[['wie',0],['cic',1]]}
+      ];
+      var l1 = '<div class="flat">' + cols.map(function(c,i){
+        return '<span class="cl" style="left:calc(var(--sx)*' + i + ');">' + c.l + '</span>' +
+          c.it.map(function(x){ return hex(T[x[0]], '', 'left:calc(var(--sx)*' + i + ');top:calc(var(--sy)*' + x[1] + ' + 44px);'); }).join('');
+      }).join('') + '</div>';
+      // 2 · kwiat: Zuchy w środku, dziewczyny po lewej, chłopcy po prawej
+      var l2 = rows([{items:['les','koh']},{items:['ste','skr','for'],hub:true},{items:['wie','cic']}]);
+      // 3 · romb 1-2-3-2 z pustym środkiem w trzecim rzędzie: wiersz = wiek
+      var l3 = rows([{label:'6–9',items:['skr']},{label:'10–13',items:['les','koh']},{label:'gimnazjum',items:['ste',null,'for']},{label:'liceum',items:['wie','cic']}]);
+      var out = document.getElementById('teams');
+      out.innerHTML = '<div class="lay" data-l="1">' + l1 + '</div><div class="lay" data-l="2">' + l2 + '</div><div class="lay" data-l="3">' + l3 + '</div>';
+      var rng = document.getElementById('lay');
+      function setLay(v) {
+        rng.value = v;
+        Array.prototype.forEach.call(out.children, function(e){ e.style.display = e.getAttribute('data-l')==v ? '' : 'none'; });
+        Array.prototype.forEach.call(document.querySelectorAll('.swn button'), function(b){ b.classList.toggle('on', b.getAttribute('data-v')==v); });
+      }
+      rng.addEventListener('input', function(){ setLay(rng.value); });
+      Array.prototype.forEach.call(document.querySelectorAll('.swn button'), function(b){ b.addEventListener('click', function(){ setLay(b.getAttribute('data-v')); }); });
+      setLay(1);
+    </script>
   </div>
 </section>
 
