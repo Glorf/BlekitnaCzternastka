@@ -53,16 +53,10 @@
   .tile h3 { font-size:36px; margin-bottom:4px; }
   .tile span { display:inline-block; margin-top:12px; padding:8px 18px; border-radius:999px; background:#fff; color:var(--navy); font-weight:900; font-size:15px; }
 
-  /* L I C Z B Y */
-  .nums { background:var(--navy); color:#fff; padding:34px 0; }
-  .nums .wrap { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; text-align:center; }
-  .nums b { display:block; font:900 clamp(34px,6vw,56px) Bitter,serif; line-height:1; }
-  .nums span { opacity:.85; font-size:16px; }
-
   /* J A K  Z A C Z Ą Ć */
   .how { background:var(--mist); }
   .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; counter-reset:s; }
-  @media (max-width:760px){ .steps{grid-template-columns:1fr} .nums .wrap{gap:8px} }
+  @media (max-width:760px){ .steps{grid-template-columns:1fr} }
   .step { background:#fff; border-radius:20px; padding:26px; box-shadow:0 8px 22px rgba(53,57,100,.12); }
   .step::before { counter-increment:s; content:counter(s); display:grid; place-items:center; width:46px; height:46px; border-radius:50%; background:var(--navy); color:#fff; font:900 22px Bitter,serif; margin-bottom:14px; }
   .step h3 { font-size:22px; margin-bottom:6px; }
@@ -124,15 +118,6 @@
     </div>
   </div>
 </section>
-
-<!-- L I C Z B Y -->
-<div class="nums">
-  <div class="wrap">
-    <div><b>6</b><span>drużyn w szczepie</span></div>
-    <div><b>od 6 lat</b><span>można zacząć</span></div>
-    <div><b>1 miesiąc</b><span>w lesie każdego lata</span></div>
-  </div>
-</div>
 
 <!-- J A K  Z A C Z Ą Ć -->
 <section class="how">
