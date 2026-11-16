@@ -23,19 +23,6 @@
   </div>
 </section>
 
-<!-- O B Ó Z  I  Z I M O W I S K O -->
-<section id="oboz">
-  <div class="wrap">
-    <h2>Dwa duże wyjazdy w roku</h2>
-    <p class="sub">Latem miesiąc w lesie, zimą zimowisko. Reszta roku to zbiórki i rajdy.</p>
-    <div class="big2">
-      {% for o in site.obozy %}
-      <a class="ph" href="{{ url_for('oboz') }}#{{ o.id }}" style="background-image:url({{ url_for('static', filename='img/' ~ o.zdjecie) }})"><div><h3>{{ o.nazwa }}</h3><small>Terminy, miejsce, cena →</small></div></a>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
 <!-- D R U Ż Y N Y -->
 <section class="teams" id="druzyny">
   <div class="wrap">
@@ -58,15 +45,31 @@
   </div>
 </section>
 
-<!-- P R O C E N T -->
-<section class="teams" id="procent">
+<!-- O B Ó Z  I  Z I M O W I S K O -->
+<section id="oboz">
   <div class="wrap">
-    <h2>Przekaż nam {{ site.procent.kwota }} podatku</h2>
-    <p class="sub">Jesteśmy organizacją pożytku publicznego. Jeśli chcesz wesprzeć Błękitną Czternastkę, wystarczy przekazać {{ site.procent.kwota }} podatku na rzecz naszego szczepu. Jak to zrobić:</p>
-    <div class="steps">
-      <div class="step"><h3>Numer KRS</h3><p>W formularzu podatkowym znajdź część „Wniosek o przekazanie {{ site.procent.kwota }} na rzecz OPP”. W polu „Numer KRS” wpisz <b>{{ site.procent.krs }}</b>.</p></div>
-      <div class="step"><h3>Kwota</h3><p>W polu „Wnioskowana kwota” wpisz {{ site.procent.kwota }} kwoty należnego podatku, odpowiednio zaokrągloną.</p></div>
-      <div class="step"><h3>Cel szczegółowy</h3><p>W polu „Cel szczegółowy {{ site.procent.kwota }}” wpisz: <b>{{ site.procent.cel }}</b>.</p></div>
+    <h2>Dwa duże wyjazdy w roku</h2>
+    <p class="sub">Latem miesiąc w lesie, zimą zimowisko. Reszta roku to zbiórki i rajdy.</p>
+    <div class="big2">
+      {% for o in site.obozy %}
+      <a class="ph" href="{{ url_for('oboz') }}#{{ o.id }}" style="background-image:url({{ url_for('static', filename='img/' ~ o.zdjecie) }})"><div><h3>{{ o.nazwa }}</h3><small>Terminy, miejsce, cena →</small></div></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- F A C E B O O K -->
+<section class="teams fbsec">
+  <div class="wrap trip">
+    <div>
+      <h2>Co słychać?</h2>
+      <p class="sub">To, co dzieje się teraz, najszybciej zobaczysz na naszym Facebooku i Instagramie. Tu są ostatnie wpisy ze strony szczepu.</p>
+      <a class="textlink" href="{{ site.linki.facebook_strona }}">Cała strona na Facebooku →</a><br>
+      <a class="textlink" href="{{ site.linki.instagram }}">Instagram →</a>
+    </div>
+    <div class="fbbox">
+      <iframe title="Ostatnie wpisy na Facebooku Błękitnej XIV" loading="lazy"
+        src="https://www.facebook.com/plugins/page.php?href={{ site.linki.facebook_strona|urlencode }}&tabs=timeline&width=500&height=640&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false"></iframe>
     </div>
   </div>
 </section>
@@ -75,14 +78,12 @@
 <section>
   <div class="wrap">
     <h2>Tak to wygląda</h2>
-    <p class="sub">Więcej zdjęć na Flickrze, a to, co dzieje się teraz, na Facebooku i Instagramie.</p>
+    <p class="sub">Więcej zdjęć na Flickrze.</p>
     <div class="strip">
       {% for g in site.galeria %}<i style="background-image:url({{ url_for('static', filename='img/' ~ g) }})"></i>{% endfor %}
     </div>
     <div class="links">
       <a class="chip" href="{{ site.linki.flickr }}">Zdjęcia na Flickr</a>
-      <a class="chip o" href="{{ site.linki.facebook }}">Facebook</a>
-      <a class="chip o" href="{{ site.linki.instagram }}">Instagram</a>
     </div>
   </div>
 </section>

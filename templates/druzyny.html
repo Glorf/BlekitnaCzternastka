@@ -26,7 +26,7 @@
       {% for p in d.tekst %}<p>{{ p }}</p>{% endfor %}
       {% if d.zbiorka %}<p class="meet"><b>Zbiórki:</b> {{ d.zbiorka }}</p>{% endif %}
       {% if d.druzynowy %}
-      <p class="lead">Drużynowy: {{ d.druzynowy.imie }}</p>
+      <p class="lead">{{ 'Drużynowa' if d.druzynowy.kobieta else 'Drużynowy' }}: {{ d.druzynowy.imie }}</p>
       <a class="big" href="{{ d.druzynowy.telefon|tel }}">{{ d.druzynowy.telefon }}</a>
       <a class="mail" href="mailto:{{ d.druzynowy.email }}">{{ d.druzynowy.email }}</a>
       {% else %}

@@ -16,17 +16,17 @@ szczep:
     telefon: +48 536 583 778
     email: blekitna14@gmail.com
   # Tekst "Kim jesteśmy?" ze starej strony.
+  # Skrócony tekst "Kim jesteśmy?" (pełny jest na starej stronie).
   kim:
-    - Jesteśmy dziećmi i młodymi dorosłymi, jesteśmy uczniami i studentami. Przychodzimy stąd i zowąd i zmierzamy w różne strony. W inny sposób lubimy spędzać wieczory i z różnymi rzeczami jeść kanapki. Jesteśmy mali i duzi, jesteśmy podróżnikami, muzykami, odkrywcami, fotografami, sportowcami, aktorami.
-    - Ale ta jedna rzecz wszystkich nas łączy – jesteśmy harcerzami. A to znaczy, że dzielące nas różnice nie mają znaczenia. Tu zawsze znajdzie się ktoś, kto nas rozśmieszy, rozzłości, czymś zaciekawi albo znudzi, ale liczy się jedno – możemy liczyć na siebie nawzajem. Jesteśmy grupą przyjaciół – to takie niepozorne słowo, które bardzo wiele dla nas znaczy.
-    - Mamy swoje małe i duże sprawy, swoje tradycje i dziwactwa. Lubimy wynajdywać okazje żeby znów, wrzuciwszy to i owo do plecaka, uciec na chwilę od codzienności i świata dorosłych. Na dźwięk gwizdka wszyscy odruchowo stajemy w bezruchu jak surykatki i nadstawiamy uszu. Czasami wyznacznikiem luksusu jest dla nas obecność wrzątku. Raz do roku znikamy na miesiąc gdzieś w lesie, gdzie między drzewami budujemy od podstaw własny, mały świat, daleko od cywilizacji. Niektórzy z nas liczą lata od lipca do lipca.
-    - A poznać nas może każdy, bez żadnych zobowiązań ani przysiąg. Weź tylko ze sobą szczoteczkę do zębów i paczkę ciastek, i jeśli chcesz, możesz w każdej chwili gdzieś z nami pojechać. I wcale nie musisz zostawać na długo. Chociaż słyszałam, że w sercu kogoś, kto raz się tutaj pojawi, na zawsze już pozostanie ten niewielki, błękitny fragment.
+    - Jesteśmy dziećmi i młodymi dorosłymi, uczniami i studentami. Różni nas wiele, ale jedno nas łączy – jesteśmy harcerzami i możemy liczyć na siebie nawzajem. Raz do roku znikamy na miesiąc gdzieś w lesie, gdzie budujemy od podstaw własny, mały świat.
+    - Poznać nas może każdy, bez żadnych zobowiązań ani przysiąg. Weź tylko szczoteczkę do zębów i paczkę ciastek.
 
 linki:
   facebook: https://facebook.com/blekitna14/
   instagram: https://instagram.com/blekitna14
   flickr: https://www.flickr.com/photos/blekitna14/albums
   archiwum: https://blekitna14.org/archiwum/index.html
+  facebook_strona: https://www.facebook.com/Blekitna14/
 
 # Przekaż 1,5% (dane ze starej strony).
 procent:
@@ -54,7 +54,7 @@ druzyny:
       - Gromada zuchowa „Leśne Skrzaty” to miejsce, gdzie najmłodsi – dzieci w wieku 6–9 lat – odkrywają świat poprzez zabawę i rozwijanie nowych umiejętności. Podczas zbiórek budujemy statki kosmiczne, rozwiązujemy zagadki, pomagamy szalonym naukowcom, poznajemy pląsy, przy okazji zdobywając coraz to nowe sprawności. Oprócz cotygodniowych piątkowych zbiórek, wybieramy się czasem w weekendy na biwaki z naszym szczepem oraz rajdy zuchowe z zaprzyjaźnionymi gromadami.
       - Każde nasze spotkanie to nowa przygoda i mnóstwo radości!
     zbiorka: piątki
-    druzynowy: {imie: Dominika Sagalara, telefon: 784 261 648, email: dominika.sagalara@zhp.net.pl}
+    druzynowy: {imie: Dominika Sagalara, kobieta: true, telefon: 784 261 648, email: dominika.sagalara@zhp.net.pl}
   - id: lesna
     nazwa: Leśna
     pelna: Drużyna Harcerska „Leśna”
@@ -65,7 +65,7 @@ druzyny:
     tekst:
       - „Leśna” to wyjątkowa drużyna dla dziewczynek w wieku 10–13 lat. Jesteśmy oryginalne i pomysłowe, dlatego za każdym razem na naszych zbiórkach świetnie się bawimy, poznając różne zakątki świata, dowiadując się czegoś o naszym ciele lub zgłębiając tajniki handlu – zawsze znajdzie się coś ciekawego do odkrycia. Czasami jesteśmy komandosami i mamy bardzo trudne zadania do wykonania, podczas których uczymy się samodzielności i współpracy, ale czasami zasługujemy też na chwilę odpoczynku i jesteśmy księżniczkami. Lubimy porysować, ugotować coś smacznego, poplotkować.
       - Naszą patronką jest Maria „Majka” Krassowska, sanitariuszka z czasów powstania warszawskiego, dlatego jeździmy na rajdy do Warszawy, aby móc dowiedzieć się o niej, odwiedzając Muzeum Powstania Warszawskiego, jej rodzinny dom czy grób na Powązkach. Oczywiście to nie wszystko – czasami lubimy po prostu wyjechać na weekend nad jezioro. Zapraszamy na zbiórki wszystkie dziewczynki, które chciałyby przeżyć wspaniałą przygodę, spróbować nowych rzeczy i nie boją się wyzwań.
-    druzynowy: {imie: Alicja Han, telefon: 724 794 671, email: alicja.han@zhp.net.pl}
+    druzynowy: {imie: Alicja Han, kobieta: true, telefon: 724 794 671, email: alicja.han@zhp.net.pl}
   - id: kohorta
     nazwa: Kohorta
     pelna: Drużyna Męska „Kohorta”
@@ -89,7 +89,7 @@ druzyny:
     tekst:
       - Żeńska Drużyna Starszoharcerska „Ster” im. Kingi Choszcz to drużyna dziewczyn w wieku gimnazjalnym. Powstała w 2007 roku. Sterniczki cechuje pozytywna energia, sympatia oraz pomysłowość. Spotykamy się na zbiórkach w piątki o 16.45 w Marcinku, a także w każdym semestrze jedziemy na rajd drużyny – byłyśmy już m.in. w Gdańsku, Warszawie oraz Toruniu. Razem robimy wiele ciekawych rzeczy oraz dobrze się bawimy. Serdecznie zapraszamy!
     zbiorka: piątki, 16:45, Marcinek
-    druzynowy: {imie: Agnieszka Maślińska, telefon: 668 988 169, email: agnieszka.maslinska@zhp.net.pl}
+    druzynowy: {imie: Agnieszka Maślińska, kobieta: true, telefon: 668 988 169, email: agnieszka.maslinska@zhp.net.pl}
   - id: formoza
     nazwa: Formoza
     pelna: Drużyna Męska „Formoza” im. Gen. Mariusza Zaruskiego
@@ -112,7 +112,7 @@ druzyny:
       - Drużyna Żeńska „Więź” to ekipa licealistek i studentek, które razem lubią spędzać aktywnie czas. Chętnie chodzimy po górach, jeździmy na rowerze czy rolkach, próbujemy swoich sił we wspinaczce. W czasie semestru drużyna działa patrolami, czyli zajmujemy się dokładnie tym, na co mamy ochotę na początku semestru. Do tej pory miałyśmy takie patrole jak filmowy, sportowy, fotograficzny, kulinarny, kulturalny. Oprócz tego pomagamy potrzebującym, ostatnio prowadzimy zajęcia dla podopiecznych fundacji św. Jadwigi. W czasie wakacji, oprócz wyjazdów na obóz szczepu, jeździmy w góry na obozy wędrowne.
       - Nasze zbiórki odbywają się zazwyczaj w weekendy, ale czasem zdarzają się wyjątki, jeżeli tego akurat wymaga dany patrol. Zasadniczo raz w miesiącu wyjeżdżamy na rajdy, zarówno szczepu i hufca, jak też samodzielne wyjazdy drużyny, w czasie których zwiedzamy inne miasta, jedziemy w góry lub na dłuższe wycieczki rowerowe.
     zbiorka: zazwyczaj w weekendy
-    druzynowy: {imie: Zofia Nawrocka, telefon: 797 117 882, email: zofia.nawrocka@zhp.net.pl}
+    druzynowy: {imie: Zofia Nawrocka, kobieta: true, telefon: 797 117 882, email: zofia.nawrocka@zhp.net.pl}
   - id: cichociemni
     nazwa: Cichociemni
     pelna: I Drużyna Męska „Cichociemni”
@@ -135,11 +135,18 @@ instruktorzy:
       - Kłuszyn to instruktorzy, bez których nasz szczep by nie istniał. Nazwa naszego kręgu instruktorskiego wywodzi się z bitwy pod Kłuszynem – największego zwycięstwa hetmana Żółkiewskiego. Razem staramy się sprawić, by w „Błękitnej” znalazło się miejsce dla każdego, by wszystko, co robimy, było interesujące i choć trochę pożyteczne.
       - Nasi instruktorzy są w bardzo różnym wieku, zajmują się różnymi rzeczami, ale łączy ich jedno – pasja do pomagania innym i naprawiania świata.
 
+# Flickr: albumy pobierane przez API (python flickr.py, wymaga FLICKR_API_KEY),
+# zapisywane w data/flickr.json. Do każdego wyjazdu trafiają albumy,
+# w których tytule jest któreś ze słów z "flickr_slowa".
+flickr:
+  uzytkownik_url: https://www.flickr.com/photos/blekitna14/
+
 # Dwa duże wyjazdy w roku (do uzupełnienia; nie było ich na stronie "O nas").
 obozy:
   - id: oboz-letni
     nazwa: Obóz letni
     zdjecie: oboz.jpg
+    flickr_slowa: [obóz, oboz, kolonia]
     haslo: Raz do roku znikamy na miesiąc gdzieś w lesie.
     terminy: do uzupełnienia
     miejsce: do uzupełnienia
@@ -151,6 +158,7 @@ obozy:
   - id: zimowisko
     nazwa: Zimowisko
     zdjecie: zimowisko.jpg
+    flickr_slowa: [zimowisko, zimowy]
     haslo: Zimowy wyjazd szczepu.
     terminy: do uzupełnienia
     miejsce: do uzupełnienia

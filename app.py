@@ -8,6 +8,8 @@ from pathlib import Path
 import yaml
 from flask import Flask, render_template
 
+import flickr
+
 ROOT = Path(__file__).parent
 
 app = Flask(__name__)
@@ -41,7 +43,16 @@ def druzyny():
 
 @app.route("/oboz/")
 def oboz():
-    return render_template("oboz.html", page="oboz")
+    albums = flickr.load()
+    site = load_site()
+    for o in site["obozy"]:
+        o["albumy"] = flickr.filter_albums(albums, o.get("flickr_slowa"))
+    return render_template("oboz.html", page="oboz", site=site)
+
+
+@app.route("/procent/")
+def procent():
+    return render_template("procent.html", page="procent")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Przekaż {{ site.procent.kwota }} podatku{% endblock %}
+{% block desc %}Jak przekazać {{ site.procent.kwota }} podatku na rzecz szczepu Błękitna Czternastka: numer KRS {{ site.procent.krs }} i cel szczegółowy.{% endblock %}
+{% block content %}
+
+<!-- N A G Ł Ó W E K -->
+<div class="pagehead" style="background-image:linear-gradient(rgba(20,22,45,.55),rgba(20,22,45,.78)),url({{ url_for('static', filename='img/5.jpg') }})">
+  <div class="wrap">
+    <h1>Przekaż nam {{ site.procent.kwota }} podatku</h1>
+    <p>Jesteśmy organizacją pożytku publicznego. Jeśli chcesz wesprzeć Błękitną Czternastkę, wystarczy przy rozliczeniu podatku przekazać {{ site.procent.kwota }} na rzecz naszego szczepu.</p>
+  </div>
+</div>
+
+<!-- K R O K I -->
+<section>
+  <div class="wrap">
+    <h2>Jak to zrobić?</h2>
+    <p class="sub">Trzy pola w formularzu podatkowym.</p>
+    <div class="steps">
+      <div class="step"><h3>Numer KRS</h3><p>W formularzu podatkowym znajdź część „Wniosek o przekazanie {{ site.procent.kwota }} na rzecz OPP”. W polu „Numer KRS” wpisz <b>{{ site.procent.krs }}</b>.</p></div>
+      <div class="step"><h3>Kwota</h3><p>W polu „Wnioskowana kwota” wpisz {{ site.procent.kwota }} kwoty należnego podatku, odpowiednio zaokrągloną.</p></div>
+      <div class="step"><h3>Cel szczegółowy</h3><p>W polu „Cel szczegółowy {{ site.procent.kwota }}” wpisz: <b>{{ site.procent.cel }}</b>.</p></div>
+    </div>
+  </div>
+</section>
+{% endblock %}

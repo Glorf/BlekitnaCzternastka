@@ -28,7 +28,19 @@
       <h3>Dla rodziców</h3>
       <ul>{% for l in o.dla_rodzicow %}<li>{{ l }}</li>{% endfor %}</ul>
       <p class="sign">{{ o.zapisy }}</p>
-      <a class="btn p" href="mailto:{{ site.szczep.email }}?subject={{ o.nazwa|urlencode }}">Napisz w sprawie wyjazdu</a>
+      <div class="albums">
+        <h3>Zdjęcia z {{ 'obozów' if o.id == 'oboz-letni' else 'zimowisk' }}</h3>
+        {% if o.albumy %}
+        <div class="albgrid">
+          {% for a in o.albumy[:8] %}
+          <a class="alb" href="{{ a.url }}"><i style="background-image:url({{ a.okladka }})"></i><b>{{ a.tytul }}</b><span>{{ a.zdjec }} zdjęć</span></a>
+          {% endfor %}
+        </div>
+        {% else %}
+        <p><a class="textlink" href="{{ site.linki.flickr }}">Wszystkie albumy na Flickrze →</a></p>
+        {% endif %}
+      </div>
+      <a class="btn p" style="margin-top:22px" href="mailto:{{ site.szczep.email }}?subject={{ o.nazwa|urlencode }}">Napisz w sprawie wyjazdu</a>
     </div>
   </div>
 </section>
