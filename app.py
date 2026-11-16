@@ -45,8 +45,8 @@ def druzyny():
 def oboz():
     albums = flickr.load()
     site = load_site()
-    for o in site["obozy"]:
-        o["albumy"] = flickr.filter_albums(albums, o.get("flickr_slowa"), o.get("flickr_wyklucz"))
+    for g in site["zdjecia"]:
+        g["albumy"] = flickr.filter_albums(albums, g.get("slowa"), g.get("wyklucz"))
     return render_template("oboz.html", page="oboz", site=site)
 
 

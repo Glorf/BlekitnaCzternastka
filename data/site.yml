@@ -136,8 +136,7 @@ instruktorzy:
       - Nasi instruktorzy są w bardzo różnym wieku, zajmują się różnymi rzeczami, ale łączy ich jedno – pasja do pomagania innym i naprawiania świata.
 
 # Flickr: albumy pobierane przez API (python flickr.py, wymaga FLICKR_API_KEY),
-# zapisywane w data/flickr.json. Do każdego wyjazdu trafiają albumy,
-# w których tytule jest któreś ze słów z "flickr_slowa".
+# zapisywane w data/flickr.json.
 flickr:
   uzytkownik_url: https://www.flickr.com/photos/blekitna14/
 
@@ -146,8 +145,6 @@ obozy:
   - id: oboz-letni
     nazwa: Obóz letni
     zdjecie: oboz.jpg
-    flickr_slowa: [obóz, oboz, kolonia]
-    flickr_wyklucz: [wędrown, poobozowa]
     haslo: Raz do roku znikamy na miesiąc gdzieś w lesie.
     terminy: do uzupełnienia
     miejsce: do uzupełnienia
@@ -159,8 +156,6 @@ obozy:
   - id: zimowisko
     nazwa: Zimowisko
     zdjecie: zimowisko.jpg
-    flickr_slowa: [zimowisko]
-    flickr_wyklucz: []
     haslo: Zimowy wyjazd szczepu.
     terminy: do uzupełnienia
     miejsce: do uzupełnienia
@@ -171,3 +166,22 @@ obozy:
       - Informacje dla rodziców (kto jedzie, opieka, co zabrać) do uzupełnienia.
 
 galeria: [2.jpg, 4.jpg, 6.jpg, 3.jpg]
+
+# Sekcja zdjęć na stronie Obóz. Do każdej grupy trafiają albumy, w których tytule
+# jest któreś ze słów z "slowa" (bez słów z "wyklucz"). "podpis" jest opcjonalny.
+zdjecia:
+  - id: obozy
+    naglowek: "Obozach:"
+    slowa: [obóz, oboz, kolonia]
+    wyklucz: [wędrown, poobozowa]
+  - id: zimowiska
+    naglowek: "Zimowiskach:"
+    slowa: [zimowisko]
+  - id: zolkiewszczady
+    naglowek: "Żółkiewszczadach:"
+    podpis: Rajd patrona szczepu
+    slowa: [żółkiewszczada, zolkiewszczada]
+  - id: rajdy-wiosenne
+    naglowek: "Rajdach wiosennych:"
+    slowa: [rajd wiosenny]
+
