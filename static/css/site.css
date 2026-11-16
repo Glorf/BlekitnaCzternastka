@@ -18,10 +18,10 @@ body.plain header { position:sticky; top:0; background:var(--navy); box-shadow:0
 header .wrap { display:flex; align-items:center; gap:24px; height:78px; }
 .logo { font-size:26px; font-weight:900; text-decoration:none; }
 .logo b { font-weight:400; }
-body.on-hero .logo, body.on-hero nav { text-shadow:0 1px 10px rgba(0,0,0,.45); }
-nav { margin-left:auto; display:flex; gap:26px; font-weight:700; }
-nav a { text-decoration:none; padding:6px 0; border-bottom:3px solid transparent; }
-nav a:hover, nav a.on { border-color:var(--sky); }
+body.on-hero .logo, body.on-hero header nav { text-shadow:0 1px 10px rgba(0,0,0,.45); }
+header nav { margin-left:auto; display:flex; gap:26px; font-weight:700; }
+header nav a { text-decoration:none; padding:6px 0; border-bottom:3px solid transparent; }
+header nav a:hover, header nav a.on { border-color:var(--sky); }
 .soc { display:flex; gap:10px; }
 .soc a { width:36px; height:36px; border-radius:var(--rb); background:rgba(255,255,255,.2); backdrop-filter:blur(4px); display:grid; place-items:center; font-size:13px; font-weight:900; text-decoration:none; }
 .soc a:hover { background:#fff; color:var(--navy); }
@@ -32,8 +32,8 @@ nav a:hover, nav a.on { border-color:var(--sky); }
   .mt span, .mt span::before, .mt span::after { position:absolute; left:11px; width:22px; height:3px; background:#fff; border-radius:2px; content:""; }
   .mt span { top:20px; } .mt span::before { left:0; top:-7px; } .mt span::after { left:0; top:7px; }
   .mt-box:focus-visible + .mt { outline:3px solid var(--sky); }
-  nav { display:none; position:absolute; top:78px; left:0; right:0; margin:0; flex-direction:column; gap:0; background:var(--navy); padding:8px 20px 16px; text-shadow:none !important; }
-  nav a { padding:12px 0; border-bottom:1px solid rgba(255,255,255,.15); }
+  header nav { display:none; position:absolute; top:78px; left:0; right:0; margin:0; flex-direction:column; gap:0; background:var(--navy); padding:8px 20px 16px; text-shadow:none !important; }
+  header nav a { padding:12px 0; border-bottom:1px solid rgba(255,255,255,.15); }
   .mt-box:checked ~ nav { display:flex; }
 }
 
@@ -83,17 +83,21 @@ nav a:hover, nav a.on { border-color:var(--sky); }
   .flat .hexw:last-child .hex { aspect-ratio:2/1; }
 }
 
-/* K A R T Y  D R U Ż Y N (strona Drużyny) */
-.tgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:26px; }
-.tcard { background:#fff; border-radius:var(--rc); overflow:hidden; box-shadow:0 12px 30px rgba(53,57,100,.2); display:flex; flex-direction:column; }
-.tph { height:190px; background-size:cover; background-position:center; }
-.tbody { padding:22px 24px 26px; display:flex; flex-direction:column; gap:6px; }
-.tbody h3 { font-size:28px; }
-.tbody .age { color:var(--muted); font-size:16px; }
-.tbody .lead { margin-top:8px; }
-.tbody .big { font:900 28px Bitter,serif; text-decoration:none; color:var(--navy); }
-.tbody a:not(.big) { color:var(--navy); }
-.tcard:target { outline:3px solid var(--sky); outline-offset:3px; }
+/* S E G M E N T Y  D R U Ż Y N (strona Drużyny) */
+.jump { display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+.jump a { padding:8px 18px; border-radius:var(--rb); background:#fff; color:var(--navy); text-decoration:none; font-weight:700; font-size:16px; }
+.jump a:hover { background:var(--sky); color:#fff; }
+.team .trip { grid-template-columns:5fr 6fr; }
+.team .tripph { min-height:360px; }
+.team h2 { margin-bottom:2px; }
+.team .age { color:var(--muted); margin-bottom:14px; }
+.team .meet { margin:10px 0 18px; }
+.team .lead { font-weight:900; color:var(--navy); }
+.team .big { font:900 32px Bitter,serif; text-decoration:none; color:var(--navy); display:block; margin:2px 0; }
+.team .mail { color:var(--navy); }
+.team .links { margin-top:20px; }
+.team:target .tripph { outline:3px solid var(--sky); outline-offset:4px; }
+@media (max-width:760px){ .team .trip { grid-template-columns:1fr; } }
 
 /* J A K  Z A C Z Ą Ć */
 .how { color:#fff; background-size:cover; background-position:center; }

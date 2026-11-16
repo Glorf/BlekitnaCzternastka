@@ -40,6 +40,7 @@ druzyny:
     tekst: Gromada zuchów. Zabawy, zagadki i pierwsze przygody w lesie.
     zbiorka: wtorki, 17:00
     druzynowy: {imie: Imię Nazwisko, telefon: 000 000 000, email: skrzaty@example.com}
+    social: {facebook: \"\", instagram: \"\"}
   - id: lesna
     nazwa: Leśna
     opis: dziewczyny, 10–13 lat
@@ -49,6 +50,7 @@ druzyny:
     tekst: Drużyna harcerek. Biwaki, gry terenowe i dużo śmiechu.
     zbiorka: środy, 17:00
     druzynowy: {imie: Imię Nazwisko, telefon: 000 000 000, email: lesna@example.com}
+    social: {facebook: \"\", instagram: \"\"}
   - id: kohorta
     nazwa: Kohorta
     opis: chłopcy, 10–13 lat
@@ -58,6 +60,7 @@ druzyny:
     tekst: Drużyna harcerzy. Wyprawy, ogniska i rozwiązywanie zadań razem.
     zbiorka: środy, 17:00
     druzynowy: {imie: Imię Nazwisko, telefon: 000 000 000, email: kohorta@example.com}
+    social: {facebook: \"\", instagram: \"\"}
   - id: ster
     nazwa: Ster
     opis: dziewczyny, gimnazjum
@@ -67,6 +70,7 @@ druzyny:
     tekst: Drużyna starszych harcerek. Własne pomysły i duże wyzwania.
     zbiorka: czwartki, 18:00
     druzynowy: {imie: Imię Nazwisko, telefon: 000 000 000, email: ster@example.com}
+    social: {facebook: \"\", instagram: \"\"}
   - id: formoza
     nazwa: Formoza
     opis: chłopcy, gimnazjum
@@ -76,6 +80,7 @@ druzyny:
     tekst: Drużyna starszych harcerzy. Własne pomysły i duże wyzwania.
     zbiorka: czwartki, 18:00
     druzynowy: {imie: Imię Nazwisko, telefon: 000 000 000, email: formoza@example.com}
+    social: {facebook: \"\", instagram: \"\"}
   - id: wiez
     nazwa: Więź
     opis: dziewczyny, liceum
@@ -85,6 +90,7 @@ druzyny:
     tekst: Drużyna licealistek. Samodzielne wyjazdy i zajęcia z młodszymi.
     zbiorka: piątki, 18:00
     druzynowy: {imie: Imię Nazwisko, telefon: 000 000 000, email: wiez@example.com}
+    social: {facebook: \"\", instagram: \"\"}
   - id: cichociemni
     nazwa: Cichociemni
     opis: chłopcy, liceum
@@ -94,6 +100,7 @@ druzyny:
     tekst: Drużyna licealistów. Samodzielne wyjazdy i zajęcia z młodszymi.
     zbiorka: piątki, 18:00
     druzynowy: {imie: Imię Nazwisko, telefon: 000 000 000, email: cichociemni@example.com}
+    social: {facebook: \"\", instagram: \"\"}
 
 # Dwa duże wyjazdy w roku.
 obozy:
