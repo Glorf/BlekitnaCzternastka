@@ -28,36 +28,41 @@
       <h3>Dla rodziców</h3>
       <ul>{% for l in o.dla_rodzicow %}<li>{{ l }}</li>{% endfor %}</ul>
       <p class="sign">{{ o.zapisy }}</p>
-      <div class="albums">
-        <h3>Zdjęcia z {{ 'obozów' if o.id == 'oboz-letni' else 'zimowisk' }}</h3>
-        {% if o.albumy %}
-        <div class="albgrid">
-          {% for a in o.albumy[:6] %}
-          <a class="alb" href="{{ a.url }}"><i style="background-image:url({{ a.okladka }})"></i><b>{{ a.tytul }}</b><span>{{ a.zdjec }} zdjęć</span></a>
-          {% endfor %}
-        </div>
-        {% if o.albumy|length > 6 %}
-        <details class="older"><summary>Starsze albumy ({{ o.albumy|length - 6 }})</summary>
-          <ul>{% for a in o.albumy[6:] %}<li><a href="{{ a.url }}">{{ a.tytul }}</a> <span>· {{ a.zdjec }} zdjęć</span></li>{% endfor %}</ul>
-        </details>
-        {% endif %}
-        {% else %}
-        <p><a class="textlink" href="{{ site.linki.flickr }}">Wszystkie albumy na Flickrze →</a></p>
-        {% endif %}
-      </div>
-      <a class="btn p" style="margin-top:22px" href="mailto:{{ site.szczep.email }}?subject={{ o.nazwa|urlencode }}">Napisz w sprawie wyjazdu</a>
+      <a class="btn p" href="mailto:{{ site.szczep.email }}?subject={{ o.nazwa|urlencode }}">Napisz w sprawie wyjazdu</a>
     </div>
   </div>
 </section>
 {% endfor %}
 
-<section>
+<!-- Z D J Ę C I A  Z  A L B U M Ó W -->
+<section class="photos" id="zdjecia">
   <div class="wrap">
     <h2>Zdjęcia z wyjazdów</h2>
-    <div class="strip">
-      {% for g in site.galeria %}<i style="background-image:url({{ url_for('static', filename='img/' ~ g) }})"></i>{% endfor %}
+    <p class="sub">Albumy z naszego Flickra, osobno z obozów i z zimowisk. Najnowsze na górze.</p>
+    {% for o in site.obozy if o.albumy %}
+    <div class="grp">
+      <div class="grphead">
+        <i class="fa {{ 'fa-sun-o' if o.id == 'oboz-letni' else 'fa-asterisk' }}" aria-hidden="true"></i>
+        <h3>{{ o.nazwa }}</h3>
+        <span>{{ o.albumy|length }} {{ 'album' if o.albumy|length == 1 else 'albumów' }}</span>
+      </div>
+      <div class="mosaic">
+        {% for a in o.albumy[:5] %}
+        <a class="mt{{ ' big' if loop.first }}" href="{{ a.url }}" style="background-image:url({{ a.okladka }})">
+          <span class="yr">{{ a.rok }}</span>
+          <span class="nm">{{ a.nazwa }}</span>
+          <span class="ct">{{ a.zdjec }} zdjęć</span>
+        </a>
+        {% endfor %}
+      </div>
+      {% if o.albumy|length > 5 %}
+      <details class="older"><summary>Starsze albumy ({{ o.albumy|length - 5 }})</summary>
+        <ul>{% for a in o.albumy[5:] %}<li><b>{{ a.rok }}</b> <a href="{{ a.url }}">{{ a.nazwa }}</a></li>{% endfor %}</ul>
+      </details>
+      {% endif %}
     </div>
-    <div class="links"><a class="chip" href="{{ site.linki.flickr }}">Więcej na Flickr</a><a class="chip o" href="{{ site.linki.archiwum }}">Archiwum ↗</a></div>
+    {% endfor %}
+    <p class="links" style="margin-top:44px"><a class="textlink" href="{{ site.linki.flickr }}">Wszystkie albumy na Flickrze →</a> &nbsp; <a class="textlink" href="{{ site.linki.archiwum }}">Archiwum ↗</a></p>
   </div>
 </section>
 {% endblock %}

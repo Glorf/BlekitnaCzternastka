@@ -72,7 +72,8 @@ def filter_albums(albums, words, exclude=None):
     found = [a for a in albums
              if any(w in a["tytul"].lower() for w in words)
              and not any(w in a["tytul"].lower() for w in exclude)]
-    return sorted(found, key=lambda a: (_year(a), a["data"]), reverse=True)
+    found = [dict(a, rok=_year(a) or "", nazwa=re.sub(r"^\s*\d{4}(\s*[-–/]\s*|\s+)", "", a["tytul"]).strip()) for a in found]
+    return sorted(found, key=lambda a: (a["rok"] or 0, a["data"]), reverse=True)
 
 
 if __name__ == "__main__":
