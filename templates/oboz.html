@@ -44,20 +44,34 @@
   <div class="wrap trip alb {{ 'rev' if loop.index0 % 2 }}">
     <div class="albtext">
       <h3>{{ 'Z obozów' if o.id == 'oboz-letni' else 'Z zimowisk' }}</h3>
-      <p class="sub">{{ o.albumy|length }} {{ 'album' if o.albumy|length == 1 else 'albumów' }} na Flickrze. Obok najnowsze{% if o.albumy|length > 6 %}, starsze poniżej{% endif %}.</p>
-      {% if o.albumy|length > 6 %}
-      <ul class="olderlist">{% for a in o.albumy[6:] %}<li><b>{{ a.rok }}</b> <a href="{{ a.url }}">{{ a.nazwa }}</a></li>{% endfor %}</ul>
-      {% endif %}
+      <p class="sub">{{ o.albumy|length }} {{ 'album' if o.albumy|length == 1 else 'albumów' }} na Flickrze. Obok najnowsze.</p>
     </div>
     <div class="thumbs">
-      {% for a in o.albumy[:6] %}
-      <a class="th" href="{{ a.url }}" style="background-image:url({{ a.okladka }})" title="{{ a.tytul }} ({{ a.zdjec }} zdjęć)">
+      {% for a in o.albumy[:4] %}
+      <a class="th" href="{{ a.url }}" title="{{ a.tytul }} ({{ a.zdjec }} zdjęć)">
+        <img src="{{ a.okladka }}" alt="" loading="lazy">
         <span class="yr">{{ a.rok }}</span>
         <span class="nm">{{ a.nazwa }}</span>
       </a>
       {% endfor %}
     </div>
   </div>
+  {% if o.albumy|length > 4 %}
+  <div class="wrap">
+    <details class="more">
+      <summary>Pokaż starsze albumy ({{ o.albumy|length - 4 }})</summary>
+      <div class="thumbs many">
+        {% for a in o.albumy[4:] %}
+        <a class="th" href="{{ a.url }}" title="{{ a.tytul }} ({{ a.zdjec }} zdjęć)">
+          <img src="{{ a.okladka }}" alt="" loading="lazy">
+          <span class="yr">{{ a.rok }}</span>
+          <span class="nm">{{ a.nazwa }}</span>
+        </a>
+        {% endfor %}
+      </div>
+    </details>
+  </div>
+  {% endif %}
   {% endfor %}
   <div class="wrap">
     <p class="links" style="margin-top:44px"><a class="textlink" href="{{ site.linki.flickr }}">Wszystkie albumy na Flickrze →</a> &nbsp; <a class="textlink" href="{{ site.linki.archiwum }}">Archiwum ↗</a></p>
