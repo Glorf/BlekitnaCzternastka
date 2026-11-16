@@ -171,17 +171,17 @@ galeria: [2.jpg, 4.jpg, 6.jpg, 3.jpg]
 # jest któreś ze słów z "slowa" (bez słów z "wyklucz"). "podpis" jest opcjonalny.
 zdjecia:
   - id: obozy
-    naglowek: "Obozach:"
+    naglowek: Obozach
     slowa: [obóz, oboz, kolonia]
     wyklucz: [wędrown, poobozowa]
   - id: zimowiska
-    naglowek: "Zimowiskach:"
+    naglowek: Zimowiskach
     slowa: [zimowisko]
   - id: zolkiewszczady
-    naglowek: "Żółkiewszczadach:"
+    naglowek: Żółkiewszczadach
     podpis: Rajd patrona szczepu
     slowa: [żółkiewszczada, zolkiewszczada]
   - id: rajdy-wiosenne
-    naglowek: "Rajdach wiosennych:"
+    naglowek: Rajdach wiosennych
     slowa: [rajd wiosenny]
 

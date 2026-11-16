@@ -188,3 +188,5 @@ footer a { color:#fff; }
   .thumbs { grid-template-columns:repeat(2,1fr); }
   .th .nm { font-size:12px; }
 }
+.trip.alb.rev .albtext { text-align:right; }
+@media (max-width:760px){ .trip.alb.rev .albtext { text-align:left; } }
