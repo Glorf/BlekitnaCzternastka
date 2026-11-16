@@ -39,7 +39,7 @@
   <div class="wrap cgrid">
     <div class="card">
       <h3>Szczepowy</h3>
-      <p>{{ site.szczep.szczepowy.imie }}</p>
+      {% if site.szczep.szczepowy.imie %}<p>{{ site.szczep.szczepowy.imie }}</p>{% endif %}
       <a class="big" href="{{ site.szczep.szczepowy.telefon|tel }}">{{ site.szczep.szczepowy.telefon }}</a>
       <a href="mailto:{{ site.szczep.szczepowy.email }}">{{ site.szczep.szczepowy.email }}</a>
       <p style="margin-top:10px">{{ site.szczep.adres }}</p>
@@ -49,7 +49,7 @@
       <p>Numer jest przy każdej drużynie.</p>
       <div class="links" style="margin-top:14px">
         <a class="chip" href="{{ url_for('druzyny') }}">Zobacz drużyny</a>
-        <a class="chip o" href="{{ site.linki.procent }}">Przekaż 1%</a>
+        <a class="chip o" href="{{ url_for('start') }}#procent">Przekaż {{ site.procent.kwota }}</a>
       </div>
     </div>
   </div>
@@ -58,7 +58,7 @@
 <footer>
   <div class="wrap">
     <span>© {{ site.szczep.nazwa }} · Poznań</span>
-    <span>Przekaż nam <a href="{{ site.linki.procent }}">1% podatku</a></span>
+    <span>Przekaż nam <a href="{{ url_for('start') }}#procent">{{ site.procent.kwota }} podatku</a></span>
     <span><a href="{{ site.linki.facebook }}">Facebook</a> · <a href="{{ site.linki.instagram }}">Instagram</a> · <a href="{{ site.linki.flickr }}">Flickr</a></span>
   </div>
 </footer>

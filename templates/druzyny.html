@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% set wszystkie = site.druzyny + site.instruktorzy %}
 {% block title %}Drużyny{% endblock %}
-{% block desc %}Siedem drużyn harcerskich i zuchowych Błękitnej XIV w Poznaniu. Numer telefonu do drużynowego przy każdej drużynie.{% endblock %}
+{% block desc %}Drużyny harcerskie i zuchowe Błękitnej XIV w Poznaniu oraz krąg instruktorski Kłuszyn. Kontakt do drużynowego przy każdej drużynie.{% endblock %}
 {% block content %}
 
 <!-- N A G Ł Ó W E K -->
@@ -9,30 +10,32 @@
     <h1>Drużyny</h1>
     <p>{{ site.szczep.opis }}</p>
     <nav class="jump" aria-label="Przejdź do drużyny">
-      {% for d in site.druzyny %}<a href="#{{ d.id }}">{{ d.nazwa }}</a>{% endfor %}
+      {% for d in wszystkie %}<a href="#{{ d.id }}">{{ d.nazwa }}</a>{% endfor %}
     </nav>
   </div>
 </div>
 
 <!-- D R U Ż Y N Y: osobny segment dla każdej -->
-{% for d in site.druzyny %}
+{% for d in wszystkie %}
 <section class="team {{ 'teams' if loop.index0 % 2 }}" id="{{ d.id }}">
   <div class="wrap trip {{ 'rev' if loop.index0 % 2 }}">
-    <div class="tripph" style="background-image:url({{ url_for('static', filename='img/' ~ d.zdjecie) }})" role="img" aria-label="Zdjęcie drużyny {{ d.nazwa }}"></div>
+    <div class="tripph" style="background-image:url({{ url_for('static', filename='img/' ~ d.zdjecie) }})" role="img" aria-label="Zdjęcie: {{ d.nazwa }}"></div>
     <div>
       <h2>{{ d.nazwa }}</h2>
-      <p class="age">{{ site.grupy[d.kol] }} · {{ d.opis }}</p>
-      <p>{{ d.tekst }}</p>
+      <p class="age">{{ d.opis }}</p>
+      {% for p in d.tekst %}<p>{{ p }}</p>{% endfor %}
       {% if d.zbiorka %}<p class="meet"><b>Zbiórki:</b> {{ d.zbiorka }}</p>{% endif %}
+      {% if d.druzynowy %}
       <p class="lead">Drużynowy: {{ d.druzynowy.imie }}</p>
       <a class="big" href="{{ d.druzynowy.telefon|tel }}">{{ d.druzynowy.telefon }}</a>
       <a class="mail" href="mailto:{{ d.druzynowy.email }}">{{ d.druzynowy.email }}</a>
+      {% else %}
+      <p class="lead">Kontakt</p>
+      <a class="mail" href="#kontakt">Napisz lub zadzwoń do szczepowego</a>
+      {% endif %}
       {% set fb = (d.social.facebook if d.social else '') or site.linki.facebook %}
       {% set ig = (d.social.instagram if d.social else '') or site.linki.instagram %}
-      <div class="links">
-        <a class="chip" href="{{ fb }}">Facebook</a>
-        <a class="chip o" href="{{ ig }}">Instagram</a>
-      </div>
+      <p class="where">Zobacz nas na: <a href="{{ fb }}">Facebooku</a> · <a href="{{ ig }}">Instagramie</a></p>
     </div>
   </div>
 </section>
