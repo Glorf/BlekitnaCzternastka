@@ -147,6 +147,7 @@ obozy:
     nazwa: Obóz letni
     zdjecie: oboz.jpg
     flickr_slowa: [obóz, oboz, kolonia]
+    flickr_wyklucz: [wędrown, poobozowa]
     haslo: Raz do roku znikamy na miesiąc gdzieś w lesie.
     terminy: do uzupełnienia
     miejsce: do uzupełnienia
@@ -158,7 +159,8 @@ obozy:
   - id: zimowisko
     nazwa: Zimowisko
     zdjecie: zimowisko.jpg
-    flickr_slowa: [zimowisko, zimowy]
+    flickr_slowa: [zimowisko]
+    flickr_wyklucz: []
     haslo: Zimowy wyjazd szczepu.
     terminy: do uzupełnienia
     miejsce: do uzupełnienia

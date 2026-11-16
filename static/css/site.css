@@ -162,3 +162,9 @@ footer a { color:#fff; }
 .alb b { display:block; color:var(--navy); }
 .alb span { color:var(--muted); font-size:14px; }
 .textlink { color:var(--navy); font-weight:700; text-underline-offset:3px; }
+.older { margin-top:16px; }
+.older summary { cursor:pointer; font-weight:700; color:var(--navy); }
+.older ul { margin:10px 0 0 18px; columns:2; column-gap:30px; font-size:16px; }
+.older li { break-inside:avoid; margin-bottom:4px; }
+.older li span { color:var(--muted); font-size:14px; }
+@media (max-width:760px){ .older ul { columns:1; } }

@@ -32,10 +32,15 @@
         <h3>Zdjęcia z {{ 'obozów' if o.id == 'oboz-letni' else 'zimowisk' }}</h3>
         {% if o.albumy %}
         <div class="albgrid">
-          {% for a in o.albumy[:8] %}
+          {% for a in o.albumy[:6] %}
           <a class="alb" href="{{ a.url }}"><i style="background-image:url({{ a.okladka }})"></i><b>{{ a.tytul }}</b><span>{{ a.zdjec }} zdjęć</span></a>
           {% endfor %}
         </div>
+        {% if o.albumy|length > 6 %}
+        <details class="older"><summary>Starsze albumy ({{ o.albumy|length - 6 }})</summary>
+          <ul>{% for a in o.albumy[6:] %}<li><a href="{{ a.url }}">{{ a.tytul }}</a> <span>· {{ a.zdjec }} zdjęć</span></li>{% endfor %}</ul>
+        </details>
+        {% endif %}
         {% else %}
         <p><a class="textlink" href="{{ site.linki.flickr }}">Wszystkie albumy na Flickrze →</a></p>
         {% endif %}

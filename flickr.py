@@ -8,6 +8,7 @@ więc zwykły build (python freeze.py) nie potrzebuje ani klucza, ani internetu.
 """
 import json
 import os
+import re
 import sys
 import urllib.parse
 import urllib.request
@@ -58,10 +59,20 @@ def load():
     return []
 
 
-def filter_albums(albums, words):
-    """Albumy, w których tytule jest któreś ze słów (bez względu na wielkość liter)."""
+def _year(album):
+    m = re.match(r"\s*(\d{4})", album["tytul"])
+    return int(m.group(1)) if m else 0
+
+
+def filter_albums(albums, words, exclude=None):
+    """Albumy z którymś ze słów w tytule (bez względu na wielkość liter),
+    bez tych ze słowami wykluczonymi. Najnowsze (wg roku w tytule) pierwsze."""
     words = [w.lower() for w in words or []]
-    return [a for a in albums if any(w in a["tytul"].lower() for w in words)]
+    exclude = [w.lower() for w in exclude or []]
+    found = [a for a in albums
+             if any(w in a["tytul"].lower() for w in words)
+             and not any(w in a["tytul"].lower() for w in exclude)]
+    return sorted(found, key=lambda a: (_year(a), a["data"]), reverse=True)
 
 
 if __name__ == "__main__":
