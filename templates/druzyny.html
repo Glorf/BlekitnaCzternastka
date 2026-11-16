@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% from "_hexes.html" import hexes %}
+{% block title %}Drużyny{% endblock %}
+{% block desc %}Siedem drużyn harcerskich i zuchowych Błękitnej XIV w Poznaniu. Numer telefonu do drużynowego przy każdej drużynie.{% endblock %}
+{% block content %}
+
+<!-- N A G Ł Ó W E K -->
+<div class="pagehead" style="background-image:linear-gradient(rgba(20,22,45,.55),rgba(20,22,45,.75)),url({{ url_for('static', filename='img/header.jpg') }})">
+  <div class="wrap">
+    <h1>Drużyny</h1>
+    <p>{{ site.szczep.opis }}</p>
+  </div>
+</div>
+
+<!-- Ś C I E Ż K A  W I E K U -->
+<section class="teams">
+  <div class="wrap">
+    <h2>Wybierz po wieku</h2>
+    <p class="sub">Od lewej zuchy, dalej coraz starsi. Dziewczyny na górze, chłopcy pod nimi. Kliknij drużynę, żeby przejść do jej opisu.</p>
+    {{ hexes(site) }}
+  </div>
+</section>
+
+<!-- K A R T Y  D R U Ż Y N -->
+<section>
+  <div class="wrap">
+    <h2>Drużynowi</h2>
+    <p class="sub">Zadzwoń lub napisz do drużynowego. Powie, kiedy i gdzie jest najbliższa zbiórka.</p>
+    <div class="tgrid">
+      {% for d in site.druzyny %}
+      <article class="tcard" id="{{ d.id }}">
+        <div class="tph" style="background-image:url({{ url_for('static', filename='img/' ~ d.zdjecie) }})"></div>
+        <div class="tbody">
+          <h3>{{ d.nazwa }}</h3>
+          <p class="age">{{ site.grupy[d.kol] }} · {{ d.opis }}</p>
+          <p>{{ d.tekst }}</p>
+          {% if d.zbiorka %}<p class="meet"><b>Zbiórki:</b> {{ d.zbiorka }}</p>{% endif %}
+          <p class="lead">Drużynowy: <b>{{ d.druzynowy.imie }}</b></p>
+          <a class="big" href="{{ d.druzynowy.telefon|tel }}">{{ d.druzynowy.telefon }}</a>
+          <a href="mailto:{{ d.druzynowy.email }}">{{ d.druzynowy.email }}</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

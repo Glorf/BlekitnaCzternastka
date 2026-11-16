@@ -1,0 +1,123 @@
+# Treść strony Błękitnej XIV. Tu edytujemy dane co kilka miesięcy.
+# WAŻNE: imiona, telefony i terminy poniżej to PRZYKŁADY do podmiany.
+
+szczep:
+  nazwa: Błękitna Czternastka
+  hasla: "Harcerze z Poznania. Od 1919 roku."
+  opis: >-
+    Błękitna XIV to szczep harcerski z Poznania. Mamy drużyny dla zuchów,
+    harcerek i harcerzy w każdym wieku. Spotykamy się co tydzień, jeździmy na
+    rajdy, a latem na miesiąc wyjeżdżamy w las.
+  adres: ul. Bukowska 16, 60-809 Poznań
+  email: blekitna14@gmail.com
+  szczepowy:
+    imie: Imię Nazwisko
+    telefon: 000 000 000
+    email: blekitna14@gmail.com
+
+linki:
+  facebook: https://www.facebook.com/blekitna14
+  instagram: https://www.instagram.com/blekitna14
+  flickr: https://www.flickr.com/photos/blekitna14
+  archiwum: https://blekitna14.org/archiwum/index.html
+  procent: https://blekitna14.org/jeden-procent/index.html
+
+# Kolumny ścieżki wieku (0 = najmłodsi).
+grupy:
+  - Zuchy · 6–9
+  - 10–13 lat
+  - Gimnazjum
+  - Liceum
+
+# kol: kolumna, wiersz: pozycja w pionie (dziewczyny wyżej, chłopcy niżej).
+druzyny:
+  - id: lesne-skrzaty
+    nazwa: Leśne Skrzaty
+    opis: zuchy, 6–9 lat
+    zdjecie: li.jpg
+    kol: 0
+    wiersz: 0.5
+    tekst: Gromada zuchów. Zabawy, zagadki i pierwsze przygody w lesie.
+    zbiorka: wtorki, 17:00
+    druzynowy: {imie: Imię Nazwisko, telefon: 000 000 000, email: skrzaty@example.com}
+  - id: lesna
+    nazwa: Leśna
+    opis: dziewczyny, 10–13 lat
+    zdjecie: lesna.jpg
+    kol: 1
+    wiersz: 0
+    tekst: Drużyna harcerek. Biwaki, gry terenowe i dużo śmiechu.
+    zbiorka: środy, 17:00
+    druzynowy: {imie: Imię Nazwisko, telefon: 000 000 000, email: lesna@example.com}
+  - id: kohorta
+    nazwa: Kohorta
+    opis: chłopcy, 10–13 lat
+    zdjecie: kohorta.jpg
+    kol: 1
+    wiersz: 1
+    tekst: Drużyna harcerzy. Wyprawy, ogniska i rozwiązywanie zadań razem.
+    zbiorka: środy, 17:00
+    druzynowy: {imie: Imię Nazwisko, telefon: 000 000 000, email: kohorta@example.com}
+  - id: ster
+    nazwa: Ster
+    opis: dziewczyny, gimnazjum
+    zdjecie: ster.jpg
+    kol: 2
+    wiersz: 0.5
+    tekst: Drużyna starszych harcerek. Własne pomysły i duże wyzwania.
+    zbiorka: czwartki, 18:00
+    druzynowy: {imie: Imię Nazwisko, telefon: 000 000 000, email: ster@example.com}
+  - id: formoza
+    nazwa: Formoza
+    opis: chłopcy, gimnazjum
+    zdjecie: formoza.jpg
+    kol: 2
+    wiersz: 1.5
+    tekst: Drużyna starszych harcerzy. Własne pomysły i duże wyzwania.
+    zbiorka: czwartki, 18:00
+    druzynowy: {imie: Imię Nazwisko, telefon: 000 000 000, email: formoza@example.com}
+  - id: wiez
+    nazwa: Więź
+    opis: dziewczyny, liceum
+    zdjecie: wiez.jpg
+    kol: 3
+    wiersz: 0
+    tekst: Drużyna licealistek. Samodzielne wyjazdy i zajęcia z młodszymi.
+    zbiorka: piątki, 18:00
+    druzynowy: {imie: Imię Nazwisko, telefon: 000 000 000, email: wiez@example.com}
+  - id: cichociemni
+    nazwa: Cichociemni
+    opis: chłopcy, liceum
+    zdjecie: cichociemni.jpg
+    kol: 3
+    wiersz: 1
+    tekst: Drużyna licealistów. Samodzielne wyjazdy i zajęcia z młodszymi.
+    zbiorka: piątki, 18:00
+    druzynowy: {imie: Imię Nazwisko, telefon: 000 000 000, email: cichociemni@example.com}
+
+# Dwa duże wyjazdy w roku.
+obozy:
+  - id: oboz-letni
+    nazwa: Obóz letni
+    zdjecie: oboz.jpg
+    haslo: Miesiąc w lesie z całym szczepem.
+    terminy: lipiec 2027 (do potwierdzenia)
+    miejsce: do uzupełnienia
+    cena: do uzupełnienia
+    komendant: Imię Nazwisko
+    zapisy: "Zapisy ruszą wiosną. Napisz do nas, a damy znać, gdy będą gotowe."
+    dla_rodzicow:
+      - Informacje dla rodziców (kto jedzie, opieka, co zabrać) do uzupełnienia.
+  - id: zimowisko
+    nazwa: Zimowisko
+    zdjecie: zimowisko.jpg
+    haslo: Tydzień zimą, w górach.
+    terminy: ferie 2027 (do potwierdzenia)
+    miejsce: do uzupełnienia
+    cena: do uzupełnienia
+    komendant: Imię Nazwisko
+    zapisy: "Zapisy ruszą jesienią. Napisz do nas, a damy znać, gdy będą gotowe."
+    dla_rodzicow:
+      - Informacje dla rodziców (kto jedzie, opieka, co zabrać) do uzupełnienia.
+
+galeria: [2.jpg, 4.jpg, 6.jpg, 3.jpg]

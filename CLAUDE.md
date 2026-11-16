@@ -8,6 +8,10 @@ Static website of the scout troop "Błękitna XIV" (Polish-language, `lang="pl"`
 
 The `redesign` branch is for a from-scratch rebuild of the site; `master` holds the current live site.
 
+## Nowa strona (branch `redesign`)
+
+Flask + Jinja2 + Frozen-Flask. Tresc do edycji (druzyny, kontakty, obozy, linki) jest w `data/site.yml`; szablony w `templates/`, style i zdjecia w `static/`. Podglad: `python app.py`. Build statyczny: `python freeze.py` (wynik w `build/`, razem ze starymi `archiwum/` i `grom/`, `CNAME`). Zarchiwizowane makiety A-E: `docs/makiety/`. Dane w `site.yml` (imiona, telefony, terminy, godziny zbiorek) to na razie przyklady. Opis ponizej dotyczy starej strony z `master`.
+
 ## Conventions (from README.md)
 
 - File and directory names use kebab-case.

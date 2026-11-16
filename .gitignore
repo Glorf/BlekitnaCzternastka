@@ -1,3 +1,6 @@
 archiwum/files/
 *.zip
 news/generated_index.html
+build/
+__pycache__/
+.venv/
