@@ -51,14 +51,26 @@
   .ph small { display:block; font-size:17px; margin-top:8px; color:#e6e2ee; }
 
   /* D R U Ż Y N Y */
-  .ladder { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; align-items:stretch; }
-  @media (max-width:980px){ .ladder{grid-template-columns:1fr 1fr} }
-  @media (max-width:560px){ .ladder{grid-template-columns:1fr} }
-  .col { display:flex; flex-direction:column; gap:18px; }
-  .col h4 { font:700 20px 'Zilla Slab',serif; padding-bottom:2px; }
-  .col h4 span { display:block; font:400 15px Lora,serif; color:var(--muted); }
-  .col .team.tall { flex:1; display:flex; flex-direction:column; align-items:flex-start; }
-  .team.tall .pic { align-self:stretch; flex:1; min-height:120px; margin-top:18px; border-radius:var(--rb); background-size:cover; background-position:center; }
+  /* S Z E Ś C I O K I – ścieżka wieku, zaokrąglone */
+  .flat { --w:min(260px,24vw); --h:calc(var(--w)*.866); --g:8px; --sx:calc(var(--w)*.75 + var(--g)); --sy:calc(var(--h) + var(--g)); position:relative; width:calc(var(--sx)*3 + var(--w)); height:calc(var(--sy)*2.5 + 44px); margin:0 auto; }
+  .cl { position:absolute; top:0; width:var(--w); text-align:center; font:700 clamp(15px,1.7vw,20px) 'Zilla Slab',serif; }
+  .hexw { position:absolute; display:block; width:var(--w); height:var(--h); filter:drop-shadow(0 12px 16px rgba(0,0,0,.42)); text-decoration:none; transition:transform .2s; }
+  .hexw:hover { transform:translateY(-4px); }
+  .hex { width:100%; height:100%; clip-path:url(#rhex); background-size:cover; background-position:center; position:relative; display:grid; place-items:center; }
+  .hex::before { content:""; position:absolute; inset:0; background:rgba(29,31,59,.6); transition:background .2s; }
+  .hexw:hover .hex::before { background:rgba(29,31,59,.35); }
+  .hin { position:relative; text-align:center; padding:0 12%; }
+  .hin b { display:block; font:700 clamp(15px,2vw,24px)/1.1 'Zilla Slab',serif; }
+  .hin small { display:block; font-size:clamp(11px,1.2vw,14px); color:#e6e2ee; margin:3px 0 8px; }
+  .hp { display:inline-block; padding:4px 12px; border-radius:var(--rb); background:var(--cream); color:var(--bg); font:700 clamp(11px,1.3vw,15px) 'Zilla Slab',serif; }
+  @media (max-width:700px){
+    .flat { display:grid; grid-template-columns:1fr 1fr; gap:14px; width:auto; height:auto; }
+    .hexw { position:static; width:100%; height:auto; filter:none; }
+    .hex { clip-path:none; aspect-ratio:1; border-radius:var(--rc); }
+    .cl { display:none; }
+    .flat .hexw:last-child { grid-column:span 2; }
+    .flat .hexw:last-child .hex { aspect-ratio:2/1; }
+  }
   .team { background:var(--panel); border-radius:var(--rc); padding:24px; box-shadow:0 12px 28px rgba(0,0,0,.35); }
   .team h3 { font-size:28px; line-height:1.1; }
   .team small { color:var(--muted); display:block; margin:4px 0 16px; font-size:16px; }
@@ -130,19 +142,20 @@
 <section id="druzyny">
   <div class="wrap">
     <h2>Siedem drużyn. Jeden szczep.</h2>
-    <p class="sub">Wybierz po wieku dziecka: od zuchów po liceum, osobno dziewczyny i chłopcy. Telefon do drużynowego jest przy każdej drużynie.</p>
-    <div class="ladder">
-      <div class="col"><h4>Zuchy <span>6–9 lat</span></h4>
-        <div class="team tall"><h3>Leśne Skrzaty</h3><small>gromada zuchowa, dziewczynki i chłopcy</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a><div class="pic" style="background-image:url(../o-nas/img/li.jpg)"></div></div></div>
-      <div class="col"><h4>Harcerze <span>10–13 lat</span></h4>
-        <div class="team"><h3>Leśna</h3><small>dziewczyny</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
-        <div class="team"><h3>Kohorta</h3><small>chłopcy</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div></div>
-      <div class="col"><h4>Starsi <span>gimnazjum</span></h4>
-        <div class="team"><h3>Ster</h3><small>dziewczyny</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
-        <div class="team"><h3>Formoza</h3><small>chłopcy</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div></div>
-      <div class="col"><h4>Liceum <span>i dalej</span></h4>
-        <div class="team"><h3>Więź</h3><small>dziewczyny, licealistki i studentki</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
-        <div class="team"><h3>Cichociemni</h3><small>chłopcy</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div></div>
+    <p class="sub">Wybierz po wieku dziecka: od lewej zuchy, dalej coraz starsi. Dziewczyny na górze, chłopcy pod nimi. Telefon do drużynowego jest przy każdej drużynie.</p>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="rhex" clipPathUnits="objectBoundingBox"><path d="M0.3350 0.0000 L0.6650 0.0000 Q0.7500 0.0000 0.7925 0.0850 L0.9575 0.4150 Q1.0000 0.5000 0.9575 0.5850 L0.7925 0.9150 Q0.7500 1.0000 0.6650 1.0000 L0.3350 1.0000 Q0.2500 1.0000 0.2075 0.9150 L0.0425 0.5850 Q0.0000 0.5000 0.0425 0.4150 L0.2075 0.0850 Q0.2500 0.0000 0.3350 0.0000 Z"/></clipPath></defs></svg>
+    <div class="flat">
+      <span class="cl" style="left:calc(var(--sx)*0);">Zuchy · 6–9</span>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*0);top:calc(var(--sy)*0.5 + 44px);"><div class="hex" style="background-image:url(../o-nas/img/li.jpg)"><div class="hin"><b>Leśne Skrzaty</b><small>zuchy, 6–9 lat</small><span class="hp">000 000 000</span></div></div></a>
+      <span class="cl" style="left:calc(var(--sx)*1);">10–13 lat</span>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*1);top:calc(var(--sy)*0 + 44px);"><div class="hex" style="background-image:url(../o-nas/img/lesna.jpg)"><div class="hin"><b>Leśna</b><small>dziewczyny, 10–13</small><span class="hp">000 000 000</span></div></div></a>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*1);top:calc(var(--sy)*1 + 44px);"><div class="hex" style="background-image:url(../o-nas/img/kohorta.jpg)"><div class="hin"><b>Kohorta</b><small>chłopcy, 10–13</small><span class="hp">000 000 000</span></div></div></a>
+      <span class="cl" style="left:calc(var(--sx)*2);">Gimnazjum</span>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*2);top:calc(var(--sy)*0.5 + 44px);"><div class="hex" style="background-image:url(../o-nas/img/ster.jpg)"><div class="hin"><b>Ster</b><small>dziewczyny, gimnazjum</small><span class="hp">000 000 000</span></div></div></a>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*2);top:calc(var(--sy)*1.5 + 44px);"><div class="hex" style="background-image:url(../o-nas/img/formoza.jpg)"><div class="hin"><b>Formoza</b><small>chłopcy, gimnazjum</small><span class="hp">000 000 000</span></div></div></a>
+      <span class="cl" style="left:calc(var(--sx)*3);">Liceum</span>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*3);top:calc(var(--sy)*0 + 44px);"><div class="hex" style="background-image:url(../o-nas/img/1.jpg)"><div class="hin"><b>Więź</b><small>dziewczyny, liceum</small><span class="hp">000 000 000</span></div></div></a>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*3);top:calc(var(--sy)*1 + 44px);"><div class="hex" style="background-image:url(../o-nas/img/cichociemni.jpg)"><div class="hin"><b>Cichociemni</b><small>chłopcy, liceum</small><span class="hp">000 000 000</span></div></div></a>
     </div>
   </div>
 </section>
