@@ -6,50 +6,85 @@
 <title>Makieta A – Jasna | Błękitna XIV</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&family=Bitter:wght@700;900&display=swap" rel="stylesheet">
 <style>
-  :root { --navy:#353964; --yellow:#EEEE23; --cream:#F7F2E6; --mist:#E8EAF4; --ink:#1f2021; --sky:#0BB5FF; }
+  :root { --navy:#353964; --sky:#0BB5FF; --ink:#1f2021; --white:#fff; --mist:#F1F6FB; }
   * { box-sizing:border-box; margin:0; }
-  body { font:18px/1.6 'Nunito Sans',sans-serif; color:var(--ink); background:var(--cream); }
+  html { scroll-behavior:smooth; }
+  body { font:18px/1.6 'Nunito Sans',sans-serif; color:var(--ink); background:var(--white); }
   h1,h2,h3 { font-family:Bitter,serif; line-height:1.15; }
   a { color:inherit; }
-  .wrap { max-width:1080px; margin:0 auto; padding:0 20px; }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 20px; }
 
-  header { position:sticky; top:0; z-index:5; background:var(--cream); border-bottom:1px solid #e3d9c2; }
-  header .wrap { display:flex; align-items:center; gap:24px; height:64px; }
-  .logo { font:900 22px Bitter,serif; text-decoration:none; color:var(--navy); }
+  /* H E A D E R (na zdjęciu) */
+  header { position:absolute; inset:0 0 auto 0; z-index:5; color:#fff; }
+  header .wrap { display:flex; align-items:center; gap:24px; height:76px; }
+  .logo { font:900 24px Bitter,serif; text-decoration:none; text-shadow:0 1px 8px rgba(0,0,0,.4); }
   .logo b { font-weight:400; }
-  nav { display:flex; gap:22px; margin-left:auto; font-weight:700; }
+  nav { display:flex; gap:24px; margin-left:auto; font-weight:700; text-shadow:0 1px 8px rgba(0,0,0,.45); }
   nav a { text-decoration:none; padding:6px 0; border-bottom:3px solid transparent; }
   nav a:hover, nav a.on { border-color:var(--sky); }
   .soc { display:flex; gap:10px; }
-  .soc a { width:34px; height:34px; border-radius:50%; background:var(--navy); color:#fff; display:grid; place-items:center; font-size:13px; font-weight:900; text-decoration:none; }
-  @media (max-width:760px){ nav a:nth-child(n+3){display:none} .soc{display:none} nav{gap:16px} }
+  .soc a { width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.2); backdrop-filter:blur(4px); color:#fff; display:grid; place-items:center; font-size:13px; font-weight:900; text-decoration:none; }
+  .soc a:hover { background:#fff; color:var(--navy); }
+  @media (max-width:760px){ nav a:nth-child(n+3):not(:last-child){display:none} .soc{display:none} nav{gap:16px} }
 
-  .hero { background:linear-gradient(rgba(20,22,20,.15),rgba(20,22,20,.72)),url(../o-nas/img/header.jpg) center/cover; color:#fff; min-height:min(68vh,620px); display:flex; align-items:flex-end; }
-  .hero .wrap { padding-bottom:56px; }
-  .hero h1 { font-size:clamp(34px,6vw,64px); max-width:14em; }
+  /* H E R O – cały ekran */
+  .hero { position:relative; height:100vh; height:100svh; min-height:560px; color:#fff; display:flex; align-items:flex-end;
+    background:linear-gradient(rgba(10,12,30,.45) 0,rgba(10,12,30,0) 22%,rgba(10,12,30,0) 45%,rgba(10,12,30,.78) 100%),url(../o-nas/img/header.jpg) center/cover; }
+  .hero .wrap { padding-bottom:80px; }
+  .hero h1 { font-size:clamp(38px,6.5vw,72px); max-width:12em; text-shadow:0 2px 20px rgba(0,0,0,.35); }
   .hero p { font-size:21px; max-width:32em; margin:14px 0 26px; }
-  .btn { display:inline-block; padding:13px 26px; border-radius:999px; font-weight:900; text-decoration:none; margin:0 10px 10px 0; }
+  .btn { display:inline-block; padding:14px 28px; border-radius:999px; font-weight:900; text-decoration:none; margin:0 10px 10px 0; box-shadow:0 6px 18px rgba(0,0,0,.25); }
   .btn.p { background:var(--navy); color:#fff; }
   .btn.s { background:#fff; color:var(--navy); }
+  .down { position:absolute; left:50%; bottom:22px; transform:translateX(-50%); width:44px; height:44px; border-radius:50%; border:2px solid rgba(255,255,255,.7); display:grid; place-items:center; color:#fff; text-decoration:none; font-size:20px; }
+  @media (max-width:760px){ .down{display:none} }
 
-  section { padding:64px 0; }
-  .two { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
-  @media (max-width:760px){ .two{grid-template-columns:1fr} }
-  h2 { font-size:32px; margin-bottom:14px; }
-  .tile { position:relative; min-height:260px; border-radius:18px; overflow:hidden; color:#fff; display:flex; align-items:flex-end; padding:24px; text-decoration:none; background-size:cover; background-position:center; }
-  .tile::before { content:""; position:absolute; inset:0; background:linear-gradient(transparent 30%,rgba(20,22,20,.85)); }
+  section { padding:72px 0; }
+  h2 { font-size:34px; margin-bottom:10px; }
+  .sub { color:#555b6b; margin-bottom:28px; max-width:36em; }
+
+  /* K A F E L K I */
+  .tiles { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media (max-width:760px){ .tiles{grid-template-columns:1fr} }
+  .tile { position:relative; min-height:380px; border-radius:22px; overflow:hidden; color:#fff; display:flex; align-items:flex-end; padding:30px; text-decoration:none; background-size:cover; background-position:center; box-shadow:0 14px 34px rgba(53,57,100,.28); transition:transform .25s; }
+  .tile:hover { transform:translateY(-4px); }
+  .tile::before { content:""; position:absolute; inset:0; background:linear-gradient(transparent 35%,rgba(10,12,30,.85)); }
   .tile div { position:relative; }
-  .tile h3 { font-size:28px; }
+  .tile h3 { font-size:36px; margin-bottom:4px; }
+  .tile span { display:inline-block; margin-top:12px; padding:8px 18px; border-radius:999px; background:#fff; color:var(--navy); font-weight:900; font-size:15px; }
 
-  .contact { background:var(--mist); }
-  .card { background:#fff; border-radius:18px; padding:26px; box-shadow:0 2px 0 #d6d8e8; }
-  .card h3 { margin-bottom:6px; }
-  .big { font:900 28px Bitter,serif; color:var(--ink); text-decoration:none; display:block; margin:8px 0; }
-  .links { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
-  .chip { padding:8px 16px; border-radius:999px; background:var(--navy); color:#fff; text-decoration:none; font-weight:700; font-size:16px; }
+  /* L I C Z B Y */
+  .nums { background:var(--navy); color:#fff; padding:34px 0; }
+  .nums .wrap { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; text-align:center; }
+  .nums b { display:block; font:900 clamp(34px,6vw,56px) Bitter,serif; line-height:1; }
+  .nums span { opacity:.85; font-size:16px; }
+
+  /* J A K  Z A C Z Ą Ć */
+  .how { background:var(--mist); }
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; counter-reset:s; }
+  @media (max-width:760px){ .steps{grid-template-columns:1fr} .nums .wrap{gap:8px} }
+  .step { background:#fff; border-radius:20px; padding:26px; box-shadow:0 8px 22px rgba(53,57,100,.12); }
+  .step::before { counter-increment:s; content:counter(s); display:grid; place-items:center; width:46px; height:46px; border-radius:50%; background:var(--navy); color:#fff; font:900 22px Bitter,serif; margin-bottom:14px; }
+  .step h3 { font-size:22px; margin-bottom:6px; }
+  .bring { margin-top:26px; text-align:center; font:700 20px Bitter,serif; color:var(--navy); }
+
+  /* G A L E R I A */
+  .strip { display:grid; grid-template-columns:2fr 1fr 1fr; grid-template-rows:200px 200px; gap:14px; }
+  .strip i { border-radius:16px; background-size:cover; background-position:center; box-shadow:0 8px 22px rgba(0,0,0,.18); }
+  .strip i:first-child { grid-row:span 2; }
+  @media (max-width:760px){ .strip{grid-template-columns:1fr 1fr;grid-template-rows:180px 180px 180px} .strip i:first-child{grid-column:span 2;grid-row:auto} }
+  .links { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .chip { padding:10px 20px; border-radius:999px; background:var(--navy); color:#fff; text-decoration:none; font-weight:700; font-size:16px; }
   .chip.o { background:#fff; color:var(--navy); border:2px solid var(--navy); }
 
-  footer { background:var(--navy); color:#cfd6e4; padding:30px 0; font-size:15px; }
+  /* K O N T A K T */
+  .contact { background:var(--mist); }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media (max-width:760px){ .two{grid-template-columns:1fr} }
+  .card { background:#fff; border-radius:20px; padding:28px; box-shadow:0 8px 22px rgba(53,57,100,.12); }
+  .card h3 { margin-bottom:6px; }
+  .big { font:900 30px Bitter,serif; text-decoration:none; display:block; margin:8px 0; }
+  footer { background:var(--navy); color:#d3d6ea; padding:30px 0; font-size:15px; }
   footer .wrap { display:flex; flex-wrap:wrap; gap:16px 36px; justify-content:space-between; }
   footer a { color:#fff; }
   .tag { position:fixed; right:12px; bottom:12px; background:#fff; border:1px solid var(--navy); color:var(--navy); font:700 13px sans-serif; padding:6px 12px; border-radius:6px; z-index:9; }
@@ -57,6 +92,8 @@
 </head>
 <body>
 <div class="tag">Makieta A · jasna</div>
+
+<!-- H E A D E R -->
 <header>
   <div class="wrap">
     <a class="logo" href="#">Błękitna <b>XIV</b></a>
@@ -65,36 +102,69 @@
   </div>
 </header>
 
+<!-- H E R O -->
 <div class="hero">
   <div class="wrap">
     <h1>Harcerze z Poznania. Od 1919 roku.</h1>
     <p>Zbiórki co tydzień, rajdy co miesiąc, a raz w roku miesiąc w lesie. Wpadnij i sprawdź, czy to coś dla Ciebie.</p>
-    <a class="btn p" href="#">Znajdź swoją drużynę</a>
-    <a class="btn s" href="#">Obóz letni i zimowisko</a>
+    <a class="btn p" href="#druzyny">Znajdź swoją drużynę</a>
+    <a class="btn s" href="#oboz">Obóz letni i zimowisko</a>
+  </div>
+  <a class="down" href="#druzyny" aria-label="W dół">↓</a>
+</div>
+
+<!-- D R U Ż Y N Y  I  O B Ó Z -->
+<section id="druzyny">
+  <div class="wrap">
+    <h2>Dla kogo? Dla każdego od 6 lat</h2>
+    <p class="sub">Sześć drużyn, od zuchów po licealistów. Wybierz tę, która pasuje wiekiem i zadzwoń do drużynowego.</p>
+    <div class="tiles" id="oboz">
+      <a class="tile" href="#" style="background-image:url(../o-nas/img/2.jpg)"><div><h3>Drużyny</h3>Wiek, zbiórki i telefon do drużynowego<br><span>Zobacz drużyny →</span></div></a>
+      <a class="tile" href="#" style="background-image:url(../css/img/oboz.jpg)"><div><h3>Obóz i zimowisko</h3>Dwa duże wyjazdy w roku: terminy, miejsce, cena<br><span>Zobacz szczegóły →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- L I C Z B Y -->
+<div class="nums">
+  <div class="wrap">
+    <div><b>6</b><span>drużyn w szczepie</span></div>
+    <div><b>od 6 lat</b><span>można zacząć</span></div>
+    <div><b>1 miesiąc</b><span>w lesie każdego lata</span></div>
   </div>
 </div>
 
+<!-- J A K  Z A C Z Ą Ć -->
+<section class="how">
+  <div class="wrap">
+    <h2>Jak zacząć? Prościej niż myślisz</h2>
+    <p class="sub">Bez przysiąg i zobowiązań. Pierwsza zbiórka to po prostu próba.</p>
+    <div class="steps">
+      <div class="step"><h3>Wybierz drużynę</h3>Po wieku i po tym, co lubisz. Opisy są na stronie Drużyny.</div>
+      <div class="step"><h3>Zadzwoń lub napisz</h3>Telefon do drużynowego jest przy każdej drużynie. Odpowie, kiedy i gdzie się spotykamy.</div>
+      <div class="step"><h3>Przyjdź na zbiórkę</h3>Resztę poznasz na miejscu. Możesz zostać na jedno spotkanie albo na lata.</div>
+    </div>
+    <p class="bring">Weź tylko szczoteczkę do zębów i paczkę ciastek.</p>
+  </div>
+</section>
+
+<!-- Z D J Ę C I A -->
 <section>
-  <div class="wrap two">
-    <div>
-      <h2>Kim jesteśmy</h2>
-      <p>Błękitna Czternastka to poznański szczep harcerski: sześć drużyn od zuchów po licealistów, wspólne rajdy i obozy. Przyjdź na zbiórkę bez zobowiązań, weź szczoteczkę do zębów i paczkę ciastek.</p>
+  <div class="wrap">
+    <h2>Tak to wygląda</h2>
+    <p class="sub">Ognisko, rajdy, noce w lesie i pod ziemią. Więcej zdjęć na Flickrze, a to, co dzieje się teraz, na Facebooku i Instagramie.</p>
+    <div class="strip">
+      <i style="background-image:url(../o-nas/img/2.jpg)"></i>
+      <i style="background-image:url(../o-nas/img/4.jpg)"></i>
+      <i style="background-image:url(../o-nas/img/6.jpg)"></i>
+      <i style="background-image:url(../o-nas/img/3.jpg)"></i>
+      <i style="background-image:url(../css/img/zimowisko.jpg)"></i>
     </div>
-    <div>
-      <h2>Co u nas teraz?</h2>
-      <p>Na bieżąco pokazujemy to w mediach społecznościowych, a zdjęcia z lat wyjazdów leżą na Flickrze.</p>
-      <div class="links"><a class="chip" href="#">Facebook</a><a class="chip" href="#">Instagram</a><a class="chip o" href="#">Zdjęcia na Flickr</a></div>
-    </div>
+    <div class="links"><a class="chip" href="#">Zdjęcia na Flickr</a><a class="chip o" href="#">Facebook</a><a class="chip o" href="#">Instagram</a></div>
   </div>
 </section>
 
-<section style="padding-top:0">
-  <div class="wrap two">
-    <a class="tile" href="#" style="background-image:url(../css/img/dolacz.jpg)"><div><h3>Drużyny</h3>Wiek, zbiórki i kontakt do drużynowego</div></a>
-    <a class="tile" href="#" style="background-image:url(../css/img/oboz.jpg)"><div><h3>Obóz</h3>Lato i zima: terminy, miejsce, cena</div></a>
-  </div>
-</section>
-
+<!-- K O N T A K T -->
 <section class="contact" id="kontakt">
   <div class="wrap two">
     <div class="card">
@@ -106,7 +176,7 @@
     </div>
     <div class="card">
       <h3>Szukasz drużynowego swojego dziecka?</h3>
-      <p>Telefon do drużynowego jest na karcie każdej drużyny.</p>
+      <p>Telefon jest na karcie każdej drużyny.</p>
       <div class="links"><a class="chip" href="#">Leśne Skrzaty</a><a class="chip" href="#">Leśna</a><a class="chip" href="#">Kohorta</a><a class="chip" href="#">Formoza</a><a class="chip" href="#">Ster</a><a class="chip" href="#">Cichociemni</a></div>
     </div>
   </div>
