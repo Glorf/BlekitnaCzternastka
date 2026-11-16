@@ -51,6 +51,9 @@
   .ph small { display:block; font-size:17px; margin-top:8px; color:#e6e2ee; }
 
   /* D R U Ż Y N Y */
+  .round { display:flex; align-items:center; flex-wrap:wrap; gap:10px 14px; margin:4px 0 26px; color:var(--muted); font-size:15px; }
+  .round input { width:min(320px,60vw); accent-color:var(--cream); }
+  .round output { color:var(--cream); font:700 16px 'Zilla Slab',serif; min-width:3ch; }
   /* S Z E Ś C I O K I – ścieżka wieku, zaokrąglone */
   .flat { --w:min(260px,24vw); --h:calc(var(--w)*.866); --g:8px; --sx:calc(var(--w)*.75 + var(--g)); --sy:calc(var(--h) + var(--g)); position:relative; width:calc(var(--sx)*3 + var(--w)); height:calc(var(--sy)*2.5 + 44px); margin:0 auto; }
   .cl { position:absolute; top:0; width:var(--w); text-align:center; font:700 clamp(15px,1.7vw,20px) 'Zilla Slab',serif; }
@@ -59,14 +62,14 @@
   .hex { width:100%; height:100%; clip-path:url(#rhex); background-size:cover; background-position:center; position:relative; display:grid; place-items:center; }
   .hex::before { content:""; position:absolute; inset:0; background:rgba(29,31,59,.6); transition:background .2s; }
   .hexw:hover .hex::before { background:rgba(29,31,59,.35); }
-  .hin { position:relative; text-align:center; padding:0 12%; }
+  .hin { position:relative; text-align:center; padding:0 10%; }
   .hin b { display:block; font:700 clamp(15px,2vw,24px)/1.1 'Zilla Slab',serif; }
   .hin small { display:block; font-size:clamp(11px,1.2vw,14px); color:#e6e2ee; margin:3px 0 8px; }
   .hp { display:inline-block; padding:4px 12px; border-radius:var(--rb); background:var(--cream); color:var(--bg); font:700 clamp(11px,1.3vw,15px) 'Zilla Slab',serif; }
   @media (max-width:700px){
     .flat { display:grid; grid-template-columns:1fr 1fr; gap:14px; width:auto; height:auto; }
     .hexw { position:static; width:100%; height:auto; filter:none; }
-    .hex { clip-path:none; aspect-ratio:1; border-radius:var(--rc); }
+    .hex { clip-path:none; aspect-ratio:1; border-radius:calc(var(--rc) + var(--s,0.35)*(50% - var(--rc))); }
     .cl { display:none; }
     .flat .hexw:last-child { grid-column:span 2; }
     .flat .hexw:last-child .hex { aspect-ratio:2/1; }
@@ -143,7 +146,34 @@
   <div class="wrap">
     <h2>Siedem drużyn. Jeden szczep.</h2>
     <p class="sub">Wybierz po wieku dziecka: od lewej zuchy, dalej coraz starsi. Dziewczyny na górze, chłopcy pod nimi. Telefon do drużynowego jest przy każdej drużynie.</p>
-    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="rhex" clipPathUnits="objectBoundingBox"><path d="M0.3350 0.0000 L0.6650 0.0000 Q0.7500 0.0000 0.7925 0.0850 L0.9575 0.4150 Q1.0000 0.5000 0.9575 0.5850 L0.7925 0.9150 Q0.7500 1.0000 0.6650 1.0000 L0.3350 1.0000 Q0.2500 1.0000 0.2075 0.9150 L0.0425 0.5850 Q0.0000 0.5000 0.0425 0.4150 L0.2075 0.0850 Q0.2500 0.0000 0.3350 0.0000 Z"/></clipPath></defs></svg>
+    <!-- S U W A K  O K R Ą G Ł O Ś C I (tylko w makiecie) -->
+    <div class="round">
+      <span class="rtxt">Kształt (tylko w makiecie):</span>
+      <span class="rend">sześciokąt</span>
+      <input type="range" id="rnd" min="0" max="1" step="0.01" value="0.35" aria-label="Zaokrąglenie od sześciokąta do koła">
+      <span class="rend">koło</span>
+      <output id="rval">0.35</output>
+    </div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="rhex" clipPathUnits="objectBoundingBox"><path id="rpath" d=""/></clipPath></defs></svg>
+    <script>
+      // kształt: promień mieszany między sześciokątem (0) a kołem wpisanym w sześciokąt (1)
+      function hexPath(s) {
+        var A = 0.4330127, H = 0.8660254, N = 144, d = '';
+        for (var i = 0; i < N; i++) {
+          var th = 2 * Math.PI * i / N, deg = (th * 180 / Math.PI) % 60;
+          var rh = A / Math.cos((deg - 30) * Math.PI / 180);
+          var r = rh * (1 - s) + A * s;
+          var x = 0.5 + r * Math.cos(th), y = A + r * Math.sin(th);
+          d += (i ? 'L' : 'M') + (x).toFixed(4) + ' ' + (y / H).toFixed(4) + ' ';
+        }
+        return d + 'Z';
+      }
+      (function () {
+        var rng = document.getElementById('rnd'), p = document.getElementById('rpath'), out = document.getElementById('rval');
+        function set() { var v = parseFloat(rng.value); p.setAttribute('d', hexPath(v)); out.textContent = v.toFixed(2); document.documentElement.style.setProperty('--s', v); }
+        rng.addEventListener('input', set); set();
+      })();
+    </script>
     <div class="flat">
       <span class="cl" style="left:calc(var(--sx)*0);">Zuchy · 6–9</span>
       <a class="hexw" href="#" style="left:calc(var(--sx)*0);top:calc(var(--sy)*0.5 + 44px);"><div class="hex" style="background-image:url(../o-nas/img/li.jpg)"><div class="hin"><b>Leśne Skrzaty</b><small>zuchy, 6–9 lat</small><span class="hp">000 000 000</span></div></div></a>
