@@ -51,9 +51,27 @@
   .ph small { display:block; font-size:17px; margin-top:8px; color:#e6e2ee; }
 
   /* D R U Ż Y N Y */
-  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
-  @media (max-width:860px){ .grid{grid-template-columns:1fr 1fr} }
-  @media (max-width:520px){ .grid{grid-template-columns:1fr} }
+  /* S Z E Ś C I O K I  2-3-2 */
+  .honey { --w:min(250px,29vw); --h:calc(var(--w)*1.1547); --g:10px; display:flex; flex-direction:column; align-items:center; padding-bottom:10px; }
+  .hexrow { display:flex; justify-content:center; gap:var(--g); margin-top:calc(var(--h)*-0.25 + var(--g)); }
+  .hexrow:first-child { margin-top:0; }
+  .hexw { display:block; width:var(--w); height:var(--h); filter:drop-shadow(7px 7px 0 rgba(0,0,0,.4)); text-decoration:none; transition:transform .2s; }
+  .hexw:hover { transform:translateY(-4px); }
+  .hex { width:100%; height:100%; clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); background-size:cover; background-position:center; position:relative; display:grid; place-items:center; }
+  .hex::before { content:""; position:absolute; inset:0; background:rgba(29,31,59,.62); transition:background .2s; }
+  .hexw:hover .hex::before { background:rgba(29,31,59,.38); }
+  .hin { position:relative; text-align:center; padding:0 14%; }
+  .hin b { display:block; font:700 clamp(15px,2.1vw,24px)/1.1 'Zilla Slab',serif; }
+  .hin small { display:block; font-size:clamp(11px,1.2vw,14px); color:#e6e2ee; margin:3px 0 8px; }
+  .hp { display:inline-block; padding:4px 10px; background:var(--cream); color:var(--bg); font:700 clamp(11px,1.3vw,15px) 'Zilla Slab',serif; }
+  @media (max-width:700px){
+    .honey { display:grid; grid-template-columns:1fr 1fr; gap:14px; --w:100%; }
+    .hexrow { display:contents; }
+    .hexw { width:100%; height:auto; }
+    .hex { clip-path:none; aspect-ratio:1; }
+    .hexrow:last-child .hexw:last-child { grid-column:span 2; }
+    .hexrow:last-child .hexw:last-child .hex { aspect-ratio:2/1; }
+  }
   .team { background:var(--panel); border-radius:var(--rc); padding:24px; box-shadow:0 12px 28px rgba(0,0,0,.35); }
   .team h3 { font-size:28px; line-height:1.1; }
   .team small { color:var(--muted); display:block; margin:4px 0 16px; font-size:16px; }
@@ -133,15 +151,12 @@
 <!-- D R U Ż Y N Y -->
 <section id="druzyny">
   <div class="wrap">
-    <h2>Sześć drużyn. Jeden szczep.</h2>
-    <p class="sub">Od zuchów po licealistów. Wybierz drużynę i zadzwoń do drużynowego.</p>
-    <div class="grid">
-      <div class="team"><h3>Leśne Skrzaty</h3><small>zuchy, 6–9 lat</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
-      <div class="team"><h3>Leśna</h3><small>dziewczyny, 10–13 lat</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
-      <div class="team"><h3>Kohorta</h3><small>chłopcy, 10–13 lat</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
-      <div class="team"><h3>Ster</h3><small>dziewczyny, gimnazjum</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
-      <div class="team"><h3>Formoza</h3><small>chłopcy, gimnazjum</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
-      <div class="team"><h3>Cichociemni</h3><small>liceum</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
+    <h2>Siedem drużyn. Jeden szczep.</h2>
+    <p class="sub">Od zuchów po liceum. Wybierz drużynę i zadzwoń do drużynowego.</p>
+    <div class="honey">
+      <div class="hexrow"><a class="hexw" href="#"><div class="hex" style="background-image:url(../o-nas/img/li.jpg)"><div class="hin"><b>Leśne Skrzaty</b><small>zuchy, 6–9 lat</small><span class="hp" data-tel="000 000 000">000 000 000</span></div></div></a><a class="hexw" href="#"><div class="hex" style="background-image:url(../o-nas/img/lesna.jpg)"><div class="hin"><b>Leśna</b><small>dziewczyny, 10–13</small><span class="hp" data-tel="000 000 000">000 000 000</span></div></div></a></div>
+      <div class="hexrow"><a class="hexw" href="#"><div class="hex" style="background-image:url(../o-nas/img/kohorta.jpg)"><div class="hin"><b>Kohorta</b><small>chłopcy, 10–13</small><span class="hp" data-tel="000 000 000">000 000 000</span></div></div></a><a class="hexw" href="#"><div class="hex" style="background-image:url(../o-nas/img/ster.jpg)"><div class="hin"><b>Ster</b><small>dziewczyny, gimnazjum</small><span class="hp" data-tel="000 000 000">000 000 000</span></div></div></a><a class="hexw" href="#"><div class="hex" style="background-image:url(../o-nas/img/formoza.jpg)"><div class="hin"><b>Formoza</b><small>chłopcy, gimnazjum</small><span class="hp" data-tel="000 000 000">000 000 000</span></div></div></a></div>
+      <div class="hexrow"><a class="hexw" href="#"><div class="hex" style="background-image:url(../o-nas/img/1.jpg)"><div class="hin"><b>Więź</b><small>dziewczyny, liceum</small><span class="hp" data-tel="000 000 000">000 000 000</span></div></div></a><a class="hexw" href="#"><div class="hex" style="background-image:url(../o-nas/img/cichociemni.jpg)"><div class="hin"><b>Cichociemni</b><small>chłopcy, liceum</small><span class="hp" data-tel="000 000 000">000 000 000</span></div></div></a></div>
     </div>
   </div>
 </section>

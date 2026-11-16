@@ -51,9 +51,14 @@
   .ph small { display:block; font-size:17px; margin-top:8px; color:#e6e2ee; }
 
   /* D R U Ż Y N Y */
-  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
-  @media (max-width:860px){ .grid{grid-template-columns:1fr 1fr} }
-  @media (max-width:520px){ .grid{grid-template-columns:1fr} }
+  .ladder { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; align-items:stretch; }
+  @media (max-width:980px){ .ladder{grid-template-columns:1fr 1fr} }
+  @media (max-width:560px){ .ladder{grid-template-columns:1fr} }
+  .col { display:flex; flex-direction:column; gap:18px; }
+  .col h4 { font:700 20px 'Zilla Slab',serif; padding-bottom:2px; }
+  .col h4 span { display:block; font:400 15px Lora,serif; color:var(--muted); }
+  .col .team.tall { flex:1; display:flex; flex-direction:column; align-items:flex-start; }
+  .team.tall .pic { align-self:stretch; flex:1; min-height:120px; margin-top:18px; border-radius:var(--rb); background-size:cover; background-position:center; }
   .team { background:var(--panel); border-radius:var(--rc); padding:24px; box-shadow:0 12px 28px rgba(0,0,0,.35); }
   .team h3 { font-size:28px; line-height:1.1; }
   .team small { color:var(--muted); display:block; margin:4px 0 16px; font-size:16px; }
@@ -124,15 +129,20 @@
 <!-- D R U Ż Y N Y -->
 <section id="druzyny">
   <div class="wrap">
-    <h2>Sześć drużyn. Jeden szczep.</h2>
-    <p class="sub">Od zuchów po licealistów. Wybierz drużynę i zadzwoń do drużynowego.</p>
-    <div class="grid">
-      <div class="team"><h3>Leśne Skrzaty</h3><small>zuchy, 6–9 lat</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
-      <div class="team"><h3>Leśna</h3><small>dziewczyny, 10–13 lat</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
-      <div class="team"><h3>Kohorta</h3><small>chłopcy, 10–13 lat</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
-      <div class="team"><h3>Ster</h3><small>dziewczyny, gimnazjum</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
-      <div class="team"><h3>Formoza</h3><small>chłopcy, gimnazjum</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
-      <div class="team"><h3>Cichociemni</h3><small>liceum</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
+    <h2>Siedem drużyn. Jeden szczep.</h2>
+    <p class="sub">Wybierz po wieku dziecka: od zuchów po liceum, osobno dziewczyny i chłopcy. Telefon do drużynowego jest przy każdej drużynie.</p>
+    <div class="ladder">
+      <div class="col"><h4>Zuchy <span>6–9 lat</span></h4>
+        <div class="team tall"><h3>Leśne Skrzaty</h3><small>gromada zuchowa, dziewczynki i chłopcy</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a><div class="pic" style="background-image:url(../o-nas/img/li.jpg)"></div></div></div>
+      <div class="col"><h4>Harcerze <span>10–13 lat</span></h4>
+        <div class="team"><h3>Leśna</h3><small>dziewczyny</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
+        <div class="team"><h3>Kohorta</h3><small>chłopcy</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div></div>
+      <div class="col"><h4>Starsi <span>gimnazjum</span></h4>
+        <div class="team"><h3>Ster</h3><small>dziewczyny</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
+        <div class="team"><h3>Formoza</h3><small>chłopcy</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div></div>
+      <div class="col"><h4>Liceum <span>i dalej</span></h4>
+        <div class="team"><h3>Więź</h3><small>dziewczyny, licealistki i studentki</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div>
+        <div class="team"><h3>Cichociemni</h3><small>chłopcy</small><span class="who">Imię Nazwisko</span><a class="call" href="tel:000000000">000 000 000</a></div></div>
     </div>
   </div>
 </section>
