@@ -32,14 +32,21 @@ def inject_site():
     return {"site": load_site()}
 
 
+def _tile(a):
+    """Minimalne dane albumu do wbudowania w stronę (dla galerii w JavaScript)."""
+    return {"u": a["url"], "t": f'{a["tytul"]} ({a["zdjec"]} zdjęć)', "r": a["rok"], "n": a["nazwa"],
+            "p": a.get("zdjecia") or ([a["okladka"]] if a["okladka"] else [])}
+
+
 def gallery_albums(site, newest=2, rand=2):
     """Albumy do galerii na stronie głównej: najnowsze plus losowe.
 
-    Okładka to losowe zdjęcie z albumu (jeśli data/flickr.json je zawiera).
-    Losowanie odbywa się przy każdym budowaniu strony."""
+    Zwraca (galeria, dane): galeria to wersja wylosowana przy budowaniu strony
+    (dla przeglądarek bez JavaScriptu), dane to pula, z której static/js/gallery.js
+    losuje od nowa przy każdym wejściu na stronę."""
     albums = flickr.load()
     if not albums:
-        return []
+        return [], None
     for a in albums:
         a["rok"] = flickr._year(a) or ""
         a["nazwa"] = re.sub(r"^\s*\d{4}(\s*[-–/]\s*|\s+)", "", a["tytul"]).strip()
@@ -55,12 +62,14 @@ def gallery_albums(site, newest=2, rand=2):
     chosen = [dict(a) for a in latest + picked]
     for a in chosen:
         a["twarz"] = random.choice(a["zdjecia"]) if a.get("zdjecia") else a["okladka"]
-    return chosen
+    data = {"newest": [_tile(a) for a in latest], "pool": [_tile(a) for a in pool.values()]}
+    return chosen, data
 
 
 @app.route("/")
 def start():
-    return render_template("start.html", page="start", galeria=gallery_albums(load_site()))
+    galeria, galeria_dane = gallery_albums(load_site())
+    return render_template("start.html", page="start", galeria=galeria, galeria_dane=galeria_dane)
 
 
 @app.route("/druzyny/")

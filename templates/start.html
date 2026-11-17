@@ -79,7 +79,7 @@
   <div class="wrap">
     <h2>Tak to wygląda</h2>
     <p class="sub">{% if galeria %}Dwa najnowsze albumy i dwa wylosowane z naszych wyjazdów. Wszystkie na Flickrze.{% else %}Więcej zdjęć na Flickrze.{% endif %}</p>
-    <div class="strip">
+    <div class="strip"{% if galeria %} data-gal{% endif %}>
       {% if galeria %}
       {% for a in galeria %}
       <a class="si" href="{{ a.url }}" style="background-image:url({{ a.twarz }})" title="{{ a.tytul }} ({{ a.zdjec }} zdjęć)">
@@ -94,6 +94,10 @@
     <div class="links">
       <a class="chip" href="{{ site.linki.flickr }}">Zdjęcia na Flickr</a>
     </div>
+    {% if galeria_dane %}
+    <script type="application/json" id="gal-data">{{ galeria_dane|tojson }}</script>
+    <script src="{{ url_for('static', filename='js/gallery.js') }}" defer></script>
+    {% endif %}
   </div>
 </section>
 {% endblock %}
