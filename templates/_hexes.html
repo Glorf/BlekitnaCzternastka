@@ -4,7 +4,7 @@
 <div class="flat">
   {% for g in site.grupy %}<span class="cl" style="--c:{{ loop.index0 }}">{{ g }}</span>{% endfor %}
   {% for d in site.druzyny %}
-  <a class="hexw" href="{{ url_for('druzyny') }}#{{ d.id }}" style="--c:{{ d.kol }};--r:{{ d.wiersz }}">
+  <a class="hexw" href="{{ url_for('druzyny') }}#{{ d.id }}" style="--c:{{ d.kol }};--r:{{ d.wiersz }};--i:{{ loop.index0 }};--p:{{ loop.index0 % 2 }}">
     <div class="hex" style="background-image:url({{ url_for('static', filename='img/' ~ d.zdjecie) }})">
       <div class="hin"><b>{{ d.nazwa }}</b><small>{{ d.opis }}</small><span class="hp">{{ d.druzynowy.telefon }}</span></div>
     </div>
