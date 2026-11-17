@@ -50,6 +50,11 @@ def oboz():
     return render_template("oboz.html", page="oboz", site=site)
 
 
+@app.route("/kontakt/")
+def kontakt():
+    return render_template("kontakt.html", page="kontakt")
+
+
 @app.route("/procent/")
 def procent():
     return render_template("procent.html", page="procent")

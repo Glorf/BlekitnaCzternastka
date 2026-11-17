@@ -165,6 +165,25 @@ obozy:
     dla_rodzicow:
       - Informacje dla rodziców (kto jedzie, opieka, co zabrać) do uzupełnienia.
 
+# FAQ na stronie Kontakt. PRZYKŁADY: odpowiedzi do sprawdzenia i uzupełnienia przez szczep.
+faq:
+  - pytanie: Gdzie jest harcówka szczepu?
+    odpowiedz: Nasz adres to ul. Bukowska 16, 60-809 Poznań. Gdzie dokładnie spotyka się dana drużyna, znajdziesz przy niej na stronie Drużyny.
+  - pytanie: Kiedy powstał szczep?
+    odpowiedz: Pierwsza drużyna powstała w 1919 roku. Od tamtej pory harcerze z Błękitnej Czternastki działają w Poznaniu nieprzerwanie.
+  - pytanie: Kto jest patronem szczepu?
+    odpowiedz: Patronem szczepu jest hetman Stanisław Żółkiewski. Co roku jeździmy na rajd jego imienia, czyli Żółkiewszczadę.
+  - pytanie: Od jakiego wieku można zacząć?
+    odpowiedz: Od 6 lat. Najmłodsi trafiają do gromady zuchowej Leśne Skrzaty (6–9 lat), a potem przechodzą do kolejnych drużyn wraz z wiekiem.
+  - pytanie: Czy trzeba składać przysięgę albo się do czegoś zobowiązać?
+    odpowiedz: Nie. Poznać nas może każdy, bez zobowiązań ani przysiąg. Pierwsza zbiórka to po prostu próba.
+  - pytanie: Co zabrać na pierwszą zbiórkę?
+    odpowiedz: Szczoteczkę do zębów i paczkę ciastek. Resztą zajmie się drużynowy.
+  - pytanie: Ile kosztuje harcerstwo?
+    odpowiedz: DO UZUPEŁNIENIA (składka członkowska, koszt obozu i zimowiska).
+  - pytanie: Jak zapisać dziecko?
+    odpowiedz: Zadzwoń lub napisz do drużynowego wybranej drużyny. Jego numer i e-mail są przy każdej drużynie.
+
 galeria: [2.jpg, 4.jpg, 6.jpg, 3.jpg]
 
 # Sekcja zdjęć na stronie Obóz. Do każdej grupy trafiają albumy, w których tytule

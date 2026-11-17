@@ -19,11 +19,11 @@
     <input type="checkbox" id="mt" class="mt-box" aria-label="Menu">
     <label for="mt" class="mt" aria-hidden="true"><span></span></label>
     <nav>
-      <a href="{{ url_for('start') }}" {% if page == 'start' %}class="on"{% endif %}>Start</a>
       <a href="{{ url_for('druzyny') }}" {% if page == 'druzyny' %}class="on"{% endif %}>Drużyny</a>
       <a href="{{ url_for('oboz') }}" {% if page == 'oboz' %}class="on"{% endif %}>Obóz</a>
       <a href="{{ site.linki.archiwum }}">Archiwum ↗</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="{{ url_for('kontakt') }}" {% if page == 'kontakt' %}class="on"{% endif %}>Kontakt</a>
+      <a class="navbtn" href="{{ url_for('procent') }}">Przekaż {{ site.procent.kwota }}</a>
     </nav>
     <div class="soc">
       <a href="{{ site.linki.facebook }}" title="Facebook" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -35,6 +35,7 @@
 
 {% block content %}{% endblock %}
 
+{% if page != 'kontakt' %}
 <!-- K O N T A K T -->
 <section class="contact" id="kontakt">
   <div class="wrap cgrid">
@@ -47,14 +48,16 @@
     </div>
     <div class="card">
       <h3>Szukasz drużynowego swojego dziecka?</h3>
-      <p>Numer jest przy każdej drużynie.</p>
+      <p>Numer jest przy każdej drużynie. Odpowiedzi na częste pytania znajdziesz w FAQ.</p>
       <div class="links" style="margin-top:14px">
         <a class="chip" href="{{ url_for('druzyny') }}">Zobacz drużyny</a>
+        <a class="chip o" href="{{ url_for('kontakt') }}#faq">FAQ</a>
         <a class="chip o" href="{{ url_for('procent') }}">Przekaż {{ site.procent.kwota }}</a>
       </div>
     </div>
   </div>
 </section>
+{% endif %}
 
 <footer>
   <div class="wrap">
