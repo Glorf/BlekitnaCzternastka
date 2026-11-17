@@ -97,7 +97,6 @@ header nav a:hover, header nav a.on { border-color:var(--sky); }
 .team .mail { color:var(--navy); }
 .team .where { margin-top:16px; font-weight:700; }
 .team .where a { color:var(--navy); text-underline-offset:3px; }
-.team .full { color:var(--muted); font-size:16px; margin-bottom:12px; }
 .team p + p { margin-top:10px; }
 .team:target .tripph { outline:3px solid var(--sky); outline-offset:4px; }
 @media (max-width:760px){ .team .trip { grid-template-columns:1fr; } }
@@ -111,7 +110,6 @@ header nav a:hover, header nav a.on { border-color:var(--sky); }
 .step::before { counter-increment:s; content:counter(s); display:grid; place-items:center; width:46px; height:46px; border-radius:var(--rb); background:var(--navy); color:#fff; font:900 22px Bitter,serif; margin-bottom:14px; }
 .step h3 { font-size:23px; margin-bottom:6px; }
 .step p { color:var(--muted); }
-.bring { margin-top:28px; text-align:center; font:700 22px Bitter,serif; }
 
 /* G A L E R I A */
 .strip { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
@@ -203,7 +201,6 @@ footer a { color:#fff; }
 .socline a { color:var(--navy); text-underline-offset:3px; }
 
 /* A R C H I W U M */
-.h2like { font-size:clamp(30px,4.6vw,44px); margin-bottom:4px; }
 .arch { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start; }
 @media (max-width:760px){ .arch { grid-template-columns:1fr; } }
 .acard { background:#fff; border-radius:var(--rc); padding:28px; box-shadow:0 10px 26px rgba(53,57,100,.14); }

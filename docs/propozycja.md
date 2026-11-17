@@ -1,6 +1,6 @@
 # Nowa strona Błękitnej XIV – propozycja
 
-Dokument roboczy do omówienia z szczepowym/hufcowym. Nic jeszcze nie jest zbudowane – to ustalenia, które chcemy zatwierdzić przed pracą nad makietami.
+Dokument roboczy z ustaleniami. Pierwotna wersja powstała przed makietami; poniżej mapa strony jest zaktualizowana do tego, co zostało zbudowane (wersja pokazowa pod blekitna14.org/demo).
 
 ## Po co zmieniamy stronę
 
@@ -19,39 +19,41 @@ Strona jest dla: harcerzy, rodziców, byłych harcerzy, rodziców dzieci, które
 
 | Podstrona | Co zawiera |
 |---|---|
-| **Start** | Zdjęcie, 2–3 zdania o nas, przyciski do Drużyn i Obozu, **kontakt do szczepowego** (imię, telefon, e-mail, adres: ul. Bukowska 16, Poznań), linki do Facebooka, Instagrama i Flickra, 1% podatku. |
-| **Drużyny** (dawniej „Dołącz do nas”) | Na górze krótko o szczepie i jego historii (kilka zdań), potem karta każdej drużyny osobno: wiek, kiedy i gdzie zbiórki, krótki opis, **imię, telefon i e-mail drużynowego**. Szybkie przechodzenie między drużynami; na dole miejsce na linki do dłuższych opracowań o szczepie i historii (dodamy później, jeśli szczepowy zechce). |
-| **Obóz** | Obóz letni i zimowisko: terminy, miejsce, cena, informacje dla rodziców, zdjęcia, zapisy. Tylko te dwa duże wydarzenia. |
-| **Archiwum** | W wersji 1.0 tylko link do istniejącego archiwum: <https://blekitna14.org/archiwum/index.html> (ta strona zostaje bez zmian). |
+| **Start** (logo w menu) | Zdjęcie na cały ekran, „Kim jesteśmy?”, drużyny na ścieżce wieku (zdjęcia i telefony), „Jak zacząć?”, Obóz i zimowisko, ostatnie wpisy z Facebooka, galeria (2 najnowsze i 2 losowe albumy z Flickra), kontakt do szczepowego. |
+| **Drużyny** | Osobny, duży fragment dla każdej drużyny i kręgu Kłuszyn: zdjęcie, logo, opis, zbiórki, **imię, telefon i e-mail drużynowego/drużynowej**, linki do mediów społecznościowych. Szybkie przechodzenie między drużynami u góry. |
+| **Obóz** | Obóz letni i zimowisko: termin, miejsce, cena, komendant, informacje dla rodziców, zapisy. Poniżej albumy z Flickra (obozy, zimowiska, Żółkiewszczada, rajdy wiosenne). |
+| **Archiwum** | Własna podstrona: wstęp, prośba o stare zdjęcia i zbiory (zdjęcia, Błękitny czas, jednodniówki, książki i śpiewniki) z linkami ze starego archiwum. |
+| **Kontakt** | Najczęstsze pytania (FAQ), a pod nimi kontakt do szczepowego i adres. |
+| **Przekaż 1,5%** | Numer KRS, kwota i cel szczegółowy krok po kroku. |
 | **Błękitny Grom** *(później)* | Zarezerwowane miejsce, osobny wygląd w tej samej konstrukcji strony. |
 
-Menu: **Start · Drużyny · Obóz · Archiwum**, plus ikony Facebooka, Instagrama i Flickra.
+Menu: **Drużyny · Obóz · Archiwum · Kontakt · Przekaż 1,5%**, plus ikony Facebooka, Instagrama i Flickra. Logo prowadzi na Start. Na dole każdej strony: Zobacz drużyny, FAQ, Przekaż 1,5%.
 
-**Rezygnujemy z:** Aktualności, osobnych podstron O nas / Kontakt / Historia / 100-lecie, strony „10 powodów”.
+**Rezygnujemy z:** Aktualności, osobnych podstron Historia / 100-lecie, strony „10 powodów”.
 
-**Kontakt:** szczepowy na stronie Start, drużynowi na kartach drużyn. Numery telefonów są jawne.
+**Kontakt:** szczepowy na Start i w Kontakcie, drużynowi na stronie Drużyny. Numery telefonów są jawne.
 
 ## Technologia (po ludzku)
 
 - Strona napisana w Pythonie (Flask), zamieniana na zwykłe pliki, które hostujemy za darmo na GitHub Pages, pod tym samym adresem blekitna14.org. Nie potrzeba serwera ani opłat.
-- Dane do aktualizacji (drużyny, drużynowi, telefony, terminy obozów) siedzą w jednym pliku. Zmiana numeru telefonu to edycja jednej linijki, a nie przepisywanie strony.
+- Dane do aktualizacji (drużyny, drużynowi, telefony, terminy obozów, FAQ, linki archiwum) siedzą w jednym pliku.
+- Albumy ze zdjęciami pobieramy z Flickra (publiczne dane, klucz API tylko lokalnie, nie na stronie). Zmiana numeru telefonu to edycja jednej linijki, a nie przepisywanie strony.
 - Aktualizuje ktoś, kto programuje – rzadko, więc nie potrzebujemy panelu administracyjnego.
 - Usuwamy z kodu klucze i hasła, które dziś leżą w repozytorium.
 
 ## Wygląd
 
-Kolory i układ ustalimy na makietach, nie w tabelkach. Punkt wyjścia: obecny błękit marki (`#0BB5FF`), granat (`#293040`) i kremowe tło (`#FFFAF0`), maksymalnie jeden kolor dodatkowy. Strona ma być oparta na zdjęciach, wygodna na telefonie i czytelna.
+Wybrany kierunek „D”: jasne tło, granat i błękit z logo, zaokrąglone kształty, drużyny jako zaokrąglone sześciokąty na ścieżce wieku. Zarchiwizowane makiety A–E są w `docs/makiety/`.
 
 ## Kolejne kroki
 
-1. Zatwierdzenie tego dokumentu przez szczepowego.
-2. 2–3 makiety strony głównej do wyboru.
-3. Budowa Start, Drużyny, Obóz.
-4. Podgląd na gałęzi `redesign`, akceptacja, publikacja.
+1. Uzupełnienie treści przez szczep (współdzielony dokument z tabelami).
+2. Przegląd wersji pokazowej, poprawki.
+3. Publikacja pod blekitna14.org po akceptacji; stara strona i archiwum zostają dostępne pod swoimi adresami.
 
 ## Czego potrzebujemy od szczepu
 
-- Lista drużyn: nazwy, przedziały wiekowe, dni i miejsca zbiórek.
+- Dni, godziny i miejsca zbiórek drużyn.
 - Dane kontaktowe szczepowego i drużynowych (imię, telefon, e-mail).
 - Terminy, miejsca i ceny obozu i zimowiska, link do zapisów.
 - Zdjęcie na główną i zdjęcia do obozu.
