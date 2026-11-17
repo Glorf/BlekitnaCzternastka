@@ -15,6 +15,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).parent
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # polskie znaki w konsoli Windows
 PUSH = "--push" in sys.argv
 
 
