@@ -1,4 +1,4 @@
-"""Albumy z Flickra dla strony Obóz.
+"""Albumy z Flickra dla strony Obóz i galerii na stronie głównej.
 
 python flickr.py   pobiera listę albumów i zapisuje ją w data/flickr.json
 
@@ -8,8 +8,10 @@ więc zwykły build (python freeze.py) nie potrzebuje ani klucza, ani internetu.
 """
 import json
 import os
+import random
 import re
 import sys
+from concurrent.futures import ThreadPoolExecutor
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -31,12 +33,24 @@ def _call(key, method, **params):
     return data
 
 
+SAMPLE = 10  # tyle losowych zdjęć z albumu zapisujemy (do losowania okładki)
+
+
+def _sample_photos(key, user_id, album_id):
+    data = _call(key, "flickr.photosets.getPhotos", photoset_id=album_id, user_id=user_id,
+                 per_page=500, extras="url_q", media="photos")
+    urls = [p["url_q"] for p in data["photoset"]["photo"] if p.get("url_q")]
+    return random.sample(urls, min(SAMPLE, len(urls)))
+
+
 def refresh(key):
     with open(ROOT / "data" / "site.yml", encoding="utf-8") as f:
-        profile_url = yaml.safe_load(f)["flickr"]["uzytkownik_url"]
+        site = yaml.safe_load(f)
+    profile_url = site["flickr"]["uzytkownik_url"]
     user = _call(key, "flickr.urls.lookupUser", url=profile_url)["user"]
     sets = _call(key, "flickr.photosets.getList", user_id=user["id"],
                  per_page=500, primary_photo_extras="url_q")["photosets"]["photoset"]
+    old = {a["id"]: a for a in load()}
     albums = []
     for s in sets:
         primary = s.get("primary_photo_extras") or {}
@@ -49,6 +63,26 @@ def refresh(key):
             "data": int(s.get("date_create", 0)),
         })
     albums.sort(key=lambda a: a["data"], reverse=True)
+
+    # Losowe zdjęcia pobieramy tylko dla albumów, które mogą trafić na stronę:
+    # z grup w sekcji zdjęć oraz kilku najnowszych. Reszta zostaje z okładką.
+    needed = {a["id"] for g in site["zdjecia"] for a in filter_albums(albums, g.get("slowa"), g.get("wyklucz"))}
+    needed |= {a["id"] for a in sorted(albums, key=lambda a: (_year(a), a["data"]), reverse=True)[:10]}
+    todo = []
+    for a in albums:
+        prev = old.get(a["id"])
+        if prev and prev.get("zdjecia") and prev.get("zdjec") == a["zdjec"]:
+            a["zdjecia"] = prev["zdjecia"]
+        elif a["id"] in needed:
+            todo.append(a)
+    print(f"Albumów: {len(albums)}, do pobrania zdjęć: {len(todo)}")
+
+    def fetch(a):
+        a["zdjecia"] = _sample_photos(key, user["id"], a["id"])
+
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        list(pool.map(fetch, todo))
+
     CACHE.write_text(json.dumps(albums, ensure_ascii=False, indent=1), encoding="utf-8")
     return albums
 
