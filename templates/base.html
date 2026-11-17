@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Błękitna XIV{% endblock %} | Błękitna XIV</title>
+<meta name="description" content="{% block desc %}{{ site.szczep.hasla }} Szczep harcerski Błękitna XIV z Poznania: drużyny, obóz, kontakt.{% endblock %}">
+{% if noindex %}<meta name="robots" content="noindex, nofollow">
+{% endif %}<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&family=Bitter:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/font-awesome.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+</head>
+<body class="{{ 'on-hero' if page == 'start' else 'plain' }}">
+
+<!-- H E A D E R -->
+<header>
+  <div class="wrap">
+    <a class="logo" href="{{ url_for('start') }}">Błękitna <b>XIV</b></a>
+    <input type="checkbox" id="mt" class="mt-box" aria-label="Menu">
+    <label for="mt" class="mt" aria-hidden="true"><span></span></label>
+    <nav>
+      <a href="{{ url_for('druzyny') }}" {% if page == 'druzyny' %}class="on"{% endif %}>Drużyny</a>
+      <a href="{{ url_for('oboz') }}" {% if page == 'oboz' %}class="on"{% endif %}>Obóz</a>
+      <a href="{{ url_for('archiwum') }}" {% if page == 'archiwum' %}class="on"{% endif %}>Archiwum</a>
+      <a href="{{ url_for('kontakt') }}" {% if page == 'kontakt' %}class="on"{% endif %}>Kontakt</a>
+      <a href="{{ url_for('procent') }}" {% if page == 'procent' %}class="on"{% endif %}>Przekaż {{ site.procent.kwota }}</a>
+    </nav>
+    <div class="soc">
+      <a href="{{ site.linki.facebook }}" title="Facebook" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href="{{ site.linki.instagram }}" title="Instagram" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      <a href="{{ site.linki.flickr }}" title="Flickr" aria-label="Flickr"><i class="fa fa-flickr" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</header>
+
+{% block content %}{% endblock %}
+
+{% if page != 'kontakt' %}
+<!-- K O N T A K T -->
+<section class="contact" id="kontakt">
+  <div class="wrap cgrid">
+    <div class="card">
+      <h3>Szczepowy</h3>
+      {% if site.szczep.szczepowy.imie %}<p>{{ site.szczep.szczepowy.imie }}</p>{% endif %}
+      <a class="big" href="{{ site.szczep.szczepowy.telefon|tel }}">{{ site.szczep.szczepowy.telefon }}</a>
+      <a href="mailto:{{ site.szczep.szczepowy.email }}">{{ site.szczep.szczepowy.email }}</a>
+      <p style="margin-top:10px">{{ site.szczep.adres }}</p>
+    </div>
+    <div class="card">
+      <h3>Szukasz drużynowego swojego dziecka?</h3>
+      <p>Numer jest przy każdej drużynie. Odpowiedzi na częste pytania znajdziesz w FAQ.</p>
+      <div class="links" style="margin-top:14px">
+        <a class="chip" href="{{ url_for('druzyny') }}">Zobacz drużyny</a>
+        <a class="chip o" href="{{ url_for('kontakt') }}#faq">FAQ</a>
+        <a class="chip o" href="{{ url_for('procent') }}">Przekaż {{ site.procent.kwota }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<footer>
+  <div class="wrap">
+    <span>© {{ site.szczep.nazwa }} · Poznań</span>
+    <span>Przekaż nam <a href="{{ url_for('procent') }}">{{ site.procent.kwota }} podatku</a></span>
+    <span><a href="{{ site.linki.facebook }}">Facebook</a> · <a href="{{ site.linki.instagram }}">Instagram</a> · <a href="{{ site.linki.flickr }}">Flickr</a></span>
+  </div>
+</footer>
+</body>
+</html>

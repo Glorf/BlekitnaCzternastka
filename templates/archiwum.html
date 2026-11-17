@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Archiwum{% endblock %}
+{% block desc %}Archiwum Błękitnej XIV: zdjęcia, gazetka Błękitny czas, jednodniówki, książki i śpiewniki w jednym miejscu.{% endblock %}
+{% block content %}
+
+<!-- N A G Ł Ó W E K -->
+<div class="pagehead" style="background-image:linear-gradient(rgba(20,22,45,.55),rgba(20,22,45,.78)),url({{ url_for('static', filename='img/2.jpg') }})">
+  <div class="wrap">
+    <h1>Archiwum</h1>
+    <p>{{ site.archiwum.wstep[0] }}</p>
+    <nav class="jump" aria-label="Przejdź do sekcji"><a href="#podziel-sie">Masz stare zdjęcia?</a><a href="#zbiory">Zbiory</a></nav>
+  </div>
+</div>
+
+<!-- P O D Z I E L   S I Ę -->
+<section id="podziel-sie">
+  <div class="wrap trip">
+    <div class="tripph" style="background-image:url({{ url_for('static', filename='img/6.jpg') }})" role="img" aria-label="Zdjęcie harcerzy"></div>
+    <div class="about">
+      <h2>Masz stare zdjęcia?</h2>
+      {% for p in site.archiwum.wstep[1:] %}<p>{{ p }}</p>{% endfor %}
+      <p><a class="mail" href="mailto:{{ site.szczep.email }}?subject=Materia%C5%82y%20do%20archiwum">{{ site.szczep.email }}</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Z B I O R Y -->
+<section class="teams" id="zbiory">
+  <div class="wrap">
+    <h2>Zbiory</h2>
+    <p class="sub">Wszystko, co zebraliśmy w sieci, pogrupowane według rodzaju.</p>
+    <div class="arch">
+      {% for k in site.archiwum.zbiory %}
+      <div class="acard">
+        <h3>{{ k.nazwa }}</h3>
+        <p class="adesc">{{ k.opis }}</p>
+        <ul>
+          {% for l in k.linki %}
+          <li><a href="{{ l.url }}">{{ l.tytul }}</a>{% if l.uwaga %} <span>{{ l.uwaga }}</span>{% endif %}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+{# Ścieżka wieku: sześciokąty drużyn. Linki prowadzą do kart na stronie Drużyny. #}
+{% macro hexes(site) %}
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="rhex" clipPathUnits="objectBoundingBox"><path d="M0.3350 0.0000 L0.6650 0.0000 Q0.7500 0.0000 0.7925 0.0850 L0.9575 0.4150 Q1.0000 0.5000 0.9575 0.5850 L0.7925 0.9150 Q0.7500 1.0000 0.6650 1.0000 L0.3350 1.0000 Q0.2500 1.0000 0.2075 0.9150 L0.0425 0.5850 Q0.0000 0.5000 0.0425 0.4150 L0.2075 0.0850 Q0.2500 0.0000 0.3350 0.0000 Z"/></clipPath></defs></svg>
+<div class="flat">
+  {% for g in site.grupy %}<span class="cl" style="--c:{{ loop.index0 }}">{{ g }}</span>{% endfor %}
+  {% for d in site.druzyny %}
+  <a class="hexw" href="{{ url_for('druzyny') }}#{{ d.id }}" style="--c:{{ d.kol }};--r:{{ d.wiersz }}">
+    <div class="hex" style="background-image:url({{ url_for('static', filename='img/' ~ d.zdjecie) }})">
+      <div class="hin"><b>{{ d.nazwa }}</b><small>{{ d.opis }}</small><span class="hp">{{ d.druzynowy.telefon }}</span></div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endmacro %}

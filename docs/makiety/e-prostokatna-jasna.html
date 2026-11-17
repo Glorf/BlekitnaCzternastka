@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Makieta E – Jasna prostokątna | Błękitna XIV</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&family=Bitter:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  /* jasna, z ostrymi kształtami i sześciokątami */
+  :root { --navy:#353964; --sky:#0BB5FF; --ink:#1f2021; --white:#fff; --mist:#F1F6FB; --muted:#5a6072; --rb:0; --rc:0; }
+  * { box-sizing:border-box; margin:0; }
+  html { scroll-behavior:smooth; }
+  body { font:18px/1.6 'Nunito Sans',sans-serif; color:var(--ink); background:var(--white); }
+  h1,h2,h3,.logo { font-family:Bitter,serif; line-height:1.15; }
+  a { color:inherit; }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 20px; }
+
+  /* H E A D E R (na zdjęciu) */
+  header { position:absolute; inset:0 0 auto 0; z-index:5; color:#fff; }
+  header .wrap { display:flex; align-items:center; gap:24px; height:78px; }
+  .logo { font-size:26px; font-weight:900; text-decoration:none; text-shadow:0 1px 10px rgba(0,0,0,.45); }
+  .logo b { font-weight:400; }
+  nav { margin-left:auto; display:flex; gap:26px; font-weight:700; text-shadow:0 1px 10px rgba(0,0,0,.5); }
+  nav a { text-decoration:none; padding:6px 0; border-bottom:3px solid transparent; }
+  nav a:hover, nav a.on { border-color:var(--sky); }
+  .soc { display:flex; gap:10px; }
+  .soc a { width:36px; height:36px; background:rgba(255,255,255,.2); display:grid; place-items:center; font-size:13px; font-weight:900; text-decoration:none; }
+  .soc a:hover { background:#fff; color:var(--navy); }
+  @media (max-width:760px){ nav a:nth-child(n+3):not(:last-child){display:none} .soc{display:none} nav{gap:16px} }
+
+  /* H E R O – cały ekran */
+  .hero { position:relative; height:100vh; height:100svh; min-height:580px; color:#fff; display:flex; align-items:flex-end;
+    background:linear-gradient(rgba(20,22,45,.5) 0,rgba(20,22,45,.05) 25%,rgba(20,22,45,.2) 55%,rgba(20,22,45,.82) 100%),url(../../css/img/oboz.jpg) center/cover; }
+  .hero .wrap { padding-bottom:90px; }
+  .hero h1 { font-size:clamp(40px,7vw,86px); line-height:1.02; max-width:11em; text-shadow:0 3px 24px rgba(0,0,0,.4); }
+  .hero h1 em { font-weight:400; }
+  .hero p { font-size:21px; max-width:30em; margin:18px 0 28px; }
+  .btn { display:inline-block; padding:14px 28px; border-radius:var(--rb); font-weight:900; text-decoration:none; margin:0 12px 12px 0; box-shadow:5px 5px 0 rgba(0,0,0,.4); transition:transform .15s, box-shadow .15s; }
+  .btn:hover { transform:translate(-2px,-2px); box-shadow:7px 7px 0 rgba(0,0,0,.4); }
+  .btn.p { background:var(--navy); color:#fff; }
+  .btn.s { background:#fff; color:var(--navy); }
+
+  section { padding:76px 0; }
+  h2 { font-size:clamp(30px,4.6vw,44px); margin-bottom:10px; }
+  .sub { color:var(--muted); max-width:36em; margin-bottom:30px; }
+
+  /* O B Ó Z  I  Z I M O W I S K O */
+  .big2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media (max-width:700px){ .big2{grid-template-columns:1fr} }
+  .ph { position:relative; min-height:380px; border-radius:var(--rc); overflow:hidden; background-size:cover; background-position:center; display:flex; align-items:flex-end; padding:28px; color:#fff; text-decoration:none; box-shadow:9px 9px 0 rgba(53,57,100,.32); transition:transform .2s, box-shadow .2s; }
+  .ph:hover { transform:translate(-3px,-3px); box-shadow:12px 12px 0 rgba(53,57,100,.32); }
+  .ph::before { content:""; position:absolute; inset:0; background:linear-gradient(transparent 35%,rgba(20,22,45,.88)); }
+  .ph div { position:relative; }
+  .ph h3 { font-size:clamp(34px,5vw,48px); line-height:1; }
+  .ph small { display:block; font-size:17px; margin-top:8px; opacity:.92; }
+
+  /* D R U Ż Y N Y – ścieżka wieku (z C) */
+  .teams { background:var(--mist); }
+  .flat { --w:min(260px,24vw); --h:calc(var(--w)*.866); --g:8px; --sx:calc(var(--w)*.75 + var(--g)); --sy:calc(var(--h) + var(--g)); position:relative; width:calc(var(--sx)*3 + var(--w)); height:calc(var(--sy)*2.5 + 44px); margin:0 auto; }
+  .cl { position:absolute; top:0; width:var(--w); text-align:center; font:900 clamp(15px,1.7vw,20px) Bitter,serif; color:var(--navy); }
+  .hexw { position:absolute; display:block; width:var(--w); height:var(--h); filter:drop-shadow(7px 7px 0 rgba(53,57,100,.3)); text-decoration:none; color:#fff; transition:transform .15s; }
+  .hexw:hover { transform:translate(-3px,-3px); }
+  .hex { width:100%; height:100%; clip-path:url(#rhex); background-size:cover; background-position:center; position:relative; display:grid; place-items:center; }
+  .hex::before { content:""; position:absolute; inset:0; background:rgba(31,33,66,.6); transition:background .2s; }
+  .hexw:hover .hex::before { background:rgba(31,33,66,.35); }
+  .hin { position:relative; text-align:center; padding:0 10%; }
+  .hin b { display:block; font:900 clamp(15px,2vw,23px)/1.1 Bitter,serif; }
+  .hin small { display:block; font-size:clamp(11px,1.2vw,14px); margin:3px 0 8px; opacity:.92; }
+  .hp { display:inline-block; padding:4px 12px; border-radius:var(--rb); background:#fff; color:var(--navy); font:900 clamp(11px,1.3vw,15px) 'Nunito Sans',sans-serif; }
+  @media (max-width:700px){
+    .flat { display:grid; grid-template-columns:1fr 1fr; gap:14px; width:auto; height:auto; }
+    .hexw { position:static; width:100%; height:auto; filter:none; }
+    .hex { clip-path:none; aspect-ratio:1; border-radius:var(--rc); }
+    .cl { display:none; }
+    .flat .hexw:last-child { grid-column:span 2; }
+    .flat .hexw:last-child .hex { aspect-ratio:2/1; }
+  }
+
+  /* J A K  Z A C Z Ą Ć – zdjęcie w tle (z B) */
+  .how { color:#fff; background:linear-gradient(rgba(31,33,66,.8),rgba(31,33,66,.88)),url(../../o-nas/img/5.jpg) center/cover; }
+  .how .sub { color:#d5d8ec; }
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; counter-reset:s; }
+  @media (max-width:760px){ .steps{grid-template-columns:1fr} }
+  .step { background:#fff; color:var(--ink); border-radius:var(--rc); padding:26px; box-shadow:8px 8px 0 rgba(0,0,0,.4); }
+  .step::before { counter-increment:s; content:counter(s); display:grid; place-items:center; width:46px; height:46px; border-radius:var(--rb); background:var(--navy); color:#fff; font:900 22px Bitter,serif; margin-bottom:14px; }
+  .step h3 { font-size:23px; margin-bottom:6px; }
+  .step p { color:var(--muted); }
+  .bring { margin-top:28px; text-align:center; font:700 22px Bitter,serif; }
+
+  /* G A L E R I A */
+  .strip { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .strip i { aspect-ratio:3/4; border-radius:var(--rc); background-size:cover; background-position:center; box-shadow:8px 8px 0 rgba(53,57,100,.3); }
+  .strip i:nth-child(even) { transform:translateY(24px); }
+  @media (max-width:760px){ .strip{grid-template-columns:1fr 1fr} }
+  .links { display:flex; flex-wrap:wrap; gap:10px; margin-top:50px; }
+  .chip { padding:10px 22px; border-radius:var(--rb); background:var(--navy); color:#fff; text-decoration:none; font-weight:700; font-size:16px; }
+  .chip.o { background:#fff; color:var(--navy); border:2px solid var(--navy); }
+
+  /* K O N T A K T */
+  .contact { background:var(--mist); }
+  .cgrid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media (max-width:760px){ .cgrid{grid-template-columns:1fr} }
+  .card { background:#fff; border-radius:var(--rc); padding:28px; box-shadow:8px 8px 0 rgba(53,57,100,.18); }
+  .card h3 { margin-bottom:6px; }
+  .big { font:900 32px Bitter,serif; text-decoration:none; display:block; margin:8px 0; }
+  footer { background:var(--navy); color:#d3d6ea; padding:30px 0; font-size:15px; }
+  footer .wrap { display:flex; flex-wrap:wrap; gap:16px 36px; justify-content:space-between; }
+  footer a { color:#fff; }
+  .tag { position:fixed; right:12px; bottom:12px; background:#fff; border:1px solid var(--navy); color:var(--navy); font:700 13px sans-serif; padding:6px 12px; border-radius:0; z-index:9; }
+</style>
+</head>
+<body>
+<div class="tag">Makieta E · jasna prostokątna</div>
+
+<!-- H E A D E R -->
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">Błękitna <b>XIV</b></a>
+    <nav><a class="on" href="#">Start</a><a href="#">Drużyny</a><a href="#">Obóz</a><a href="#">Archiwum ↗</a><a href="#kontakt">Kontakt</a></nav>
+    <div class="soc"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a><a href="#" title="Flickr">fl</a></div>
+  </div>
+</header>
+
+<!-- H E R O -->
+<div class="hero">
+  <div class="wrap">
+    <h1>Harcerze z Poznania. <em>Od 1919 roku.</em></h1>
+    <p>Zbiórki co tydzień, rajdy co miesiąc, raz w roku miesiąc w lesie. Przyjdź i zobacz.</p>
+    <a class="btn p" href="#druzyny">Znajdź swoją drużynę</a><a class="btn s" href="#oboz">Obóz i zimowisko</a>
+  </div>
+</div>
+
+<!-- O B Ó Z  I  Z I M O W I S K O -->
+<section id="oboz">
+  <div class="wrap">
+    <h2>Dwa duże wyjazdy w roku</h2>
+    <p class="sub">Latem miesiąc w lesie, zimą tydzień w górach. Reszta roku to zbiórki i rajdy.</p>
+    <div class="big2">
+      <a class="ph" href="#" style="background-image:url(../../css/img/oboz.jpg)"><div><h3>Obóz letni</h3><small>Terminy, miejsce, cena →</small></div></a>
+      <a class="ph" href="#" style="background-image:url(../../css/img/zimowisko.jpg)"><div><h3>Zimowisko</h3><small>Terminy, miejsce, cena →</small></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- D R U Ż Y N Y -->
+<section class="teams" id="druzyny">
+  <div class="wrap">
+    <h2>Siedem drużyn. Jeden szczep.</h2>
+    <p class="sub">Wybierz po wieku dziecka: od lewej zuchy, dalej coraz starsi. Dziewczyny na górze, chłopcy pod nimi. Telefon do drużynowego jest przy każdej drużynie.</p>
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="rhex" clipPathUnits="objectBoundingBox"><path d="M0.25 0 L0.75 0 L1 0.5 L0.75 1 L0.25 1 L0 0.5 Z"/></clipPath></defs></svg>
+
+    <div class="flat">
+      <span class="cl" style="left:calc(var(--sx)*0);">Zuchy · 6–9</span>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*0);top:calc(var(--sy)*0.5 + 44px);"><div class="hex" style="background-image:url(../../o-nas/img/li.jpg)"><div class="hin"><b>Leśne Skrzaty</b><small>zuchy, 6–9 lat</small><span class="hp">000 000 000</span></div></div></a>
+
+      <span class="cl" style="left:calc(var(--sx)*1);">10–13 lat</span>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*1);top:calc(var(--sy)*0 + 44px);"><div class="hex" style="background-image:url(../../o-nas/img/lesna.jpg)"><div class="hin"><b>Leśna</b><small>dziewczyny, 10–13</small><span class="hp">000 000 000</span></div></div></a>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*1);top:calc(var(--sy)*1 + 44px);"><div class="hex" style="background-image:url(../../o-nas/img/kohorta.jpg)"><div class="hin"><b>Kohorta</b><small>chłopcy, 10–13</small><span class="hp">000 000 000</span></div></div></a>
+
+      <span class="cl" style="left:calc(var(--sx)*2);">Gimnazjum</span>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*2);top:calc(var(--sy)*0.5 + 44px);"><div class="hex" style="background-image:url(../../o-nas/img/ster.jpg)"><div class="hin"><b>Ster</b><small>dziewczyny, gimnazjum</small><span class="hp">000 000 000</span></div></div></a>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*2);top:calc(var(--sy)*1.5 + 44px);"><div class="hex" style="background-image:url(../../o-nas/img/formoza.jpg)"><div class="hin"><b>Formoza</b><small>chłopcy, gimnazjum</small><span class="hp">000 000 000</span></div></div></a>
+
+      <span class="cl" style="left:calc(var(--sx)*3);">Liceum</span>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*3);top:calc(var(--sy)*0 + 44px);"><div class="hex" style="background-image:url(../../o-nas/img/1.jpg)"><div class="hin"><b>Więź</b><small>dziewczyny, liceum</small><span class="hp">000 000 000</span></div></div></a>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*3);top:calc(var(--sy)*1 + 44px);"><div class="hex" style="background-image:url(../../o-nas/img/cichociemni.jpg)"><div class="hin"><b>Cichociemni</b><small>chłopcy, liceum</small><span class="hp">000 000 000</span></div></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- J A K  Z A C Z Ą Ć -->
+<section class="how">
+  <div class="wrap">
+    <h2>Jak zacząć?</h2>
+    <p class="sub">Bez przysiąg i zobowiązań. Pierwsza zbiórka to po prostu próba.</p>
+    <div class="steps">
+      <div class="step"><h3>Wybierz drużynę</h3><p>Po wieku i po tym, co lubisz.</p></div>
+      <div class="step"><h3>Zadzwoń lub napisz</h3><p>Drużynowy powie, kiedy i gdzie się spotykamy.</p></div>
+      <div class="step"><h3>Przyjdź na zbiórkę</h3><p>Możesz zostać na jedno spotkanie albo na lata.</p></div>
+    </div>
+    <p class="bring">Weź tylko szczoteczkę do zębów i paczkę ciastek.</p>
+  </div>
+</section>
+
+<!-- Z D J Ę C I A -->
+<section>
+  <div class="wrap">
+    <h2>Tak to wygląda</h2>
+    <p class="sub">Więcej zdjęć na Flickrze, a to, co dzieje się teraz, na Facebooku i Instagramie.</p>
+    <div class="strip">
+      <i style="background-image:url(../../o-nas/img/2.jpg)"></i>
+      <i style="background-image:url(../../o-nas/img/4.jpg)"></i>
+      <i style="background-image:url(../../o-nas/img/6.jpg)"></i>
+      <i style="background-image:url(../../o-nas/img/3.jpg)"></i>
+    </div>
+    <div class="links"><a class="chip" href="#">Zdjęcia na Flickr</a><a class="chip o" href="#">Facebook</a><a class="chip o" href="#">Instagram</a></div>
+  </div>
+</section>
+
+<!-- K O N T A K T -->
+<section class="contact" id="kontakt">
+  <div class="wrap cgrid">
+    <div class="card">
+      <h3>Szczepowy</h3>
+      <p>Imię Nazwisko</p>
+      <a class="big" href="tel:000000000">000 000 000</a>
+      <a href="mailto:blekitna14@gmail.com">blekitna14@gmail.com</a>
+      <p style="margin-top:10px">ul. Bukowska 16, 60-809 Poznań</p>
+    </div>
+    <div class="card">
+      <h3>Szukasz drużynowego swojego dziecka?</h3>
+      <p>Numer jest przy każdej drużynie.</p>
+      <div class="links" style="margin-top:14px"><a class="chip" href="#druzyny">Zobacz drużyny</a><a class="chip o" href="#">Przekaż 1%</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© Błękitna Czternastka · Poznań</span>
+    <span>Przekaż nam <a href="#">1% podatku</a></span>
+    <span><a href="#">Facebook</a> · <a href="#">Instagram</a> · <a href="#">Flickr</a></span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% from "_hexes.html" import hexes %}
+{% block title %}Harcerze z Poznania{% endblock %}
+{% block content %}
+
+<!-- H E R O -->
+<div class="hero" style="background-image:linear-gradient(rgba(20,22,45,.5) 0,rgba(20,22,45,.05) 25%,rgba(20,22,45,.2) 55%,rgba(20,22,45,.82) 100%),url({{ url_for('static', filename='img/oboz.jpg') }})">
+  <div class="wrap">
+    <h1>Harcerze z Poznania. <em>Od 1919 roku.</em></h1>
+    <p>Zbiórki co tydzień, rajdy co miesiąc, raz w roku miesiąc w lesie. Przyjdź i zobacz.</p>
+    <a class="btn p" href="#druzyny">Znajdź swoją drużynę</a><a class="btn s" href="#oboz">Obóz i zimowisko</a>
+  </div>
+</div>
+
+<!-- K I M  J E S T E Ś M Y -->
+<section id="o-nas">
+  <div class="wrap trip">
+    <div class="tripph" style="background-image:url({{ url_for('static', filename='img/1.jpg') }})" role="img" aria-label="Harcerze Błękitnej XIV"></div>
+    <div class="about">
+      <h2>Kim jesteśmy?</h2>
+      {% for p in site.szczep.kim %}<p>{{ p }}</p>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- D R U Ż Y N Y -->
+<section class="teams" id="druzyny">
+  <div class="wrap">
+    <h2>Siedem drużyn. Jeden szczep.</h2>
+    <p class="sub">Wybierz po wieku dziecka: od lewej zuchy, dalej coraz starsi. Dziewczyny na górze, chłopcy pod nimi. Telefon do drużynowego jest przy każdej drużynie.</p>
+    {{ hexes(site) }}
+  </div>
+</section>
+
+<!-- J A K  Z A C Z Ą Ć -->
+<section class="how" style="background-image:linear-gradient(rgba(31,33,66,.8),rgba(31,33,66,.88)),url({{ url_for('static', filename='img/5.jpg') }})">
+  <div class="wrap">
+    <h2>Jak zacząć?</h2>
+    <p class="sub">Bez przysiąg i zobowiązań. Pierwsza zbiórka to po prostu próba.</p>
+    <div class="steps">
+      <div class="step"><h3>Wybierz drużynę</h3><p>Po wieku i po tym, co lubisz.</p></div>
+      <div class="step"><h3>Zadzwoń lub napisz</h3><p>Drużynowy powie, kiedy i gdzie się spotykamy.</p></div>
+      <div class="step"><h3>Przyjdź na zbiórkę</h3><p>Możesz zostać na jedno spotkanie albo na lata.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- O B Ó Z  I  Z I M O W I S K O -->
+<section id="oboz">
+  <div class="wrap">
+    <h2>Dwa duże wyjazdy w roku</h2>
+    <p class="sub">Latem miesiąc w lesie, zimą zimowisko. Reszta roku to zbiórki i rajdy.</p>
+    <div class="big2">
+      {% for o in site.obozy %}
+      <a class="ph" href="{{ url_for('oboz') }}#{{ o.id }}" style="background-image:url({{ url_for('static', filename='img/' ~ o.zdjecie) }})"><div><h3>{{ o.nazwa }}</h3><small>Terminy, miejsce, cena →</small></div></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- F A C E B O O K -->
+<section class="teams fbsec">
+  <div class="wrap trip">
+    <div>
+      <h2>Co słychać?</h2>
+      <p class="sub">To, co dzieje się teraz, najszybciej zobaczysz na naszym Facebooku i Instagramie. Tu są ostatnie wpisy ze strony szczepu.</p>
+      <a class="textlink" href="{{ site.linki.facebook_strona }}">Cała strona na Facebooku →</a><br>
+      <a class="textlink" href="{{ site.linki.instagram }}">Instagram →</a>
+    </div>
+    <div class="fbbox">
+      <iframe title="Ostatnie wpisy na Facebooku Błękitnej XIV" loading="lazy"
+        src="https://www.facebook.com/plugins/page.php?href={{ site.linki.facebook_strona|urlencode }}&tabs=timeline&width=500&height=640&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Z D J Ę C I A -->
+<section>
+  <div class="wrap">
+    <h2>Tak to wygląda</h2>
+    <p class="sub">{% if galeria %}Dwa najnowsze albumy i dwa wylosowane z naszych wyjazdów. Wszystkie na Flickrze.{% else %}Więcej zdjęć na Flickrze.{% endif %}</p>
+    <div class="strip"{% if galeria %} data-gal{% endif %}>
+      {% if galeria %}
+      {% for a in galeria %}
+      <a class="si" href="{{ a.url }}" style="background-image:url({{ a.twarz }})" title="{{ a.tytul }} ({{ a.zdjec }} zdjęć)">
+        <span class="yr">{{ a.rok }}</span>
+        <span class="nm">{{ a.nazwa }}</span>
+      </a>
+      {% endfor %}
+      {% else %}
+      {% for g in site.galeria %}<i style="background-image:url({{ url_for('static', filename='img/' ~ g) }})"></i>{% endfor %}
+      {% endif %}
+    </div>
+    <div class="links">
+      <a class="chip" href="{{ site.linki.flickr }}">Zdjęcia na Flickr</a>
+    </div>
+    {% if galeria_dane %}
+    <script type="application/json" id="gal-data">{{ galeria_dane|tojson }}</script>
+    <script src="{{ url_for('static', filename='js/gallery.js') }}" defer></script>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

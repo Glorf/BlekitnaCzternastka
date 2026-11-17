@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}Obóz i zimowisko{% endblock %}
+{% block desc %}Obóz letni i zimowisko Błękitnej XIV: terminy, miejsce, cena i informacje dla rodziców.{% endblock %}
+{% block content %}
+
+<!-- N A G Ł Ó W E K -->
+<div class="pagehead" style="background-image:linear-gradient(rgba(20,22,45,.5),rgba(20,22,45,.75)),url({{ url_for('static', filename='img/oboz.jpg') }})">
+  <div class="wrap">
+    <h1>Obóz i zimowisko</h1>
+    <p>Dwa duże wyjazdy w roku: latem miesiąc w lesie, zimą zimowisko.</p>
+  </div>
+</div>
+
+{% for o in site.obozy %}
+<!-- {{ o.nazwa|upper }} -->
+<section id="{{ o.id }}" class="{{ 'teams' if loop.index0 % 2 else '' }}">
+  <div class="wrap trip {{ 'rev' if loop.index0 % 2 }}">
+    <div class="tripph" style="background-image:url({{ url_for('static', filename='img/' ~ o.zdjecie) }})"></div>
+    <div>
+      <h2>{{ o.nazwa }}</h2>
+      <p class="sub">{{ o.haslo }}</p>
+      <dl class="facts">
+        <dt>Termin</dt><dd>{{ o.terminy }}</dd>
+        <dt>Miejsce</dt><dd>{{ o.miejsce }}</dd>
+        <dt>Cena</dt><dd>{{ o.cena }}</dd>
+        <dt>Komendant</dt><dd>{{ o.komendant }}</dd>
+      </dl>
+      <h3>Dla rodziców</h3>
+      <ul>{% for l in o.dla_rodzicow %}<li>{{ l }}</li>{% endfor %}</ul>
+      <p class="sign">{{ o.zapisy }}</p>
+      <a class="btn p" href="mailto:{{ site.szczep.email }}?subject={{ o.nazwa|urlencode }}">Napisz w sprawie wyjazdu</a>
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+<!-- Z D J Ę C I A  Z  A L B U M Ó W -->
+<section class="photos" id="zdjecia">
+  <div class="wrap">
+    <h2>Zobaczcie jak bawiliśmy się na poprzednich:</h2>
+  </div>
+  {% for g in site.zdjecia if g.albumy %}
+  {% set n = g.albumy|length %}
+  <div class="wrap trip alb {{ 'rev' if loop.index0 % 2 }}">
+    <div class="albtext">
+      <h3>{{ g.naglowek }}</h3>
+      {% if g.podpis %}<p class="sub">{{ g.podpis }}</p>{% endif %}
+    </div>
+    <div class="thumbcol">
+      {% if n > 4 %}<input type="checkbox" id="more-{{ g.id }}" class="morebox" aria-label="Pokaż więcej albumów: {{ g.naglowek }}">{% endif %}
+      <div class="thumbs">
+        {% for a in g.albumy[:(3 if n > 4 else 4)] %}
+        <a class="th" href="{{ a.url }}" title="{{ a.tytul }} ({{ a.zdjec }} zdjęć)">
+          <img src="{{ a.okladka }}" alt="" loading="lazy">
+          <span class="yr">{{ a.rok }}</span>
+          <span class="nm">{{ a.nazwa }}</span>
+        </a>
+        {% endfor %}
+        {% if n > 4 %}
+        <label class="th plus" for="more-{{ g.id }}">
+          <span class="pl">+</span>
+          <span class="nm a">{{ n - 3 }} więcej</span>
+          <span class="nm b">Zwiń</span>
+        </label>
+        {% endif %}
+      </div>
+      {% if n > 4 %}
+      <div class="thumbs many">
+        {% for a in g.albumy[3:] %}
+        <a class="th" href="{{ a.url }}" title="{{ a.tytul }} ({{ a.zdjec }} zdjęć)">
+          <img src="{{ a.okladka }}" alt="" loading="lazy">
+          <span class="yr">{{ a.rok }}</span>
+          <span class="nm">{{ a.nazwa }}</span>
+        </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+  <div class="wrap">
+    <p class="links" style="margin-top:44px"><a class="textlink" href="{{ site.linki.flickr }}">Wszystkie albumy na Flickrze →</a> &nbsp; <a class="textlink" href="{{ url_for('archiwum') }}">Archiwum →</a></p>
+  </div>
+</section>
+{% endblock %}

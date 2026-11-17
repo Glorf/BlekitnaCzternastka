@@ -1,0 +1,250 @@
+# Treść strony Błękitnej XIV. Tu edytujemy dane co kilka miesięcy.
+# Teksty o szczepie i drużynach oraz kontakty pochodzą ze starej strony.
+# Obozy (terminy, miejsca, ceny) są jeszcze do uzupełnienia.
+
+szczep:
+  nazwa: Błękitna Czternastka
+  hasla: "Harcerze z Poznania. Od 1919 roku."
+  opis: >-
+    Błękitna XIV to szczep harcerski z Poznania: drużyny dla zuchów, harcerek
+    i harcerzy w każdym wieku oraz krąg instruktorski Kłuszyn. Poniżej każda
+    z drużyn z kontaktem do drużynowego.
+  adres: ul. Bukowska 16, 60-809 Poznań
+  email: blekitna14@gmail.com
+  szczepowy:
+    imie: ""
+    telefon: +48 536 583 778
+    email: blekitna14@gmail.com
+  # Tekst "Kim jesteśmy?" ze starej strony.
+  # Skrócony tekst "Kim jesteśmy?" (pełny jest na starej stronie).
+  kim:
+    - Jesteśmy dziećmi i młodymi dorosłymi, uczniami i studentami. Różni nas wiele, ale jedno nas łączy – jesteśmy harcerzami i możemy liczyć na siebie nawzajem. Raz do roku znikamy na miesiąc gdzieś w lesie, gdzie budujemy od podstaw własny, mały świat.
+    - Poznać nas może każdy, bez żadnych zobowiązań ani przysiąg. Weź tylko szczoteczkę do zębów i paczkę ciastek.
+
+linki:
+  facebook: https://facebook.com/blekitna14/
+  instagram: https://instagram.com/blekitna14
+  flickr: https://www.flickr.com/photos/blekitna14/albums
+  facebook_strona: https://www.facebook.com/Blekitna14/
+
+# Przekaż 1,5% (dane ze starej strony).
+procent:
+  kwota: 1,5%
+  krs: "0000266321"
+  cel: "Hufiec „7”, Szczep Błękitna Czternastka"
+
+# Kolumny ścieżki wieku (0 = najmłodsi).
+grupy:
+  - Zuchy · 6–9
+  - 10–13 lat
+  - Gimnazjum
+  - Liceum
+
+# kol: kolumna, wiersz: pozycja w pionie (dziewczyny wyżej, chłopcy niżej).
+druzyny:
+  - id: lesne-skrzaty
+    logo: skrzaty.svg
+    nazwa: Leśne Skrzaty
+    pelna: Gromada zuchowa „Leśne Skrzaty”
+    opis: zuchy, 6–9 lat
+    zdjecie: li.jpg
+    kol: 0
+    wiersz: 0.5
+    tekst:
+      - Gromada zuchowa „Leśne Skrzaty” to miejsce, gdzie najmłodsi – dzieci w wieku 6–9 lat – odkrywają świat poprzez zabawę i rozwijanie nowych umiejętności. Podczas zbiórek budujemy statki kosmiczne, rozwiązujemy zagadki, pomagamy szalonym naukowcom, poznajemy pląsy, przy okazji zdobywając coraz to nowe sprawności. Oprócz cotygodniowych piątkowych zbiórek, wybieramy się czasem w weekendy na biwaki z naszym szczepem oraz rajdy zuchowe z zaprzyjaźnionymi gromadami.
+      - Każde nasze spotkanie to nowa przygoda i mnóstwo radości!
+    zbiorka: piątki
+    druzynowy: {imie: Dominika Sagalara, kobieta: true, telefon: 784 261 648, email: dominika.sagalara@zhp.net.pl}
+  - id: lesna
+    logo: lesna.svg
+    nazwa: Leśna
+    pelna: Drużyna Harcerska „Leśna”
+    opis: dziewczyny, 10–13 lat
+    zdjecie: lesna.jpg
+    kol: 1
+    wiersz: 0
+    tekst:
+      - „Leśna” to wyjątkowa drużyna dla dziewczynek w wieku 10–13 lat. Jesteśmy oryginalne i pomysłowe, dlatego za każdym razem na naszych zbiórkach świetnie się bawimy, poznając różne zakątki świata, dowiadując się czegoś o naszym ciele lub zgłębiając tajniki handlu – zawsze znajdzie się coś ciekawego do odkrycia. Czasami jesteśmy komandosami i mamy bardzo trudne zadania do wykonania, podczas których uczymy się samodzielności i współpracy, ale czasami zasługujemy też na chwilę odpoczynku i jesteśmy księżniczkami. Lubimy porysować, ugotować coś smacznego, poplotkować.
+      - Naszą patronką jest Maria „Majka” Krassowska, sanitariuszka z czasów powstania warszawskiego, dlatego jeździmy na rajdy do Warszawy, aby móc dowiedzieć się o niej, odwiedzając Muzeum Powstania Warszawskiego, jej rodzinny dom czy grób na Powązkach. Oczywiście to nie wszystko – czasami lubimy po prostu wyjechać na weekend nad jezioro. Zapraszamy na zbiórki wszystkie dziewczynki, które chciałyby przeżyć wspaniałą przygodę, spróbować nowych rzeczy i nie boją się wyzwań.
+    druzynowy: {imie: Alicja Han, kobieta: true, telefon: 724 794 671, email: alicja.han@zhp.net.pl}
+  - id: kohorta
+    logo: kohorta.svg
+    nazwa: Kohorta
+    pelna: Drużyna Męska „Kohorta”
+    opis: chłopcy, 10–13 lat
+    zdjecie: kohorta.jpg
+    kol: 1
+    wiersz: 1
+    tekst:
+      - Drużyna męska „Kohorta” zrzesza 20 chłopców w wieku 10–13 lat (klasy 4–6 szkoły podstawowej). Razem z nami przeżyć można wspaniałe przygody, nabyć wiele pożytecznych umiejętności, a także zawiązać przyjaźnie na całe życie! Nasze cotygodniowe zbiórki odbywają się najczęściej na terenie największego parku w Poznaniu – Parku Cytadela – lub w Społecznej Szkole Podstawowej nr 4 na osiedlu Oświecenia.
+      - W czasie zbiórek członkowie drużyny biorą udział w grach terenowych, poznając tajniki technik harcerskich, takich jak rozpalanie ogniska, szyfry oraz orientacja w terenie, i przy tym świetnie się bawiąc! Oprócz tego tradycją Kohorty są rajdy w góry, w trakcie których członkowie drużyny mają okazję sprawdzić się fizycznie, a także rozwinąć w sobie pasję turystyki górskiej.
+      - Kohorta jest zatem miejscem dla wszystkich młodych chłopaków, którzy czas wolny wolą spędzać aktywniej niż siedząc przed ekranem, nie boją się wyzwań oraz chcą spróbować czegoś nowego, co z czasem ze zwykłego hobby może przeobrazić się w styl życia!
+    zbiorka: Park Cytadela lub Społeczna SP nr 4 (os. Oświecenia)
+    druzynowy: {imie: Marcin Kniat, telefon: 605 099 553, email: marcin.kniat@zhp.net.pl}
+  - id: ster
+    logo: ster.png
+    nazwa: Ster
+    pelna: Żeńska Drużyna Starszoharcerska „Ster” im. Kingi Choszcz
+    opis: dziewczyny, gimnazjum
+    zdjecie: ster.jpg
+    kol: 2
+    wiersz: 0.5
+    tekst:
+      - Żeńska Drużyna Starszoharcerska „Ster” im. Kingi Choszcz to drużyna dziewczyn w wieku gimnazjalnym. Powstała w 2007 roku. Sterniczki cechuje pozytywna energia, sympatia oraz pomysłowość. Spotykamy się na zbiórkach w piątki o 16.45 w Marcinku, a także w każdym semestrze jedziemy na rajd drużyny – byłyśmy już m.in. w Gdańsku, Warszawie oraz Toruniu. Razem robimy wiele ciekawych rzeczy oraz dobrze się bawimy. Serdecznie zapraszamy!
+    zbiorka: piątki, 16:45, Marcinek
+    druzynowy: {imie: Agnieszka Maślińska, kobieta: true, telefon: 668 988 169, email: agnieszka.maslinska@zhp.net.pl}
+  - id: formoza
+    logo: formoza.svg
+    nazwa: Formoza
+    pelna: Drużyna Męska „Formoza” im. Gen. Mariusza Zaruskiego
+    opis: chłopcy, gimnazjum
+    zdjecie: formoza.jpg
+    kol: 2
+    wiersz: 1.5
+    tekst:
+      - Drużyna Męska „Formoza” im. Gen. Mariusza Zaruskiego to najmłodsza z drużyn działających obecnie w naszym szczepie. Jesteśmy drużyną starszoharcerską, co oznacza, że zrzeszamy gimnazjalistów. Naszym żywiołem jest woda, dlatego możecie się po nas spodziewać wypadów nad morze, ataków na łodzie czy nurkowania. Nasz patron związany jest z górami, więc dołączając do nas poznasz najdziksze zakątki naszego kraju.
+      - Nazwa „Formoza” pochodzi od Jednostki Wojskowej „Formoza”, dlatego towarzyszą nam ekscytujące nocne akcje, eksplorowanie opuszczonych budynków, poznawanie technik survivalu i ciągły dreszcz emocji. Przede wszystkim jesteśmy gimnazjalistami, poza poważnymi rzeczami liczy się dla nas świetna zabawa. Jesteśmy Formozą, a Ty możesz stać się jednym z nas. Zapraszamy!
+    druzynowy: {imie: Marcin Kniat, telefon: 605 099 553, email: marcin.kniat@zhp.net.pl}
+  - id: wiez
+    logo: wiez.svg
+    nazwa: Więź
+    pelna: Drużyna Żeńska „Więź”
+    opis: dziewczyny, liceum i studia
+    zdjecie: wiez.jpg
+    kol: 3
+    wiersz: 0
+    tekst:
+      - Drużyna Żeńska „Więź” to ekipa licealistek i studentek, które razem lubią spędzać aktywnie czas. Chętnie chodzimy po górach, jeździmy na rowerze czy rolkach, próbujemy swoich sił we wspinaczce. W czasie semestru drużyna działa patrolami, czyli zajmujemy się dokładnie tym, na co mamy ochotę na początku semestru. Do tej pory miałyśmy takie patrole jak filmowy, sportowy, fotograficzny, kulinarny, kulturalny. Oprócz tego pomagamy potrzebującym, ostatnio prowadzimy zajęcia dla podopiecznych fundacji św. Jadwigi. W czasie wakacji, oprócz wyjazdów na obóz szczepu, jeździmy w góry na obozy wędrowne.
+      - Nasze zbiórki odbywają się zazwyczaj w weekendy, ale czasem zdarzają się wyjątki, jeżeli tego akurat wymaga dany patrol. Zasadniczo raz w miesiącu wyjeżdżamy na rajdy, zarówno szczepu i hufca, jak też samodzielne wyjazdy drużyny, w czasie których zwiedzamy inne miasta, jedziemy w góry lub na dłuższe wycieczki rowerowe.
+    zbiorka: zazwyczaj w weekendy
+    druzynowy: {imie: Zofia Nawrocka, kobieta: true, telefon: 797 117 882, email: zofia.nawrocka@zhp.net.pl}
+  - id: cichociemni
+    logo: cichociemni.svg
+    nazwa: Cichociemni
+    pelna: I Drużyna Męska „Cichociemni”
+    opis: chłopcy, liceum
+    zdjecie: cichociemni.jpg
+    kol: 3
+    wiersz: 1
+    tekst:
+      - I Drużyna Męska „Cichociemni” to działająca od ponad trzydziestu lat załoga facetów z liceum, którzy wytrwale pracują i uczą się, by być godnymi imienia swoich Patronów. Jeśli chcesz poznać smak przygody i braterstwa, masz odwagę postawić przed sobą cele i posiadasz siłę, by dążyć do ideałów, to koniecznie do nas dołącz!
+    druzynowy: {imie: Jakub Cichy, telefon: 603 396 144, email: jakub.cichy@zhp.net.pl}
+
+# Krąg instruktorski: tylko na stronie Drużyny (nie na ścieżce wieku na Start).
+instruktorzy:
+  - id: kluszyn
+    nazwa: Kłuszyn
+    pelna: Krąg instruktorski „Kłuszyn”
+    opis: instruktorzy szczepu
+    zdjecie: kluszyn.jpg
+    tekst:
+      - Kłuszyn to instruktorzy, bez których nasz szczep by nie istniał. Nazwa naszego kręgu instruktorskiego wywodzi się z bitwy pod Kłuszynem – największego zwycięstwa hetmana Żółkiewskiego. Razem staramy się sprawić, by w „Błękitnej” znalazło się miejsce dla każdego, by wszystko, co robimy, było interesujące i choć trochę pożyteczne.
+      - Nasi instruktorzy są w bardzo różnym wieku, zajmują się różnymi rzeczami, ale łączy ich jedno – pasja do pomagania innym i naprawiania świata.
+
+# Flickr: albumy pobierane przez API (python flickr.py, wymaga FLICKR_API_KEY),
+# zapisywane w data/flickr.json.
+flickr:
+  uzytkownik_url: https://www.flickr.com/photos/blekitna14/
+
+# Dwa duże wyjazdy w roku (do uzupełnienia; nie było ich na stronie "O nas").
+obozy:
+  - id: oboz-letni
+    nazwa: Obóz letni
+    zdjecie: oboz.jpg
+    haslo: Raz do roku znikamy na miesiąc gdzieś w lesie.
+    terminy: do uzupełnienia
+    miejsce: do uzupełnienia
+    cena: do uzupełnienia
+    komendant: do uzupełnienia
+    zapisy: "Napisz do nas, a damy znać, gdy ruszą zapisy."
+    dla_rodzicow:
+      - Informacje dla rodziców (kto jedzie, opieka, co zabrać) do uzupełnienia.
+  - id: zimowisko
+    nazwa: Zimowisko
+    zdjecie: zimowisko.jpg
+    haslo: Zimowy wyjazd szczepu.
+    terminy: do uzupełnienia
+    miejsce: do uzupełnienia
+    cena: do uzupełnienia
+    komendant: do uzupełnienia
+    zapisy: "Napisz do nas, a damy znać, gdy ruszą zapisy."
+    dla_rodzicow:
+      - Informacje dla rodziców (kto jedzie, opieka, co zabrać) do uzupełnienia.
+
+# FAQ na stronie Kontakt. PRZYKŁADY: odpowiedzi do sprawdzenia i uzupełnienia przez szczep.
+faq:
+  - pytanie: Gdzie jest harcówka szczepu?
+    odpowiedz: Nasz adres to ul. Bukowska 16, 60-809 Poznań. Gdzie dokładnie spotyka się dana drużyna, znajdziesz przy niej na stronie Drużyny.
+  - pytanie: Kiedy powstał szczep?
+    odpowiedz: Pierwsza drużyna powstała w 1919 roku. Od tamtej pory harcerze z Błękitnej Czternastki działają w Poznaniu nieprzerwanie.
+  - pytanie: Kto jest patronem szczepu?
+    odpowiedz: Patronem szczepu jest hetman Stanisław Żółkiewski. Co roku jeździmy na rajd jego imienia, czyli Żółkiewszczadę.
+  - pytanie: Od jakiego wieku można zacząć?
+    odpowiedz: Od 6 lat. Najmłodsi trafiają do gromady zuchowej Leśne Skrzaty (6–9 lat), a potem przechodzą do kolejnych drużyn wraz z wiekiem.
+  - pytanie: Czy trzeba składać przysięgę albo się do czegoś zobowiązać?
+    odpowiedz: Nie. Poznać nas może każdy, bez zobowiązań ani przysiąg. Pierwsza zbiórka to po prostu próba.
+  - pytanie: Co zabrać na pierwszą zbiórkę?
+    odpowiedz: Szczoteczkę do zębów i paczkę ciastek. Resztą zajmie się drużynowy.
+  - pytanie: Ile kosztuje harcerstwo?
+    odpowiedz: DO UZUPEŁNIENIA (składka członkowska, koszt obozu i zimowiska).
+  - pytanie: Jak zapisać dziecko?
+    odpowiedz: Zadzwoń lub napisz do drużynowego wybranej drużyny. Jego numer i e-mail są przy każdej drużynie.
+
+galeria: [2.jpg, 4.jpg, 6.jpg, 3.jpg]
+
+# Sekcja zdjęć na stronie Obóz. Do każdej grupy trafiają albumy, w których tytule
+# jest któreś ze słów z "slowa" (bez słów z "wyklucz"). "podpis" jest opcjonalny.
+zdjecia:
+  - id: obozy
+    naglowek: Obozach
+    slowa: [obóz, oboz, kolonia]
+    wyklucz: [wędrown, poobozowa]
+  - id: zimowiska
+    naglowek: Zimowiskach
+    slowa: [zimowisko]
+  - id: zolkiewszczady
+    naglowek: Żółkiewszczadach
+    podpis: Rajd patrona szczepu
+    slowa: [żółkiewszczada, zolkiewszczada]
+  - id: rajdy-wiosenne
+    naglowek: Rajdach wiosennych
+    slowa: [rajd wiosenny]
+
+# Archiwum: wstęp i zbiory (linki ze starej strony archiwum).
+archiwum:
+  wstep:
+    - Materiały archiwalne „Błękitnej” są rozsiane po sieci niczym gwoździe na obozie. Ta strona to indeks tych materiałów, żeby łatwiej je znaleźć.
+    - Niesamowita ilość fotografii i dokumentów jest już zeskanowana, ale bardzo możliwe, że Ty masz zdjęcia, które mogą tu trafić. W jakiejkolwiek formie by nie były, poradzimy sobie z każdą – nasz patrol archiwalny nie boi się negatywów, papierowych odbitek ani szklanych klisz. Szukamy też gazetek, kronik i plakietek.
+    - Jeśli chcesz podzielić się archiwalnymi materiałami, napisz do nas.
+  zbiory:
+    - nazwa: Zdjęcia
+      opis: Galeria zdjęć szczepu z lat 2004–2025.
+      linki:
+        - {tytul: Galeria na Flickrze (2004–2025), url: "https://www.flickr.com/photos/blekitna14/albums"}
+    - nazwa: Błękitny czas
+      opis: Gazetka szczepu.
+      linki:
+        - {tytul: Numery archiwalne (28–86), url: "https://drive.google.com/file/d/1l4g1WJpdisU5Zq4niou5-4XEG6fq8OB3/view?usp=sharing"}
+        - {tytul: Grudzień / Styczeń / Luty – 14.12.12, url: "https://drive.google.com/file/d/1jbTMQaU11_kEjZG7nFaqr84Db64-LWii/view?usp=sharing"}
+        - {tytul: Marzec / Kwiecień / Maj – 14.03.13, url: "https://drive.google.com/file/d/137f-FpSoDGz-wYBAAhGYAZ0IlSCIvVsl/view?usp=sharing"}
+        - {tytul: Czerwiec / Lipiec / Sierpień – 21.06.13, url: "https://drive.google.com/file/d/11olzXENl_p92eoMRVGDbeJo6p8r4FFE4/view?usp=sharing"}
+        - {tytul: Wrzesień / Październik / Listopad – 23.09.13, url: "https://drive.google.com/file/d/1rJOZt2nkeKoJt1nApNJ_CO7NXgN_EO8p/view?usp=sharing"}
+        - {tytul: Marzec / Kwiecień / Maj – 04.04.14, url: "https://drive.google.com/file/d/1lzsr3_-Ur1nRSt3z4FxVsiZbfly7Q8bZ/view?usp=sharing"}
+        - {tytul: Grudzień / Styczeń / Luty – 23.12.14, url: "https://drive.google.com/file/d/1ou-WHXRN7kSERslZfdNzNGFpWfaRdt2k/view?usp=sharing"}
+        - {tytul: Wydanie specjalne – 30 lat Leśnej i Kohorty – 13.10.2021, url: "https://drive.google.com/file/d/1pweTMYHW0KHY5NrTAvWe-B5RvxE35BYX/view?usp=sharing"}
+        - {tytul: Maj – Grudzień – 18.12.2025, url: "https://drive.google.com/file/d/1fvBELK3quBAmP1efj3-DmjL5F99c4nmv/view?usp=sharing"}
+    - nazwa: Jednodniówki
+      opis: Wydania okolicznościowe z okazji rocznic szczepu.
+      linki:
+        - {tytul: 80-lecie (wyd. 1999), url: "https://drive.google.com/file/d/1XiUqe1mQiqqAJ-r_u0qceI-HnzCXS45b/view?usp=sharing", uwaga: ".rar"}
+        - {tytul: 85-lecie (wyd. 2004), url: "https://docs.google.com/document/d/18trsrKWq6HXVLkV4JWoboili_6tp095U/edit?usp=sharing", uwaga: ".doc"}
+        - {tytul: "95-lecie, część I (lata 2009–2014; wyd. 2014)", url: "https://drive.google.com/file/d/1oXojYXIp5FKQVnfBaOju6LRxoP618U-s/view?usp=sharing"}
+        - {tytul: "95-lecie, część II (lata 1919–2009; wyd. 2014)", url: "https://drive.google.com/file/d/1nRJp6onX32OWtA4C8I7GhkzW9pIzNBhf/view?usp=sharing"}
+        - {tytul: 105-lecie (wyd. 2024), url: "https://drive.google.com/file/d/1YEtthJxKi1wTHtQNmxUIkbryVE3YN9N2/view?usp=sharing"}
+    - nazwa: Książki i śpiewniki
+      opis: Kroniki, książka z okazji stulecia i śpiewniki.
+      linki:
+        - {tytul: „Błękitna Czternastka” – książka wydana z okazji stulecia szczepu, url: "https://drive.google.com/file/d/1177V1Jr1yvYuRU462vTTD_kDKwEfP_5N/view?usp=sharing"}
+        - {tytul: „Historio-kronika (Silva Rerum)” – kronika historyczna drużyny i szczepu z 1993 roku, url: "https://blekitna.s3.eu-central-1.amazonaws.com/archiwum/files/silva-rerum.pdf", uwaga: pdf}
+        - {tytul: Śpiewnik Julki Suwalskiej (2011), url: "https://docs.google.com/document/d/1yucIP7VrKD-0icktaNqvIpHC8VO7u_ou/edit?usp=sharing", uwaga: ".doc"}
+        - {tytul: Otwartoźródłowy śpiewnik „Błękitnej Czternastki”, url: "https://github.com/iansowinski/spiewnik/releases", uwaga: "na podstawie śpiewników Zygacza, Bratka, Grzesia Rachlewicza, Marty Bieniasz, Julki Suwalskiej i Jana Sowińskiego"}

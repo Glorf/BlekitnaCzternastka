@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Kontakt i FAQ{% endblock %}
+{% block desc %}Kontakt do szczepowego Błękitnej XIV w Poznaniu i odpowiedzi na najczęstsze pytania.{% endblock %}
+{% block content %}
+
+<!-- N A G Ł Ó W E K -->
+<div class="pagehead" style="background-image:linear-gradient(rgba(20,22,45,.55),rgba(20,22,45,.78)),url({{ url_for('static', filename='img/4.jpg') }})">
+  <div class="wrap">
+    <h1>Kontakt i FAQ</h1>
+    <p>Odpowiedzi na najczęstsze pytania i kontakt do szczepowego.</p>
+    <nav class="jump" aria-label="Przejdź do sekcji"><a href="#faq">Najczęstsze pytania</a><a href="#kontakt">Kontakt</a></nav>
+  </div>
+</div>
+
+<!-- F A Q -->
+<section id="faq">
+  <div class="wrap faq">
+    <h2>Najczęstsze pytania</h2>
+    <p class="sub">Nie ma tu odpowiedzi na Twoje pytanie? Zadzwoń lub napisz, chętnie pomożemy.</p>
+    {% for q in site.faq %}
+    <details class="qa"{% if loop.first %} open{% endif %}>
+      <summary>{{ q.pytanie }}</summary>
+      <p>{{ q.odpowiedz }}</p>
+    </details>
+    {% endfor %}
+  </div>
+</section>
+<!-- K O N T A K T -->
+<section class="teams" id="kontakt">
+  <div class="wrap cgrid">
+    <div class="card">
+      <h3>Szczepowy</h3>
+      {% if site.szczep.szczepowy.imie %}<p>{{ site.szczep.szczepowy.imie }}</p>{% endif %}
+      <a class="big" href="{{ site.szczep.szczepowy.telefon|tel }}">{{ site.szczep.szczepowy.telefon }}</a>
+      <a href="mailto:{{ site.szczep.szczepowy.email }}">{{ site.szczep.szczepowy.email }}</a>
+      <p style="margin-top:10px">{{ site.szczep.nazwa }}<br>{{ site.szczep.adres }}</p>
+      <p class="socline"><a href="{{ site.linki.facebook }}">Facebook</a> · <a href="{{ site.linki.instagram }}">Instagram</a> · <a href="{{ site.linki.flickr }}">Flickr</a></p>
+    </div>
+    <div class="card">
+      <h3>Szukasz drużynowego swojego dziecka?</h3>
+      <p>Numer telefonu i e-mail drużynowego jest przy każdej drużynie.</p>
+      <div class="links" style="margin-top:14px">
+        <a class="chip" href="{{ url_for('druzyny') }}">Zobacz drużyny</a>
+        <a class="chip o" href="{{ url_for('procent') }}">Przekaż {{ site.procent.kwota }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

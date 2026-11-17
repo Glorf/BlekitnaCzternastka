@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Makieta B – Wieczorna | Błękitna XIV</title>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#1d1f3b; --panel:#2a2d55; --cream:#f6f1e6; --muted:#b9bbd6; --sky:#0BB5FF; --rb:8px; --rc:12px; }
+  * { box-sizing:border-box; margin:0; }
+  html { scroll-behavior:smooth; }
+  body { font:18px/1.65 Lora,serif; color:var(--cream); background:var(--bg); }
+  h1,h2,h3,.logo,nav { font-family:'Zilla Slab',serif; }
+  a { color:inherit; }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 20px; }
+
+  /* H E A D E R */
+  header { position:absolute; inset:0 0 auto 0; z-index:5; }
+  header .wrap { display:flex; align-items:center; gap:26px; height:78px; }
+  .logo { font-size:28px; font-weight:700; text-decoration:none; text-shadow:0 1px 8px rgba(0,0,0,.5); }
+  .logo b { font-weight:500; font-style:italic; }
+  nav { margin-left:auto; display:flex; gap:26px; font-size:20px; font-weight:500; text-shadow:0 1px 8px rgba(0,0,0,.55); }
+  nav a { text-decoration:none; padding:4px 0; border-bottom:2px solid transparent; }
+  nav a:hover, nav a.on { border-color:var(--cream); }
+  @media (max-width:760px){ nav a:nth-child(n+3):not(:last-child){display:none} nav{gap:16px} }
+
+  /* H E R O – cały ekran */
+  .hero { position:relative; height:100vh; height:100svh; min-height:580px; display:flex; align-items:flex-end;
+    background:linear-gradient(rgba(29,31,59,.5) 0,rgba(29,31,59,.05) 25%,rgba(29,31,59,.15) 50%,var(--bg) 100%),url(../../css/img/oboz.jpg) center/cover; }
+  .hero .wrap { padding-bottom:90px; }
+  .hero h1 { font-size:clamp(44px,8vw,104px); line-height:1; font-weight:700; max-width:11em; text-shadow:0 3px 24px rgba(0,0,0,.4); }
+  .hero h1 em { font-weight:500; }
+  .hero p { font-size:21px; max-width:30em; margin:18px 0 28px; color:#ece8f4; }
+  .btn { display:inline-block; padding:14px 30px; border-radius:var(--rb); font:700 21px 'Zilla Slab',serif; text-decoration:none; margin:0 10px 10px 0; box-shadow:0 8px 22px rgba(0,0,0,.35); }
+  .btn.p { background:var(--cream); color:var(--bg); }
+  .btn.s { background:rgba(255,255,255,.14); color:var(--cream); border:2px solid var(--cream); backdrop-filter:blur(4px); }
+  .btn:hover { transform:translateY(-2px); }
+
+  section { padding:76px 0; }
+  h2 { font-size:clamp(32px,5vw,48px); line-height:1.1; margin-bottom:12px; font-weight:700; }
+  .sub { color:var(--muted); max-width:34em; margin-bottom:30px; }
+
+  /* O B Ó Z  I  Z I M O W I S K O */
+  .big2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media (max-width:700px){ .big2{grid-template-columns:1fr} }
+  .ph { position:relative; min-height:380px; border-radius:var(--rc); overflow:hidden; background-size:cover; background-position:center; display:flex; align-items:flex-end; padding:28px; text-decoration:none; box-shadow:0 18px 40px rgba(0,0,0,.45); transition:transform .25s; }
+  .ph:hover { transform:translateY(-5px); }
+  .ph::before { content:""; position:absolute; inset:0; background:linear-gradient(transparent 35%,rgba(15,16,35,.9)); }
+  .ph div { position:relative; }
+  .ph h3 { font-size:clamp(36px,5vw,52px); line-height:1; }
+  .ph small { display:block; font-size:17px; margin-top:8px; color:#e6e2ee; }
+
+  /* D R U Ż Y N Y */
+  .round { display:flex; align-items:center; flex-wrap:wrap; gap:10px 14px; margin:4px 0 26px; color:var(--muted); font-size:15px; }
+  .round input { width:min(320px,60vw); accent-color:var(--cream); }
+  .round output { color:var(--cream); font:700 16px 'Zilla Slab',serif; min-width:3ch; }
+  /* S Z E Ś C I O K I – ścieżka wieku, zaokrąglone */
+  .flat { --w:min(260px,24vw); --h:calc(var(--w)*.866); --g:8px; --sx:calc(var(--w)*.75 + var(--g)); --sy:calc(var(--h) + var(--g)); position:relative; width:calc(var(--sx)*3 + var(--w)); height:calc(var(--sy)*2.5 + 44px); margin:0 auto; }
+  .cl { position:absolute; top:0; width:var(--w); text-align:center; font:700 clamp(15px,1.7vw,20px) 'Zilla Slab',serif; }
+  .hexw { position:absolute; display:block; width:var(--w); height:var(--h); filter:drop-shadow(0 12px 16px rgba(0,0,0,.42)); text-decoration:none; transition:transform .2s; }
+  .hexw:hover { transform:translateY(-4px); }
+  .hex { width:100%; height:100%; clip-path:url(#rhex); background-size:cover; background-position:center; position:relative; display:grid; place-items:center; }
+  .hex::before { content:""; position:absolute; inset:0; background:rgba(29,31,59,.6); transition:background .2s; }
+  .hexw:hover .hex::before { background:rgba(29,31,59,.35); }
+  .hin { position:relative; text-align:center; padding:0 10%; }
+  .hin b { display:block; font:700 clamp(15px,2vw,24px)/1.1 'Zilla Slab',serif; }
+  .hin small { display:block; font-size:clamp(11px,1.2vw,14px); color:#e6e2ee; margin:3px 0 8px; }
+  .hp { display:inline-block; padding:4px 12px; border-radius:var(--rb); background:var(--cream); color:var(--bg); font:700 clamp(11px,1.3vw,15px) 'Zilla Slab',serif; }
+  @media (max-width:700px){
+    .flat { display:grid; grid-template-columns:1fr 1fr; gap:14px; width:auto; height:auto; }
+    .hexw { position:static; width:100%; height:auto; filter:none; }
+    .hex { clip-path:none; aspect-ratio:1; border-radius:calc(var(--rc) + var(--s,0.35)*(50% - var(--rc))); }
+    .cl { display:none; }
+    .flat .hexw:last-child { grid-column:span 2; }
+    .flat .hexw:last-child .hex { aspect-ratio:2/1; }
+  }
+  .team { background:var(--panel); border-radius:var(--rc); padding:24px; box-shadow:0 12px 28px rgba(0,0,0,.35); }
+  .team h3 { font-size:28px; line-height:1.1; }
+  .team small { color:var(--muted); display:block; margin:4px 0 16px; font-size:16px; }
+  .call { display:inline-block; padding:9px 18px; border-radius:var(--rb); background:var(--cream); color:var(--bg); font:700 17px 'Zilla Slab',serif; text-decoration:none; }
+  .call:hover { background:#fff; }
+  .who { display:block; font-size:15px; color:var(--muted); margin-bottom:8px; }
+
+  /* J A K  Z A C Z Ą Ć */
+  .how { background:linear-gradient(rgba(29,31,59,.82),rgba(29,31,59,.9)),url(../../o-nas/img/5.jpg) center/cover; }
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; counter-reset:s; }
+  @media (max-width:760px){ .steps{grid-template-columns:1fr} }
+  .step { background:rgba(29,31,59,.88); border-radius:var(--rc); padding:26px; box-shadow:0 10px 26px rgba(0,0,0,.3); }
+  .step::before { counter-increment:s; content:counter(s); display:grid; place-items:center; width:46px; height:46px; border-radius:var(--rb); background:var(--cream); color:var(--bg); font:700 24px 'Zilla Slab',serif; margin-bottom:14px; }
+  .step h3 { font-size:25px; margin-bottom:6px; }
+  .step p { color:var(--muted); }
+  .bring { margin-top:28px; text-align:center; font:italic 500 24px 'Zilla Slab',serif; }
+
+  /* G A L E R I A */
+  .strip { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .strip i { aspect-ratio:3/4; border-radius:var(--rc); background-size:cover; background-position:center; box-shadow:0 12px 28px rgba(0,0,0,.4); }
+  .strip i:nth-child(even) { transform:translateY(24px); }
+  @media (max-width:760px){ .strip{grid-template-columns:1fr 1fr} }
+  .soc { margin-top:50px; display:flex; flex-wrap:wrap; gap:10px; }
+  .soc a { padding:10px 22px; border-radius:var(--rb); border:2px solid var(--muted); text-decoration:none; font:500 18px 'Zilla Slab',serif; }
+  .soc a:hover { border-color:var(--cream); background:var(--cream); color:var(--bg); }
+
+  /* K O N T A K T */
+  .contact { background:var(--panel); }
+  .cgrid { display:grid; grid-template-columns:1.2fr 1fr; gap:36px; align-items:center; }
+  @media (max-width:760px){ .cgrid{grid-template-columns:1fr} }
+  .num { font:700 clamp(38px,6vw,56px) 'Zilla Slab',serif; text-decoration:none; display:block; line-height:1.1; margin:6px 0; }
+  footer { padding:28px 0; color:var(--muted); font-size:15px; }
+  .tag { position:fixed; right:12px; bottom:12px; background:#fff; color:#000; font:700 13px sans-serif; padding:6px 12px; border-radius:6px; z-index:9; }
+</style>
+</head>
+<body>
+<div class="tag">Makieta B · wieczorna</div>
+
+<!-- H E A D E R -->
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">Błękitna <b>XIV</b></a>
+    <nav><a class="on" href="#">Start</a><a href="#">Drużyny</a><a href="#">Obóz</a><a href="#">Archiwum ↗</a><a href="#kontakt">Kontakt</a></nav>
+  </div>
+</header>
+
+<!-- H E R O -->
+<div class="hero">
+  <div class="wrap">
+    <h1>Harcerze z Poznania. <em>Od 1919 roku.</em></h1>
+    <p>Zbiórki co tydzień, rajdy co miesiąc, raz w roku miesiąc w lesie. Przyjdź i zobacz.</p>
+    <a class="btn p" href="#druzyny">Drużyny</a><a class="btn s" href="#oboz">Obóz</a>
+  </div>
+</div>
+
+<!-- O B Ó Z  I  Z I M O W I S K O -->
+<section id="oboz" style="padding-top:20px">
+  <div class="wrap">
+    <h2>Dwa duże wyjazdy w roku</h2>
+    <p class="sub">Latem miesiąc w lesie, zimą tydzień w górach. Reszta roku to zbiórki i rajdy.</p>
+    <div class="big2">
+      <a class="ph" href="#" style="background-image:url(../../css/img/oboz.jpg)"><div><h3>Obóz letni</h3><small>Terminy, miejsce, cena →</small></div></a>
+      <a class="ph" href="#" style="background-image:url(../../css/img/zimowisko.jpg)"><div><h3>Zimowisko</h3><small>Terminy, miejsce, cena →</small></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- D R U Ż Y N Y -->
+<section id="druzyny">
+  <div class="wrap">
+    <h2>Siedem drużyn. Jeden szczep.</h2>
+    <p class="sub">Wybierz po wieku dziecka: od lewej zuchy, dalej coraz starsi. Dziewczyny na górze, chłopcy pod nimi. Telefon do drużynowego jest przy każdej drużynie.</p>
+    <!-- S U W A K  O K R Ą G Ł O Ś C I (tylko w makiecie) -->
+    <div class="round">
+      <span class="rtxt">Kształt (tylko w makiecie):</span>
+      <span class="rend">sześciokąt</span>
+      <input type="range" id="rnd" min="0" max="1" step="0.01" value="0.35" aria-label="Zaokrąglenie od sześciokąta do koła">
+      <span class="rend">koło</span>
+      <output id="rval">0.35</output>
+    </div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="rhex" clipPathUnits="objectBoundingBox"><path id="rpath" d=""/></clipPath></defs></svg>
+    <script>
+      // kształt: promień mieszany między sześciokątem (0) a kołem wpisanym w sześciokąt (1)
+      function hexPath(s) {
+        var A = 0.4330127, H = 0.8660254, N = 144, d = '';
+        for (var i = 0; i < N; i++) {
+          var th = 2 * Math.PI * i / N, deg = (th * 180 / Math.PI) % 60;
+          var rh = A / Math.cos((deg - 30) * Math.PI / 180);
+          var r = rh * (1 - s) + A * s;
+          var x = 0.5 + r * Math.cos(th), y = A + r * Math.sin(th);
+          d += (i ? 'L' : 'M') + (x).toFixed(4) + ' ' + (y / H).toFixed(4) + ' ';
+        }
+        return d + 'Z';
+      }
+      (function () {
+        var rng = document.getElementById('rnd'), p = document.getElementById('rpath'), out = document.getElementById('rval');
+        function set() { var v = parseFloat(rng.value); p.setAttribute('d', hexPath(v)); out.textContent = v.toFixed(2); document.documentElement.style.setProperty('--s', v); }
+        rng.addEventListener('input', set); set();
+      })();
+    </script>
+    <div class="flat">
+      <span class="cl" style="left:calc(var(--sx)*0);">Zuchy · 6–9</span>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*0);top:calc(var(--sy)*0.5 + 44px);"><div class="hex" style="background-image:url(../../o-nas/img/li.jpg)"><div class="hin"><b>Leśne Skrzaty</b><small>zuchy, 6–9 lat</small><span class="hp">000 000 000</span></div></div></a>
+      <span class="cl" style="left:calc(var(--sx)*1);">10–13 lat</span>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*1);top:calc(var(--sy)*0 + 44px);"><div class="hex" style="background-image:url(../../o-nas/img/lesna.jpg)"><div class="hin"><b>Leśna</b><small>dziewczyny, 10–13</small><span class="hp">000 000 000</span></div></div></a>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*1);top:calc(var(--sy)*1 + 44px);"><div class="hex" style="background-image:url(../../o-nas/img/kohorta.jpg)"><div class="hin"><b>Kohorta</b><small>chłopcy, 10–13</small><span class="hp">000 000 000</span></div></div></a>
+      <span class="cl" style="left:calc(var(--sx)*2);">Gimnazjum</span>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*2);top:calc(var(--sy)*0.5 + 44px);"><div class="hex" style="background-image:url(../../o-nas/img/ster.jpg)"><div class="hin"><b>Ster</b><small>dziewczyny, gimnazjum</small><span class="hp">000 000 000</span></div></div></a>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*2);top:calc(var(--sy)*1.5 + 44px);"><div class="hex" style="background-image:url(../../o-nas/img/formoza.jpg)"><div class="hin"><b>Formoza</b><small>chłopcy, gimnazjum</small><span class="hp">000 000 000</span></div></div></a>
+      <span class="cl" style="left:calc(var(--sx)*3);">Liceum</span>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*3);top:calc(var(--sy)*0 + 44px);"><div class="hex" style="background-image:url(../../o-nas/img/1.jpg)"><div class="hin"><b>Więź</b><small>dziewczyny, liceum</small><span class="hp">000 000 000</span></div></div></a>
+      <a class="hexw" href="#" style="left:calc(var(--sx)*3);top:calc(var(--sy)*1 + 44px);"><div class="hex" style="background-image:url(../../o-nas/img/cichociemni.jpg)"><div class="hin"><b>Cichociemni</b><small>chłopcy, liceum</small><span class="hp">000 000 000</span></div></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- J A K  Z A C Z Ą Ć -->
+<section class="how">
+  <div class="wrap">
+    <h2>Jak zacząć?</h2>
+    <p class="sub">Bez przysiąg i zobowiązań. Pierwsza zbiórka to po prostu próba.</p>
+    <div class="steps">
+      <div class="step"><h3>Wybierz drużynę</h3><p>Po wieku i po tym, co lubisz.</p></div>
+      <div class="step"><h3>Zadzwoń lub napisz</h3><p>Drużynowy powie, kiedy i gdzie się spotykamy.</p></div>
+      <div class="step"><h3>Przyjdź na zbiórkę</h3><p>Możesz zostać na jedno spotkanie albo na lata.</p></div>
+    </div>
+    <p class="bring">Weź tylko szczoteczkę do zębów i paczkę ciastek.</p>
+  </div>
+</section>
+
+<!-- Z D J Ę C I A -->
+<section>
+  <div class="wrap">
+    <h2>Tak to wygląda</h2>
+    <p class="sub">Więcej zdjęć na Flickrze, a to, co dzieje się teraz, na Facebooku i Instagramie.</p>
+    <div class="strip">
+      <i style="background-image:url(../../o-nas/img/2.jpg)"></i>
+      <i style="background-image:url(../../o-nas/img/4.jpg)"></i>
+      <i style="background-image:url(../../o-nas/img/6.jpg)"></i>
+      <i style="background-image:url(../../o-nas/img/3.jpg)"></i>
+    </div>
+    <div class="soc"><a href="#">Zdjęcia na Flickr</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
+  </div>
+</section>
+
+<!-- K O N T A K T -->
+<section class="contact" id="kontakt">
+  <div class="wrap cgrid">
+    <div>
+      <h2>Szczepowy</h2>
+      <p>Imię Nazwisko</p>
+      <a class="num" href="tel:000000000">000 000 000</a>
+      <p><a href="mailto:blekitna14@gmail.com">blekitna14@gmail.com</a><br>ul. Bukowska 16, 60-809 Poznań</p>
+    </div>
+    <div>
+      <p class="sub" style="margin:0">Numer do drużynowego znajdziesz przy każdej drużynie. A jeśli chcesz nas wesprzeć, możesz przekazać 1% podatku.</p>
+      <div class="soc" style="margin-top:18px"><a href="#">Przekaż 1%</a><a href="#druzyny">Drużyny</a></div>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap">© Błękitna Czternastka · Poznań</div></footer>
+</body>
+</html>
