@@ -45,6 +45,32 @@
   </div>
 </section>
 
+<!-- 1 0  P O W O D Ó W -->
+<section class="reasons" id="powody">
+  <div class="wrap">
+    <h2>10 powodów, żeby dołączyć</h2>
+    <p class="sub">Kliknij numer.</p>
+    <div class="rgrid" role="group" aria-label="Powody, żeby dołączyć">
+      {% for r in site.powody %}
+      <button type="button" class="rbtn" aria-expanded="false" aria-controls="powod-{{ loop.index }}" style="left:{{ (loop.index - 1) * 9.677 }}%;top:{{ 0 if loop.index % 2 else 33.33 }}%">{{ loop.index }}</button>
+      {% endfor %}
+    </div>
+    {% for r in site.powody %}
+    <div class="rtext" id="powod-{{ loop.index }}" hidden><h3>{{ loop.index }}. {{ r.tytul }}</h3><p>{{ r.tekst }}</p></div>
+    {% endfor %}
+  </div>
+</section>
+<script>
+(function(){
+  var b=document.querySelectorAll('.rbtn'),t=document.querySelectorAll('.rtext');
+  b.forEach(function(x,i){x.addEventListener('click',function(){
+    var open=x.getAttribute('aria-expanded')==='true';
+    b.forEach(function(y,j){y.setAttribute('aria-expanded','false');t[j].hidden=true;});
+    if(!open){x.setAttribute('aria-expanded','true');t[i].hidden=false;}
+  });});
+})();
+</script>
+
 <!-- O B Ó Z  I  Z I M O W I S K O -->
 <section id="oboz">
   <div class="wrap">

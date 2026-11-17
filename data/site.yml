@@ -248,3 +248,26 @@ archiwum:
         - {tytul: „Historio-kronika (Silva Rerum)” – kronika historyczna drużyny i szczepu z 1993 roku, url: "https://blekitna.s3.eu-central-1.amazonaws.com/archiwum/files/silva-rerum.pdf", uwaga: pdf}
         - {tytul: Śpiewnik Julki Suwalskiej (2011), url: "https://docs.google.com/document/d/1yucIP7VrKD-0icktaNqvIpHC8VO7u_ou/edit?usp=sharing", uwaga: ".doc"}
         - {tytul: Otwartoźródłowy śpiewnik „Błękitnej Czternastki”, url: "https://github.com/iansowinski/spiewnik/releases", uwaga: "na podstawie śpiewników Zygacza, Bratka, Grzesia Rachlewicza, Marty Bieniasz, Julki Suwalskiej i Jana Sowińskiego"}
+
+# 10 powodów, żeby dołączyć (ze starej strony). Na Start jako numerowane kafelki; treść po kliknięciu.
+powody:
+  - tytul: Na mundur łatwiej złapać stopa
+    tekst: Chciałbyś zacząć przygodę z autostopem, ale boisz się, że kierowcy wezmą Cię za kryminalistę i nikt się nie zatrzyma? Problem znika, gdy wkładasz mundur. Skuteczność gwarantowana!
+  - tytul: Za mundurem panny sznurem
+    tekst: Szukasz sposobu, żeby zwrócić uwagę nieznajomej ze szkolnych korytarzy? Oferujemy coś skutecznego, czyli mundur. Przygotuj się na grono wielbicielek (w tym harcerek). Do tego to fantastyczna pamiątka.
+  - tytul: Dowiesz się, jak przeżyć apokalipsę
+    tekst: Nocne alarmy, biegi na orientację, miesiąc w lesie... Wrócisz do domu nie tylko bogatszy o niesamowite doświadczenia, ale i gotowy przezwyciężać wszelkie trudy.
+  - tytul: Odkryjesz miejsca w Marcinku, o których nie miałeś pojęcia
+    tekst: Byłeś kiedyś w podziemiach Marcinka, gdzie skrywa się nasza harcówka? Jeśli nie, czas to nadrobić!
+  - tytul: Będziesz miał nowe profilowe
+    tekst: Nasze archiwum zdjęciowe zapełnia się z wyjazdu na wyjazd, a fotografowie nie próżnują. Nie sposób uchronić się przed harcerskim paparazzi.
+  - tytul: Poznasz 1000 osób
+    tekst: Jeden z nas zapytany, dlaczego lubi harcerzy, odpowiedział, że są inni niż reszta ludzi. Wyjeżdżając z nami poznasz 1000 osób, a wszyscy są ciekawi i różnorodni.
+  - tytul: Przenocujesz w nietypowych miejscach
+    tekst: Na plaży pod gołym niebem, w historycznym forcie, na szczycie góry, na stercie materacy. Wszędzie jest dobrze, bo z kubkiem herbaty, pokruszonymi ciastkami i razem, nawet w nieocieplanym schronisku w zimową zamieć.
+  - tytul: Zbudujesz dom na drzewie
+    tekst: Marzyłeś o własnym domku na drzewie? Oprócz stawiania namiotów i budowania pryczy, niektórzy z nas stawiają kilkumetrowe platformy wsparte na drzewach.
+  - tytul: Poczujesz adrenalinę smażenia jajecznicy ze 150 jajek
+    tekst: Śniadanie dla rodziny to dla Ciebie wyczyn? A co powiesz o kanapkach z 12 bochenków chleba albo jajecznicy ze 150 jajek? Myślisz, że dasz radę?
+  - tytul: Nauczysz się grać na gitarze
+    tekst: Po czym poznać, że gdzieś w pobliżu rozbili się harcerze? Po dźwiękach gitary. Każdy z nas trochę brzdąka, profesjonalnie albo w kółko jedną piosenkę, którą zna. Lekcje gratis.

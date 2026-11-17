@@ -224,3 +224,14 @@ footer a { color:#fff; }
 .tlogo { height:60px; width:auto; max-width:190px; object-fit:contain; }
 .tlogo.inv { filter:invert(1); }  /* białe logo PNG (Ster) na ciemno; docelowo plik mono SVG */
 @media (max-width:760px){ .tlogo { height:48px; max-width:150px; } }
+
+/* 10 powodów: szachownica 2×10 (puste co drugie pole), treść po kliknięciu */
+.reasons { background:var(--mist); text-align:center; }
+.rgrid { position:relative; max-width:900px; aspect-ratio:1/0.1676; margin:14px auto 0; }
+.rbtn { position:absolute; box-sizing:border-box; width:12.903%; height:66.67%; border:0; cursor:pointer; clip-path:url(#rhex); font:900 30px Bitter,serif; color:#fff; background:#23264a; transform:scale(.94); transition:transform .15s, background .15s; }
+.rbtn:hover { transform:scale(1); }
+.rbtn[aria-expanded="true"] { background:var(--sky); }
+.rtext { max-width:640px; margin:22px auto 0; text-align:left; background:#fff; border-radius:var(--rc); padding:22px 26px; box-shadow:0 8px 20px rgba(53,57,100,.12); }
+.rtext h3 { font-size:22px; margin-bottom:8px; color:var(--navy); }
+@media (max-width:700px){ .rbtn{font-size:16px} }
+.reasons .sub { margin-left:auto; margin-right:auto; }
