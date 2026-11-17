@@ -220,3 +220,10 @@ footer a { color:#fff; }
 .strip .si .yr { font:900 26px/1 Bitter,serif; }
 .strip .si .nm { font-weight:700; line-height:1.25; margin-top:4px; }
 .strip .si:hover { filter:brightness(1.08); }
+
+/* L O G O  D R U Ż Y N */
+.thead { display:flex; align-items:center; flex-wrap:wrap; gap:6px 22px; }
+.team .thead h2 { margin-bottom:2px; }
+.tlogo { height:60px; width:auto; max-width:190px; object-fit:contain; }
+.tlogo.inv { filter:invert(1); }  /* białe logo PNG (Ster) na ciemno; docelowo plik mono SVG */
+@media (max-width:760px){ .tlogo { height:48px; max-width:150px; } }

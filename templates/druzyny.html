@@ -21,7 +21,10 @@
   <div class="wrap trip {{ 'rev' if loop.index0 % 2 }}">
     <div class="tripph" style="background-image:url({{ url_for('static', filename='img/' ~ d.zdjecie) }})" role="img" aria-label="Zdjęcie: {{ d.nazwa }}"></div>
     <div>
-      <h2>{{ d.nazwa }}</h2>
+      <div class="thead">
+        <h2>{{ d.nazwa }}</h2>
+        {% if d.logo %}<img class="tlogo{{ ' inv' if d.logo.endswith('.png') }}" src="{{ url_for('static', filename='img/logo/' ~ d.logo) }}" alt="Logo: {{ d.nazwa }}">{% endif %}
+      </div>
       <p class="age">{{ d.opis }}</p>
       {% for p in d.tekst %}<p>{{ p }}</p>{% endfor %}
       {% if d.zbiorka %}<p class="meet"><b>Zbiórki:</b> {{ d.zbiorka }}</p>{% endif %}
