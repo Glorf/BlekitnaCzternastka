@@ -55,6 +55,11 @@ def kontakt():
     return render_template("kontakt.html", page="kontakt")
 
 
+@app.route("/archiwum/")
+def archiwum():
+    return render_template("archiwum.html", page="archiwum")
+
+
 @app.route("/procent/")
 def procent():
     return render_template("procent.html", page="procent")

@@ -11,7 +11,7 @@ app.config["FREEZER_DESTINATION"] = str(ROOT / "build")
 app.config["FREEZER_REMOVE_EXTRA_FILES"] = True
 
 # Stare podstrony, które muszą nadal działać pod swoimi adresami.
-KEEP = ["archiwum", "grom"]
+KEEP = ["grom"]  # archiwum/ to teraz podstrona z app.py (ten sam adres)
 EXTRA = ["CNAME", ".nojekyll", "favicon.ico"]
 
 if __name__ == "__main__":

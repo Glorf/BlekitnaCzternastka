@@ -21,9 +21,9 @@
     <nav>
       <a href="{{ url_for('druzyny') }}" {% if page == 'druzyny' %}class="on"{% endif %}>Drużyny</a>
       <a href="{{ url_for('oboz') }}" {% if page == 'oboz' %}class="on"{% endif %}>Obóz</a>
-      <a href="{{ site.linki.archiwum }}">Archiwum ↗</a>
+      <a href="{{ url_for('archiwum') }}" {% if page == 'archiwum' %}class="on"{% endif %}>Archiwum</a>
       <a href="{{ url_for('kontakt') }}" {% if page == 'kontakt' %}class="on"{% endif %}>Kontakt</a>
-      <a class="navbtn" href="{{ url_for('procent') }}">Przekaż {{ site.procent.kwota }}</a>
+      <a href="{{ url_for('procent') }}" {% if page == 'procent' %}class="on"{% endif %}>Przekaż {{ site.procent.kwota }}</a>
     </nav>
     <div class="soc">
       <a href="{{ site.linki.facebook }}" title="Facebook" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>

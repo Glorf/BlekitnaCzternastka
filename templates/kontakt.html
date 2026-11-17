@@ -7,13 +7,26 @@
 <div class="pagehead" style="background-image:linear-gradient(rgba(20,22,45,.55),rgba(20,22,45,.78)),url({{ url_for('static', filename='img/4.jpg') }})">
   <div class="wrap">
     <h1>Kontakt i FAQ</h1>
-    <p>Napisz lub zadzwoń do szczepowego. Odpowiedzi na najczęstsze pytania są niżej.</p>
-    <nav class="jump" aria-label="Przejdź do sekcji"><a href="#kontakt">Kontakt</a><a href="#faq">Najczęstsze pytania</a></nav>
+    <p>Odpowiedzi na najczęstsze pytania i kontakt do szczepowego.</p>
+    <nav class="jump" aria-label="Przejdź do sekcji"><a href="#faq">Najczęstsze pytania</a><a href="#kontakt">Kontakt</a></nav>
   </div>
 </div>
 
+<!-- F A Q -->
+<section id="faq">
+  <div class="wrap faq">
+    <h2>Najczęstsze pytania</h2>
+    <p class="sub">Nie ma tu odpowiedzi na Twoje pytanie? Zadzwoń lub napisz, chętnie pomożemy.</p>
+    {% for q in site.faq %}
+    <details class="qa"{% if loop.first %} open{% endif %}>
+      <summary>{{ q.pytanie }}</summary>
+      <p>{{ q.odpowiedz }}</p>
+    </details>
+    {% endfor %}
+  </div>
+</section>
 <!-- K O N T A K T -->
-<section id="kontakt">
+<section class="teams" id="kontakt">
   <div class="wrap cgrid">
     <div class="card">
       <h3>Szczepowy</h3>
@@ -34,17 +47,4 @@
   </div>
 </section>
 
-<!-- F A Q -->
-<section class="teams" id="faq">
-  <div class="wrap faq">
-    <h2>Najczęstsze pytania</h2>
-    <p class="sub">Nie ma tu odpowiedzi na Twoje pytanie? Zadzwoń lub napisz, chętnie pomożemy.</p>
-    {% for q in site.faq %}
-    <details class="qa"{% if loop.first %} open{% endif %}>
-      <summary>{{ q.pytanie }}</summary>
-      <p>{{ q.odpowiedz }}</p>
-    </details>
-    {% endfor %}
-  </div>
-</section>
 {% endblock %}

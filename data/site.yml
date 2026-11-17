@@ -25,7 +25,6 @@ linki:
   facebook: https://facebook.com/blekitna14/
   instagram: https://instagram.com/blekitna14
   flickr: https://www.flickr.com/photos/blekitna14/albums
-  archiwum: https://blekitna14.org/archiwum/index.html
   facebook_strona: https://www.facebook.com/Blekitna14/
 
 # Przekaż 1,5% (dane ze starej strony).
@@ -204,3 +203,41 @@ zdjecia:
     naglowek: Rajdach wiosennych
     slowa: [rajd wiosenny]
 
+# Archiwum: wstęp i zbiory (linki ze starej strony archiwum).
+archiwum:
+  wstep:
+    - Materiały archiwalne „Błękitnej” są rozsiane po sieci niczym gwoździe na obozie. Ta strona to indeks tych materiałów, żeby łatwiej je znaleźć.
+    - Niesamowita ilość fotografii i dokumentów jest już zeskanowana, ale bardzo możliwe, że Ty masz zdjęcia, które mogą tu trafić. W jakiejkolwiek formie by nie były, poradzimy sobie z każdą – nasz patrol archiwalny nie boi się negatywów, papierowych odbitek ani szklanych klisz. Szukamy też gazetek, kronik i plakietek.
+    - Jeśli chcesz podzielić się archiwalnymi materiałami, napisz do nas.
+  zbiory:
+    - nazwa: Zdjęcia
+      opis: Galeria zdjęć szczepu z lat 2004–2025.
+      linki:
+        - {tytul: Galeria na Flickrze (2004–2025), url: "https://www.flickr.com/photos/blekitna14/albums"}
+    - nazwa: Błękitny czas
+      opis: Gazetka szczepu.
+      linki:
+        - {tytul: Numery archiwalne (28–86), url: "https://drive.google.com/file/d/1l4g1WJpdisU5Zq4niou5-4XEG6fq8OB3/view?usp=sharing"}
+        - {tytul: Grudzień / Styczeń / Luty – 14.12.12, url: "https://drive.google.com/file/d/1jbTMQaU11_kEjZG7nFaqr84Db64-LWii/view?usp=sharing"}
+        - {tytul: Marzec / Kwiecień / Maj – 14.03.13, url: "https://drive.google.com/file/d/137f-FpSoDGz-wYBAAhGYAZ0IlSCIvVsl/view?usp=sharing"}
+        - {tytul: Czerwiec / Lipiec / Sierpień – 21.06.13, url: "https://drive.google.com/file/d/11olzXENl_p92eoMRVGDbeJo6p8r4FFE4/view?usp=sharing"}
+        - {tytul: Wrzesień / Październik / Listopad – 23.09.13, url: "https://drive.google.com/file/d/1rJOZt2nkeKoJt1nApNJ_CO7NXgN_EO8p/view?usp=sharing"}
+        - {tytul: Marzec / Kwiecień / Maj – 04.04.14, url: "https://drive.google.com/file/d/1lzsr3_-Ur1nRSt3z4FxVsiZbfly7Q8bZ/view?usp=sharing"}
+        - {tytul: Grudzień / Styczeń / Luty – 23.12.14, url: "https://drive.google.com/file/d/1ou-WHXRN7kSERslZfdNzNGFpWfaRdt2k/view?usp=sharing"}
+        - {tytul: Wydanie specjalne – 30 lat Leśnej i Kohorty – 13.10.2021, url: "https://drive.google.com/file/d/1pweTMYHW0KHY5NrTAvWe-B5RvxE35BYX/view?usp=sharing"}
+        - {tytul: Maj – Grudzień – 18.12.2025, url: "https://drive.google.com/file/d/1fvBELK3quBAmP1efj3-DmjL5F99c4nmv/view?usp=sharing"}
+    - nazwa: Jednodniówki
+      opis: Wydania okolicznościowe z okazji rocznic szczepu.
+      linki:
+        - {tytul: 80-lecie (wyd. 1999), url: "https://drive.google.com/file/d/1XiUqe1mQiqqAJ-r_u0qceI-HnzCXS45b/view?usp=sharing", uwaga: ".rar"}
+        - {tytul: 85-lecie (wyd. 2004), url: "https://docs.google.com/document/d/18trsrKWq6HXVLkV4JWoboili_6tp095U/edit?usp=sharing", uwaga: ".doc"}
+        - {tytul: "95-lecie, część I (lata 2009–2014; wyd. 2014)", url: "https://drive.google.com/file/d/1oXojYXIp5FKQVnfBaOju6LRxoP618U-s/view?usp=sharing"}
+        - {tytul: "95-lecie, część II (lata 1919–2009; wyd. 2014)", url: "https://drive.google.com/file/d/1nRJp6onX32OWtA4C8I7GhkzW9pIzNBhf/view?usp=sharing"}
+        - {tytul: 105-lecie (wyd. 2024), url: "https://drive.google.com/file/d/1YEtthJxKi1wTHtQNmxUIkbryVE3YN9N2/view?usp=sharing"}
+    - nazwa: Książki i śpiewniki
+      opis: Kroniki, książka z okazji stulecia i śpiewniki.
+      linki:
+        - {tytul: „Błękitna Czternastka” – książka wydana z okazji stulecia szczepu, url: "https://drive.google.com/file/d/1177V1Jr1yvYuRU462vTTD_kDKwEfP_5N/view?usp=sharing"}
+        - {tytul: „Historio-kronika (Silva Rerum)” – kronika historyczna drużyny i szczepu z 1993 roku, url: "https://blekitna.s3.eu-central-1.amazonaws.com/archiwum/files/silva-rerum.pdf", uwaga: pdf}
+        - {tytul: Śpiewnik Julki Suwalskiej (2011), url: "https://docs.google.com/document/d/1yucIP7VrKD-0icktaNqvIpHC8VO7u_ou/edit?usp=sharing", uwaga: ".doc"}
+        - {tytul: Otwartoźródłowy śpiewnik „Błękitnej Czternastki”, url: "https://github.com/iansowinski/spiewnik/releases", uwaga: "na podstawie śpiewników Zygacza, Bratka, Grzesia Rachlewicza, Marty Bieniasz, Julki Suwalskiej i Jana Sowińskiego"}

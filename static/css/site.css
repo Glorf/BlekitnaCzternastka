@@ -191,11 +191,6 @@ footer a { color:#fff; }
 .trip.alb.rev .albtext { text-align:right; }
 @media (max-width:760px){ .trip.alb.rev .albtext { text-align:left; } }
 
-/* P R Z Y C I S K  1,5%  W  M E N U */
-header nav a.navbtn { border:0; padding:8px 16px; border-radius:var(--rb); background:#fff; color:var(--navy); text-shadow:none; }
-header nav a.navbtn:hover { background:var(--sky); color:#fff; }
-@media (max-width:820px){ header nav a.navbtn { margin-top:12px; text-align:center; } }
-
 /* K O N T A K T  I  F A Q */
 .faq { max-width:820px; }
 .qa { border-bottom:1px solid rgba(53,57,100,.2); }
@@ -206,3 +201,16 @@ header nav a.navbtn:hover { background:var(--sky); color:#fff; }
 .qa p { padding:0 40px 20px 0; color:var(--ink); }
 .socline { margin-top:14px; font-weight:700; }
 .socline a { color:var(--navy); text-underline-offset:3px; }
+
+/* A R C H I W U M */
+.h2like { font-size:clamp(30px,4.6vw,44px); margin-bottom:4px; }
+.arch { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start; }
+@media (max-width:760px){ .arch { grid-template-columns:1fr; } }
+.acard { background:#fff; border-radius:var(--rc); padding:28px; box-shadow:0 10px 26px rgba(53,57,100,.14); }
+.acard h3 { font-size:26px; }
+.acard .adesc { color:var(--muted); margin:4px 0 14px; }
+.acard ul { list-style:none; padding:0; }
+.acard li { padding:8px 0; border-top:1px solid rgba(53,57,100,.14); line-height:1.4; }
+.acard li a { color:var(--navy); font-weight:700; text-underline-offset:3px; }
+.acard li a::after { content:" ↗"; font-weight:400; }
+.acard li span { color:var(--muted); font-size:14px; }
