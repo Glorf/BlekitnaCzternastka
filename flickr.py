@@ -34,12 +34,19 @@ def _call(key, method, **params):
 
 
 SAMPLE = 10  # tyle losowych zdjęć z albumu zapisujemy (do losowania okładki)
+VERSION = 2  # zmiana wymusza ponowne pobranie zdjęć (v2: większe rozmiary)
+EXTRAS = "url_q,url_z,url_c"  # kwadrat 150 px, 640 px, 800 px (dłuższy bok)
+
+
+def _best(photo):
+    """Największy dostępny rozmiar (do 800 px); url_q (150 px) to ostateczność."""
+    return photo.get("url_c") or photo.get("url_z") or photo.get("url_q") or ""
 
 
 def _sample_photos(key, user_id, album_id):
     data = _call(key, "flickr.photosets.getPhotos", photoset_id=album_id, user_id=user_id,
-                 per_page=500, extras="url_q", media="photos")
-    urls = [p["url_q"] for p in data["photoset"]["photo"] if p.get("url_q")]
+                 per_page=500, extras=EXTRAS, media="photos")
+    urls = [u for u in (_best(p) for p in data["photoset"]["photo"]) if u]
     return random.sample(urls, min(SAMPLE, len(urls)))
 
 
@@ -49,7 +56,7 @@ def refresh(key):
     profile_url = site["flickr"]["uzytkownik_url"]
     user = _call(key, "flickr.urls.lookupUser", url=profile_url)["user"]
     sets = _call(key, "flickr.photosets.getList", user_id=user["id"],
-                 per_page=500, primary_photo_extras="url_q")["photosets"]["photoset"]
+                 per_page=500, primary_photo_extras=EXTRAS)["photosets"]["photoset"]
     old = {a["id"]: a for a in load()}
     albums = []
     for s in sets:
@@ -58,7 +65,8 @@ def refresh(key):
             "id": s["id"],
             "tytul": s["title"]["_content"],
             "url": f"{profile_url.rstrip('/')}/albums/{s['id']}",
-            "okladka": primary.get("url_q", ""),
+            "okladka": _best(primary),
+            "v": VERSION,
             "zdjec": int(s.get("photos", 0)),
             "data": int(s.get("date_create", 0)),
         })
@@ -71,7 +79,7 @@ def refresh(key):
     todo = []
     for a in albums:
         prev = old.get(a["id"])
-        if prev and prev.get("zdjecia") and prev.get("zdjec") == a["zdjec"]:
+        if prev and prev.get("v") == VERSION and prev.get("zdjecia") and prev.get("zdjec") == a["zdjec"]:
             a["zdjecia"] = prev["zdjecia"]
         elif a["id"] in needed:
             todo.append(a)
