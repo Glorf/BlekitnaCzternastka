@@ -9,7 +9,8 @@ pip install -r requirements.txt
 python app.py                  # podgląd na http://127.0.0.1:5000
 python freeze.py               # pełna statyczna strona do build/
 python freeze.py --demo        # wersja pokazowa (prefiks /demo/, noindex) do build-demo/
-python deploy_demo.py          # przygotowuje commit z demo/ na master (--push wysyła)
+python assemble_site.py        # po freeze --demo: składa _site/ (stara strona + demo/)
+python deploy_demo.py          # ręczna publikacja demo bez GitHub Actions (--push wysyła)
 python -m unittest discover tests
 ```
 
@@ -18,6 +19,17 @@ python -m unittest discover tests
 - **Teksty do uzupełniania przez szczep:** współdzielony dokument (zob. wątek w historii zmian); po uzupełnieniu przepisujemy je do `data/site.yml`.
 - Dane oznaczone w `site.yml` jako „do uzupełnienia” (terminy i ceny obozów, imię szczepowego, godziny zbiórek, FAQ) są przykładami.
 - Zarchiwizowane makiety A–E: `docs/makiety/`. Ustalenia z szczepowym: `docs/propozycja.md`.
+
+## Automatyczna publikacja
+
+Workflow `.github/workflows/pages.yml` publikuje stronę na GitHub Pages: przy każdym pushu do `master`, co poniedziałek rano i na żądanie (Actions → Publikacja strony → Run workflow). Buduje demo, uruchamia testy i wysyła stronę: starą w katalogu głównym i nową pod `/demo/`.
+
+Jednorazowa konfiguracja w repozytorium na GitHubie:
+
+1. **Settings → Pages → Build and deployment → Source: GitHub Actions** (zamiast „Deploy from a branch”). Domena `blekitna14.org` zostaje w ustawieniach.
+2. Opcjonalnie, żeby albumy z Flickra odświeżały się same: **Settings → Secrets and variables → Actions → New repository secret** o nazwie `FLICKR_API_KEY`. Bez niego używany jest `data/flickr.json` z repozytorium.
+
+Po zatwierdzeniu nowej strony zamiast `--demo` budujemy `python freeze.py` i wysyłamy jej `build/` w katalogu głównym.
 
 ## Konwencje (stara strona)
 

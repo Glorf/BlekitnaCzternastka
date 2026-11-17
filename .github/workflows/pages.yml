@@ -1,0 +1,65 @@
+name: Publikacja strony
+
+on:
+  push:
+    branches: [master]
+  schedule:
+    - cron: "0 5 * * 1"   # w poniedziałki odświeża albumy z Flickra
+  workflow_dispatch:      # ręczne uruchomienie: zakładka Actions → Run workflow
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Odśwież albumy z Flickra (tylko gdy jest sekret FLICKR_API_KEY)
+        env:
+          FLICKR_API_KEY: ${{ secrets.FLICKR_API_KEY }}
+        run: |
+          if [ -n "$FLICKR_API_KEY" ]; then
+            python flickr.py
+          else
+            echo "Brak FLICKR_API_KEY, używam data/flickr.json z repozytorium"
+          fi
+
+      - name: Testy
+        run: python -m unittest discover tests
+
+      - name: Zbuduj nową stronę (wersja demo)
+        run: python freeze.py --demo
+
+      - name: Złóż stronę (stara strona + demo/)
+        run: python assemble_site.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -13,7 +13,7 @@ The `redesign` branch is for a from-scratch rebuild of the site; `master` holds 
 Flask + Jinja2 + Frozen-Flask. Pięć podstron z `app.py`: Start `/`, Drużyny `/druzyny/`, Obóz `/oboz/`, Archiwum `/archiwum/`, Kontakt i FAQ `/kontakt/`, plus `/procent/` (1,5%). Treść do edycji (drużyny, kontakty, FAQ, archiwum, obozy, linki) jest w `data/site.yml` (uwaga: w YAML tekst z `: ` w środku trzeba ująć w cudzysłów, test to wyłapie); szablony w `templates/`, style, JS i zdjęcia w `static/`.
 
 - Podgląd: `python app.py`. Testy: `python -m unittest discover tests`.
-- Build: `python freeze.py` (pełna strona do `build/`, razem ze starym `grom/` i `CNAME`), `python freeze.py --demo` (do `build-demo/`, prefiks `/demo/`, noindex). `python deploy_demo.py` przygotowuje commit z `demo/` na `master` (`--push` wysyła).
+- Build: `python freeze.py` (pełna strona do `build/`, razem ze starym `grom/` i `CNAME`), `python freeze.py --demo` (do `build-demo/`, prefiks `/demo/`, noindex). Publikacja: workflow `.github/workflows/pages.yml` (push do `master`, co tydzień, ręcznie) buduje demo i składa `_site/` skryptem `assemble_site.py` (stara strona + `demo/`); wymaga w ustawieniach Pages źródła „GitHub Actions”. Ręczna alternatywa: `python deploy_demo.py` (commit z `demo/` na `master`, `--push` wysyła).
 - Albumy Flickra: `FLICKR_API_KEY=... python flickr.py` zapisuje `data/flickr.json` (bez tego pliku strona pokazuje tylko link do Flickra, a galeria na Start wraca do statycznych zdjęć). Klucza nie wpisujemy do repo.
 - Zarchiwizowane makiety A–E: `docs/makiety/`. Katalog `Logotypy/` (lokalne źródła logo, nie w repo); do strony trafiły tylko pliki z `static/img/logo/`.
 - Dane w `site.yml` oznaczone „do uzupełnienia” oraz FAQ to na razie przykłady.
