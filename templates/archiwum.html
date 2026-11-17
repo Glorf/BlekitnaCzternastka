@@ -3,13 +3,22 @@
 {% block desc %}Archiwum Błękitnej XIV: zdjęcia, gazetka Błękitny czas, jednodniówki, książki i śpiewniki w jednym miejscu.{% endblock %}
 {% block content %}
 
-<!-- W S T Ę P -->
-<section>
+<!-- N A G Ł Ó W E K -->
+<div class="pagehead" style="background-image:linear-gradient(rgba(20,22,45,.55),rgba(20,22,45,.78)),url({{ url_for('static', filename='img/2.jpg') }})">
+  <div class="wrap">
+    <h1>Archiwum</h1>
+    <p>{{ site.archiwum.wstep[0] }}</p>
+    <nav class="jump" aria-label="Przejdź do sekcji"><a href="#podziel-sie">Masz stare zdjęcia?</a><a href="#zbiory">Zbiory</a></nav>
+  </div>
+</div>
+
+<!-- P O D Z I E L   S I Ę -->
+<section id="podziel-sie">
   <div class="wrap trip">
     <div class="tripph" style="background-image:url({{ url_for('static', filename='img/6.jpg') }})" role="img" aria-label="Zdjęcie harcerzy"></div>
     <div class="about">
-      <h1 class="h2like">Archiwum</h1>
-      {% for p in site.archiwum.wstep %}<p>{{ p }}</p>{% endfor %}
+      <h2>Masz stare zdjęcia?</h2>
+      {% for p in site.archiwum.wstep[1:] %}<p>{{ p }}</p>{% endfor %}
       <p><a class="mail" href="mailto:{{ site.szczep.email }}?subject=Materia%C5%82y%20do%20archiwum">{{ site.szczep.email }}</a></p>
     </div>
   </div>
