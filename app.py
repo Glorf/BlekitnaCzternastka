@@ -29,7 +29,7 @@ def tel_filter(phone):
 
 @app.context_processor
 def inject_site():
-    return {"site": load_site()}
+    return {"site": load_site(), "noindex": app.config.get("NOINDEX", False)}
 
 
 def _tile(a):

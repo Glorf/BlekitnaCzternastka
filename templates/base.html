@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% block title %}Błękitna XIV{% endblock %} | Błękitna XIV</title>
 <meta name="description" content="{% block desc %}{{ site.szczep.hasla }} Szczep harcerski Błękitna XIV z Poznania: drużyny, obóz, kontakt.{% endblock %}">
-<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+{% if noindex %}<meta name="robots" content="noindex, nofollow">
+{% endif %}<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&family=Bitter:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/font-awesome.min.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">

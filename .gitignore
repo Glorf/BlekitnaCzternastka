@@ -4,3 +4,4 @@ news/generated_index.html
 build/
 __pycache__/
 .venv/
+build-demo/
